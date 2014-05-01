@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   patch '/restaurants/:id', to: 'restaurants#update'
 
+  delete '/restaurants/:id', to: 'restaurants#destroy'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -8,3 +8,8 @@
 
 
 <a href="/restaurants/<%= @restaurant.id %>/edit">Update Restaurant Information</a>
+<a href="/restaurants">Take me back to the restaurant list</a>
+
+<%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
+  <%= f.submit :delete %>
+<% end %>

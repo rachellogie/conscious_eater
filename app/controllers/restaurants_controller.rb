@@ -36,9 +36,11 @@ class RestaurantsController < ApplicationController
     @restaurant.dairy_free_options = params[:restaurant][:dairy_free_options]
     @restaurant.save
     redirect_to "/restaurants/#{@restaurant.id}"
+  end
 
-
-
+  def destroy
+    Restaurant.find(params[:id]).destroy
+    redirect_to "/restaurants"
   end
 
 end
