@@ -1,10 +1,8 @@
 class RestaurantsController < ApplicationController
 
   def index
-    p params[:search]
     if params[:search]
       @restaurants = Restaurant.where(location: params[:homepage_location])
-      p @restaurants
       return @restaurants
     else
       @restaurants = Restaurant.all
