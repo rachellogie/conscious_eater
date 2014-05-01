@@ -1,0 +1,10 @@
+<h1><%= @restaurant.name %></h1>
+
+
+<a href=<%= @restaurant.website %>>Restaurant Website</a>
+<p>Location: <%= @restaurant.location %></p>
+<p>Gluten free options: <%= @restaurant.gluten_free_options %></p>
+<p>Dairy free options:  <%= @restaurant.dairy_free_options %></p>
+
+
+<a href="/restaurants/<%= @restaurant.id %>/edit">Update Restaurant Information</a>

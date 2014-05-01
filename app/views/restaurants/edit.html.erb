@@ -1,0 +1,29 @@
+<%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}" do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+
+  <p>
+    <%= f.label :location %>
+    <%= f.select :location, [['Highlands, Denver', 'Highlands'], ['Pearl Street, Boulder', 'Pearl']] %>
+  </p>
+
+  <p>
+    <%= f.check_box :gluten_free_options %> Gluten Free Options
+  </p>
+
+  <p>
+    <%= f.check_box :dairy_free_options %> Dairy Free Options
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
