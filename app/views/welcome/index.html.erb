@@ -8,3 +8,11 @@
 <a href="/restaurants">All Restaurants</a>
 
 
+<form action="/restaurants" method="get">
+  <input type="hidden" name="search" value="true"/>
+  <select name="homepage_location">
+    <option value="Pearl Street, Boulder">Pearl Street, Boulder</option>
+    <option value="Highlands, Denver">Highlands, Denver</option>
+  </select>
+  <input type="submit" value="Go"/>
+</form>

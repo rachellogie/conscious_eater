@@ -29,9 +29,11 @@ feature 'Restaurants manager' do
     click_on "Add this Restaurant"
     expect(page).to have_content "Dairy free options: false"
     click_on "Update Restaurant Information"
+    select "Pearl", :from => "restaurant[location]"
     check("restaurant[dairy_free_options]")
     click_on "Update"
     expect(page).to have_content "Dairy free options: true"
+    expect(page).to have_content "Pearl"
   end
 
   scenario 'User can return to all restaurants from an individual restaurant page' do
@@ -57,5 +59,7 @@ feature 'Restaurants manager' do
     click_on "delete"
     expect(page).to_not have_content "Linger"
   end
+
+
 
 end
