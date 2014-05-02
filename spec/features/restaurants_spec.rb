@@ -63,14 +63,13 @@ feature 'Restaurants manager' do
   end
 
   scenario 'User cannot add a restaurant without at least 1 dietary option' do
-    pending
     visit '/'
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
     fill_in "restaurant[website]", with: "linger.com"
     click_on "Add this Restaurant"
-    expect(page).to have_content "You must select at least 1 dietary option"
+    expect(page).to have_content "You must check at least 1 diet option"
   end
 
   scenario 'User will see errors if they try to create a restaurant without a name' do

@@ -16,13 +16,17 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new
     @restaurant.name = params[:restaurant][:name]
-    @restaurant.dietary_option_list = params[:option].keys.join(", ")
+    puts ">>>>>>>>>>>>>>>>>>>>>"
+    p params[:option]
+    if params[:option]
+      @restaurant.dietary_option_list = params[:option].keys.join(", ")
+    end
     @restaurant.location = params[:restaurant][:location]
     @restaurant.website = params[:restaurant][:website]
     if @restaurant.save
       redirect_to "/restaurants/#{@restaurant.id}"
     else
-      render "/restaurants/new"
+      render restaurants_new_path
     end
   end
 

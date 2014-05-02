@@ -4,6 +4,6 @@ class Restaurant < ActiveRecord::Base
   acts_as_taggable_on :dietary_options
 
   validates :name, presence: true
-  validates :dietary_option_list, presence: true
+  validates :dietary_option_list, presence: {message: "You must check at least 1 diet option"}
 
 end
