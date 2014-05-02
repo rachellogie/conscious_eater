@@ -73,6 +73,16 @@ feature 'Restaurants manager' do
     expect(page).to have_content "You must select at least 1 dietary option"
   end
 
+  scenario 'User will see errors if they try to create a restaurant without a name' do
+    visit '/'
+    click_on "All Restaurants"
+    click_on "Add a Restaurant"
+    fill_in "restaurant[website]", with: "linger.com"
+    check("option[vegan]")
+    click_on "Add this Restaurant"
+    expect(page).to have_content "Name can't be blank"
+  end
+
 
 
 end
