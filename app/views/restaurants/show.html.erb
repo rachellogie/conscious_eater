@@ -3,8 +3,14 @@
 
 <a href=<%= @restaurant.website %>>Restaurant Website</a>
 <p>Location: <%= @restaurant.location %></p>
-<p>Gluten free options: <%= @restaurant.gluten_free_options %></p>
-<p>Dairy free options:  <%= @restaurant.dairy_free_options %></p>
+
+<ul>
+<% @restaurant.dietary_option_list.each do |option| %>
+
+  <li> <%= option %></li>
+
+<% end %>
+</ul>
 
 
 <a href="/restaurants/<%= @restaurant.id %>/edit">Update Restaurant Information</a>

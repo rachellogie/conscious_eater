@@ -15,13 +15,12 @@
     <%= f.select :location, [['Highlands, Denver', 'Highlands, Denver'], ['Pearl Street, Boulder', 'Pearl Street, Boulder']] %>
   </p>
 
-  <p>
-    <%= f.check_box :gluten_free_options %> Gluten Free Options
-  </p>
+  <% Restaurant::DIETARY_OPTIONS.each do |option| %>
+    <p>
+      <%= check_box_tag "option[#{option}]" %> <%= option %>
+    </p>
+  <% end %>
 
-  <p>
-    <%= f.check_box :dairy_free_options %> Dairy Free Options
-  </p>
 
   <p>
     <%= f.submit "Add this Restaurant" %>

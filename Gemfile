@@ -31,9 +31,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
   gem 'capybara', '~> 2.2.1'
   gem 'launchy', '~>2.3.0'
+  gem 'pry', '~> 0.9.12.6'
 end
 
+gem 'acts-as-taggable-on', '~> 3.1.1'
+
 gem 'travis-lint', '~> 1.8.0'
+
+gem 'rails_12factor', '~> 0.0.2'
 
 
 # Use ActiveModel has_secure_password

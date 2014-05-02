@@ -2,8 +2,8 @@ class RestaurantsController < ApplicationController
 
   def index
     if params[:search]
-      @restaurants = Restaurant.where(location: params[:homepage_location])
-      return @restaurants
+       @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
+       return @restaurants
     else
       @restaurants = Restaurant.all
     end
@@ -15,11 +15,10 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new
+    @restaurant.dietary_option_list = params[:option].keys.join(", ")
     @restaurant.name = params[:restaurant][:name]
     @restaurant.location = params[:restaurant][:location]
     @restaurant.website = params[:restaurant][:website]
-    @restaurant.gluten_free_options = params[:restaurant][:gluten_free_options]
-    @restaurant.dairy_free_options = params[:restaurant][:dairy_free_options]
     @restaurant.save
     redirect_to "/restaurants/#{@restaurant.id}"
   end
@@ -37,8 +36,7 @@ class RestaurantsController < ApplicationController
     @restaurant.name = params[:restaurant][:name]
     @restaurant.location = params[:restaurant][:location]
     @restaurant.website = params[:restaurant][:website]
-    @restaurant.gluten_free_options = params[:restaurant][:gluten_free_options]
-    @restaurant.dairy_free_options = params[:restaurant][:dairy_free_options]
+    @restaurant.dietary_option_list = params[:option].keys.join(", ")
     @restaurant.save
     redirect_to "/restaurants/#{@restaurant.id}"
   end

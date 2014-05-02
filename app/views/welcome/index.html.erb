@@ -14,5 +14,15 @@
     <option value="Pearl Street, Boulder">Pearl Street, Boulder</option>
     <option value="Highlands, Denver">Highlands, Denver</option>
   </select>
+
+  <% Restaurant::DIETARY_OPTIONS.each do |option| %>
+    <p>
+      <%= check_box_tag "option[#{option}]" %> <%= option %>
+    </p>
+  <% end %>
+
   <input type="submit" value="Go"/>
+
+
+
 </form>

@@ -13,10 +13,10 @@ feature 'Restaurants manager' do
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
     fill_in "restaurant[website]", with: "linger.com"
-    check("restaurant[gluten_free_options]")
+    check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "Linger"
-    expect(page).to have_content "Gluten free options: true"
+    expect(page).to have_content "gluten free"
   end
 
   scenario 'User can update a restaurant' do
@@ -25,14 +25,16 @@ feature 'Restaurants manager' do
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
     fill_in "restaurant[website]", with: "linger.com"
-    check("restaurant[gluten_free_options]")
+    check("option[gluten free]")
     click_on "Add this Restaurant"
-    expect(page).to have_content "Dairy free options: false"
+    expect(page).to have_content "gluten free"
     click_on "Update Restaurant Information"
     select "Pearl", :from => "restaurant[location]"
-    check("restaurant[dairy_free_options]")
+    uncheck("option[gluten free]")
+    check("option[dairy free]")
     click_on "Update"
-    expect(page).to have_content "Dairy free options: true"
+    expect(page).to_not have_content "gluten free"
+    expect(page).to have_content "dairy free"
     expect(page).to have_content "Pearl"
   end
 
@@ -42,7 +44,7 @@ feature 'Restaurants manager' do
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
     fill_in "restaurant[website]", with: "linger.com"
-    check("restaurant[gluten_free_options]")
+    check("option[gluten free]")
     click_on "Add this Restaurant"
     click_on "Take me back to the restaurant list"
     expect(page).to have_content "These are all the restaurants"
@@ -54,7 +56,7 @@ feature 'Restaurants manager' do
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
     fill_in "restaurant[website]", with: "linger.com"
-    check("restaurant[gluten_free_options]")
+    check("option[vegan]")
     click_on "Add this Restaurant"
     click_on "delete"
     expect(page).to_not have_content "Linger"
