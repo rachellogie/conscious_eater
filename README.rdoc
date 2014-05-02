@@ -7,3 +7,8 @@ Steps for getting this running on your machine:
 1. bundle install
 2. rake db:create db:migrate
 3. rake db:seed
+
+
+tracker project: https://www.pivotaltracker.com/n/projects/1067890
+
+heroku: http://conscious-eater.herokuapp.com/
