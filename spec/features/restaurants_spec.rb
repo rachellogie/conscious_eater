@@ -82,6 +82,21 @@ feature 'Restaurants manager' do
     expect(page).to have_content "Name can't be blank"
   end
 
-
+  scenario 'User will see errors if they try to update a restaurant without diet options' do
+    pending
+    visit '/'
+    click_on "All Restaurants"
+    click_on "Add a Restaurant"
+    fill_in "restaurant[name]", with: "Linger"
+    fill_in "restaurant[website]", with: "linger.com"
+    check("option[gluten free]")
+    click_on "Add this Restaurant"
+    expect(page).to have_content "gluten free"
+    click_on "Update Restaurant Information"
+    select "Pearl", :from => "restaurant[location]"
+    uncheck("option[gluten free]")
+    click_on "Update"
+    expect(page).to have_content "You must check at least 1 diet option"
+  end
 
 end

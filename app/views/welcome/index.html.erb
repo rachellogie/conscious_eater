@@ -1,25 +1,28 @@
-  <div id="main">
-    <div id="main_container">
-      <form action="/restaurants" method="get">
-        <input type="hidden" name="search" value="true"/>
+<div id="main">
+  <div id="main_container">
+    <form action="/restaurants" method="get">
+      <input type="hidden" name="search" value="true"/>
 
-
-        <div id="search_location">
+      <div id="search_location">
         <p class="dropbox">Find Restaurants in: </p>
         <select name="homepage_location" class="dropbox">
           <option value="Highlands, Denver">Highlands, Denver</option>
           <option value="Pearl Street, Boulder">Pearl Street, Boulder</option>
         </select>
-        </div>
+      </div>
 
+      <div id="search_options">
         <% Restaurant::DIETARY_OPTIONS.each do |option| %>
           <p>
             <%= check_box_tag "option[#{option}]" %> <%= option %>
           </p>
         <% end %>
-        <input type="submit" value="Go"/>
-      </form>
+      </div>
 
-    </div>
+      <div id="submit_button">
+        <input type="submit" value="Go"/>
+      </div>
+    </form>
   </div>
+</div>
 

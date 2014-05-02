@@ -8,18 +8,18 @@
 
 Restaurant.destroy_all
 
-Restaurant.create(name: "Salt", location: "Pearl Street, Boulder", website: "Salt.com",
+Restaurant.create(name: "Salt", location: "Pearl Street, Boulder", website: "http://saltboulderbistro.com/",
                   dietary_option_list: "gluten free, dairy free" )
 
-Restaurant.create(name: "Shine", location: "Pearl Street, Boulder", website: "shine.com",
+Restaurant.create(name: "Shine", location: "Pearl Street, Boulder", website: "http://www.shineboulder.com/",
                   dietary_option_list: "gluten free, dairy free" )
 
 
 
-Restaurant.create(name: "Linger", location: "Highlands, Denver", website: "linger.com",
+Restaurant.create(name: "Linger", location: "Highlands, Denver", website: "http://lingerdenver.com/",
                   dietary_option_list: "gluten free, dairy free" )
 
-Restaurant.create(name: "Root Down", location: "Highlands, Denver", website: "rootdown.com",
+Restaurant.create(name: "Root Down", location: "Highlands, Denver", website: "http://www.rootdowndenver.com/",
                   dietary_option_list: "gluten free, dairy free" )
 
 

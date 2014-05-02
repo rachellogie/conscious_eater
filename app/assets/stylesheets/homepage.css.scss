@@ -1,12 +1,14 @@
 header {
     background:image-url('denver.jpg') no-repeat center center;
     background-size: cover;
-    height: 300px;
+    height: 250px;
+    margin-top: -30px;
 }
 
 h1 {
     font-family: 'Pacifico', cursive;
     color: white;
+  clear: both;
 }
 
 h3 {
@@ -24,12 +26,12 @@ h3 {
 #main_container{
     margin: auto;
     max-width: 980px;
-    border: 1px solid black;
 }
 
 #nav_container li {
     float: right;
     padding: 10px;
+    padding-top: 20px;
 }
 
 #nav_container ul {
@@ -39,8 +41,6 @@ h3 {
 .dropbox {
     display: inline-block;
 }
-
-
 
 #search_location {
     text-align: center;
@@ -56,9 +56,24 @@ a:hover {
     color: black;
 }
 
+#main_container {
+  margin-top: 20px;
+}
+
 /*------errors---------*/
 
 .error {
   color: red;
 }
 
+//--------homepage---------
+
+#search_options {
+  margin: auto;
+  width: 300px;
+}
+
+#submit_button {
+  margin: auto;
+  width: 100px;
+}

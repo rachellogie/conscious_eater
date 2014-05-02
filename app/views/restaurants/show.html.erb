@@ -13,8 +13,8 @@
 </ul>
 
 
-<a href="/restaurants/<%= @restaurant.id %>/edit">Update Restaurant Information</a>
-<a href="/restaurants">Take me back to the restaurant list</a>
+<p><a href="/restaurants/<%= @restaurant.id %>/edit">Update Restaurant Information</a></p>
+<p><a href="/restaurants">Take me back to the restaurant list</a></p>
 
 <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
   <%= f.submit :delete %>
