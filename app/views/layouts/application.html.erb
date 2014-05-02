@@ -2,13 +2,42 @@
 <html>
 <head>
   <title>ConsciousEater</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico|Karla' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <nav>
+    <div id="nav_container">
+      <ul>
+        <li><a href="/restaurants">All Restaurants</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="header_container">
+    <h1>The Conscious Eater</h1>
 
-<%= yield %>
+    <h3><span>We make it easy to find restaurants in the Denver/Boulder area that suit your dietary preferences.</span>
+    </h3>
+  </div>
+</header>
+
+
+<div id="main">
+  <div id="main_container">
+    <%= yield %>
+  </div>
+</div>
+
+<!--<footer>-->
+<!--<div id="footer">-->
+<!--<p>Rachel Logie 2014</p>-->
+<!--</div>-->
+<!--</footer>-->
 
 </body>
 </html>

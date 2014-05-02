@@ -1,0 +1,60 @@
+header {
+    background:url('denver.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+}
+
+#header_container span {
+    background-color: black;
+    opacity: .9;
+}
+
+#header_container,
+#nav_container,
+#main_container{
+    margin: auto;
+    max-width: 980px;
+    border: 1px solid black;
+}
+
+#nav_container li {
+    float: right;
+    padding: 10px;
+}
+
+#nav_container ul {
+    list-style-type: none;
+}
+
+.dropbox {
+    display: inline-block;
+}
+
+
+
+#search_location {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
+/*-------chosen----------*/
+

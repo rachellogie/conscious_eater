@@ -12,9 +12,12 @@
  *
  *= require_tree .
  *= require_self
- *= require chosen.min
+ *= require chosen
  */
 
 body {
-    background-color: pink;
+    font-family: 'Karla', sans-serif;
+    font-size: 1.3em;
+    background-color: orange;
+;
 }
