@@ -12,7 +12,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "Linger"
@@ -24,7 +24,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "gluten free"
@@ -43,7 +43,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     click_on "Add this Restaurant"
     click_on "Take me back to the restaurant list"
@@ -55,7 +55,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[vegan]")
     click_on "Add this Restaurant"
     click_on "delete"
@@ -67,7 +67,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     click_on "Add this Restaurant"
     expect(page).to have_content "You must check at least 1 diet option"
   end
@@ -76,7 +76,7 @@ feature 'Restaurants manager' do
     visit '/'
     click_on "All Restaurants"
     click_on "Add a Restaurant"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[vegan]")
     click_on "Add this Restaurant"
     expect(page).to have_content "Name can't be blank"
@@ -88,7 +88,7 @@ feature 'Restaurants manager' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "gluten free"

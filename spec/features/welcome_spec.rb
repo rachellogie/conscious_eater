@@ -12,7 +12,7 @@ feature 'Homepage' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Linger"
-    fill_in "restaurant[website]", with: "linger.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     select "Highlands, Denver", :from => "restaurant[location]"
     click_on "Add this Restaurant"
@@ -21,7 +21,7 @@ feature 'Homepage' do
     click_on "All Restaurants"
     click_on "Add a Restaurant"
     fill_in "restaurant[name]", with: "Shine"
-    fill_in "restaurant[website]", with: "shine.com"
+    fill_in "restaurant[website]", with: "http://lingerdenver.com/"
     check("option[gluten free]")
     select "Pearl Street, Boulder", :from => "restaurant[location]"
     click_on "Add this Restaurant"
