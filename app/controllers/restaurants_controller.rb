@@ -3,7 +3,8 @@ class RestaurantsController < ApplicationController
   def index
     if params[:search] && params[:option]
        @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
-       return @restaurants
+    elsif params[:search]
+      @restaurants = Restaurant.where(location: params[:homepage_location])
     else
       @restaurants = Restaurant.all
     end
