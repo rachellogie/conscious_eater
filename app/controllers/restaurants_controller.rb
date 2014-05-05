@@ -43,6 +43,8 @@ class RestaurantsController < ApplicationController
     @restaurant.website = params[:restaurant][:website]
     if params[:option]
       @restaurant.dietary_option_list = params[:option].keys.join(", ")
+    else
+      @restaurant.dietary_option_list = ''
     end
     if @restaurant.save
       redirect_to "/restaurants/#{@restaurant.id}"

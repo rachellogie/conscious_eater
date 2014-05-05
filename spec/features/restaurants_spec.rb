@@ -83,7 +83,6 @@ feature 'Restaurants manager' do
   end
 
   scenario 'User will see errors if they try to update a restaurant without diet options' do
-    pending
     visit '/'
     click_on "All Restaurants"
     click_on "Add a Restaurant"
