@@ -4,7 +4,10 @@
 
 
 <% @restaurants.each do |restaurant| %>
+
+  <div class="display_restaurants">
   <p><%= restaurant.name %> <a href="/restaurants/<%= restaurant.id %>">see restaurant</a></p>
+  </div>
 <% end %>
 
 

@@ -1,3 +1,19 @@
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.3em;
+  background-color: #FDB254;
+}
+
+#header_container,
+#nav_container,
+#main_container,
+#footer_container{
+  margin: auto;
+  max-width: 980px;
+}
+
+//-----------header------------
+
 header {
     background:image-url('denver.jpg') no-repeat center center;
     background-size: cover;
@@ -17,16 +33,17 @@ h3 {
 }
 
 #header_container span {
-    background-color: black;
+    background-color: #3A2923;
     opacity: .9;
+    padding: 3px;
 }
 
-#header_container,
-#nav_container,
-#main_container{
-    margin: auto;
-    max-width: 980px;
+#header_container {
+  background-color: rgba(58,41,35,.2);
+  height: 250px;
 }
+
+//-----------nav-----------
 
 #nav_container li {
     float: right;
@@ -38,13 +55,21 @@ h3 {
     list-style-type: none;
 }
 
-.dropbox {
-    display: inline-block;
+//--------------------main---------
+
+#main_container {
+  margin-top: 20px;
 }
 
-#search_location {
-    text-align: center;
+#main {
+  min-height: 400px;
 }
+
+
+
+
+
+
 
 a {
     text-decoration: none;
@@ -56,9 +81,6 @@ a:hover {
     color: black;
 }
 
-#main_container {
-  margin-top: 20px;
-}
 
 /*------errors---------*/
 
@@ -76,4 +98,31 @@ a:hover {
 #submit_button {
   margin: auto;
   width: 100px;
+}
+
+.dropbox {
+  display: inline-block;
+}
+
+#search_location {
+  text-align: center;
+}
+
+
+//------------footer---------
+
+footer {
+  height: 50px;
+  background-color: #3A2923;
+  color: white;
+  text-align: right;
+}
+
+//------------all restaurants page --------
+
+.display_restaurants {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px;
 }
