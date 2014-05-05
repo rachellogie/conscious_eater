@@ -28,7 +28,7 @@ feature 'Restaurants manager' do
     check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "gluten free"
-    click_on "Update Restaurant Information"
+    click_on "Edit Restaurant Information"
     select "Pearl", :from => "restaurant[location]"
     uncheck("option[gluten free]")
     check("option[dairy free]")
@@ -91,7 +91,7 @@ feature 'Restaurants manager' do
     check("option[gluten free]")
     click_on "Add this Restaurant"
     expect(page).to have_content "gluten free"
-    click_on "Update Restaurant Information"
+    click_on "Edit Restaurant Information"
     select "Pearl", :from => "restaurant[location]"
     uncheck("option[gluten free]")
     click_on "Update"
