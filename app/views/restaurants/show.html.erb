@@ -1,16 +1,23 @@
 <h1><%= @restaurant.name %></h1>
 
+<img src="<%= @restaurant.photo_uri %>"/>
 
-<a href=<%= @restaurant.website %>>Restaurant Website</a>
-<p>Location: <%= @restaurant.location %></p>
+<p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
+<p>Neighborhood: <%= @restaurant.location %></br>
+<%= @restaurant.address %></p>
+
 
 <ul>
-<% @restaurant.dietary_option_list.each do |option| %>
+  <% @restaurant.dietary_option_list.each do |option| %>
 
-  <li> <%= option %></li>
+    <li> <%= option %></li>
 
-<% end %>
+  <% end %>
 </ul>
+
+<% if @restaurant.rating %>
+  <p><%= @restaurant.rating %> out of 5 stars</p>
+<% end %>
 
 
 <p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>

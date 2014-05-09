@@ -22,7 +22,10 @@ class RestaurantsController < ApplicationController
     end
     @restaurant.location = params[:restaurant][:location]
     @restaurant.website = params[:restaurant][:website]
+    initial_time = Time.now
     if @restaurant.save
+      end_time = Time.now
+      puts "Time elapsed: #{end_time - initial_time}"
       redirect_to "/restaurants/#{@restaurant.id}"
     else
       render restaurants_new_path

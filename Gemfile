@@ -34,11 +34,24 @@ group :development, :test do
   gem 'pry', '~> 0.9.12.6'
 end
 
+group :test do
+  gem "webmock", "~> 1.17.4"
+  gem "vcr", "~> 2.9.0"
+end
+
+group :production do
+  gem 'rails_12factor', '~> 0.0.2'
+end
+
 gem 'acts-as-taggable-on', '~> 3.1.1'
 
 gem 'travis-lint', '~> 1.8.0'
 
-gem 'rails_12factor', '~> 0.0.2'
+
+
+gem 'faraday', '~> 0.9.0'
+
+gem 'dotenv-rails', '~> 0.11.1'
 
 
 # Use ActiveModel has_secure_password
