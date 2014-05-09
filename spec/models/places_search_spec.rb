@@ -4,8 +4,8 @@ require_relative '../../app/models/places_search'
 describe 'PlacesSearch' do
 
   before :each do
-    key = ENV['GOOGLE_API_KEY']
-    @search = PlacesSearch.new(key, "Shine", "Pearl Street, Boulder")
+    @key = ENV['GOOGLE_API_KEY']
+    @search = PlacesSearch.new(@key, "Shine", "Pearl Street, Boulder")
   end
 
   it "returns a rating for a specific restaurant" do
@@ -40,6 +40,14 @@ describe 'PlacesSearch' do
     VCR.use_cassette('places_search/name') do
       name = @search.get_name
       expect(name).to eq "Shine Restaurant and Gathering Place"
+    end
+  end
+
+  it "returns false if there are no google matches" do
+    VCR.use_cassette('places_search/googlematches') do
+      search = PlacesSearch.new(@key, "bhew", "Pearl Street, Boulder")
+      matches = search.matches?
+      expect(matches).to eq false
     end
   end
 

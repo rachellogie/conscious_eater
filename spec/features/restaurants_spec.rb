@@ -112,4 +112,18 @@ feature 'Restaurants manager' do
     end
   end
 
+  scenario 'User can add a restaurant that is not in google' do
+    VCR.use_cassette('restaurants/addwithoutgoogle') do
+      visit '/'
+      click_on "All Restaurants"
+      click_on "Add a Restaurant"
+      fill_in "restaurant[name]", with: "bhsdg"
+      fill_in "restaurant[website]", with: "http://bhsdg.com/"
+      check("option[gluten free]")
+      click_on "Add this Restaurant"
+      expect(page).to have_content "gluten free"
+      expect(page).to have_content "Bhsdg"
+    end
+  end
+
 end

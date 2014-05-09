@@ -22,6 +22,8 @@ class PlacesSearch
       latitude = json_location_data["lat"]
       longitude = json_location_data["lng"]
       response = Faraday.get "#{@api_root}place/nearbysearch/json?location=#{latitude},#{longitude}&radius=1000&types=food&name=#{@restaurant_name}&sensor=false&key=#{@key}"
+     # if you can call results on it, then there is something there, otherwise return false??
+
       JSON.parse(response.body)["results"].first
     end
   end
@@ -51,6 +53,14 @@ class PlacesSearch
 
   def get_name
     get_json_restaurant_data["name"]
+  end
+
+  def matches?
+    if get_json_restaurant_data
+      true
+    else
+      false
+    end
   end
 
 end

@@ -11,11 +11,13 @@ class Restaurant < ActiveRecord::Base
 
   def add_metadata
     search = PlacesSearch.new(ENV["GOOGLE_API_KEY"], self.name, self.location)
-    self.rating = search.get_rating
-    self.address = search.get_address
-    self.photo_uri = search.get_photo[9..-3]
-    self.website = search.get_website
-    self.name = search.get_name
-    self.save
+    if search.matches?
+      self.rating = search.get_rating
+      self.address = search.get_address
+      self.photo_uri = search.get_photo[9..-3]
+      self.website = search.get_website
+      self.name = search.get_name
+      self.save
+    end
   end
 end

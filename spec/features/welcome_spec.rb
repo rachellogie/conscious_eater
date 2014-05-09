@@ -39,8 +39,6 @@ feature 'Homepage' do
       expect(page).to have_content "Shine"
       expect(page).to_not have_content "Linger"
     end
-
-
   end
 
 end
