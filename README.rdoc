@@ -1,5 +1,9 @@
 == README
 
+travis-ci: {<img src="https://travis-ci.org/rachellogie/conscious_eater.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/rachellogie/conscious_eater]
+
+code-climate: {<img src="https://codeclimate.com/github/rachellogie/conscious_eater.png" />}[https://codeclimate.com/github/rachellogie/conscious_eater]
+
 Welcome to the Conscious Eater!
 We make it easy to find restaurants in the Denver/Boulder area that suit your dietary preferences.
 
@@ -13,7 +17,3 @@ Steps for getting this running on your machine:
 tracker project: https://www.pivotaltracker.com/n/projects/1067890
 
 heroku staging: http://conscious-eater.herokuapp.com/
-
-travis-ci: {<img src="https://travis-ci.org/rachellogie/conscious_eater.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/rachellogie/conscious_eater]
-
-code-climate: {<img src="https://codeclimate.com/github/rachellogie/conscious_eater.png" />}[https://codeclimate.com/github/rachellogie/conscious_eater]
