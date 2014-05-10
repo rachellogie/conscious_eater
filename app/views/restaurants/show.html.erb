@@ -4,7 +4,7 @@
 
 <p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
 <p>Neighborhood: <%= @restaurant.location %></br>
-<%= @restaurant.address %></p>
+<a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
 
 
 <ul>
