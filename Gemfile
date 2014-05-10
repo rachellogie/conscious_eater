@@ -45,10 +45,6 @@ end
 
 gem 'acts-as-taggable-on', '~> 3.1.1'
 
-gem 'travis-lint', '~> 1.8.0'
-
-
-
 gem 'faraday', '~> 0.9.0'
 
 gem 'dotenv-rails', '~> 0.11.1'
