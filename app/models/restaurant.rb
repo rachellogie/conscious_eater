@@ -7,7 +7,6 @@ class Restaurant < ActiveRecord::Base
 
   validates :name, presence: true
   validates :dietary_option_list, presence: {message: "You must check at least 1 diet option"}
-  validates :website, :format => { :with => URI::regexp(%w(http https)), :message => ": Please enter a valid url"}
 
   after_create :add_metadata
 

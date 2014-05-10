@@ -126,4 +126,19 @@ feature 'Restaurants manager' do
     end
   end
 
+  scenario 'User can add the kitchen' do
+    VCR.use_cassette('restaurants/addthekitchen') do
+      visit '/'
+      click_on "All Restaurants"
+      click_on "Add a Restaurant"
+      fill_in "restaurant[name]", with: "kitchen"
+      fill_in "restaurant[website]", with: "http://bhsdg.com/"
+      select "Pearl Street, Boulder", :from => "restaurant[location]"
+      check("option[gluten free options]")
+      click_on "Add this Restaurant"
+      expect(page).to have_content "The Kitchen"
+      expect(page).to have_content "Boulder"
+    end
+  end
+
 end

@@ -2,54 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=39.7594564,-105.0113582&name=bhsdg&radius=1000&sensor=false&types=food
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 09 May 2014 18:46:20 GMT
-      Expires:
-      - Fri, 09 May 2014 18:51:20 GMT
-      Cache-Control:
-      - public, max-age=300
-      Vary:
-      - Accept-Language
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "html_attributions" : [],
-           "results" : [],
-           "status" : "ZERO_RESULTS"
-        }
-    http_version: 
-  recorded_at: Fri, 09 May 2014 18:46:20 GMT
-- request:
-    method: get
     uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
     body:
       encoding: US-ASCII
@@ -69,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 09 May 2014 18:51:06 GMT
+      - Sat, 10 May 2014 19:09:18 GMT
       Expires:
-      - Sat, 10 May 2014 18:51:06 GMT
+      - Sun, 11 May 2014 19:09:18 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -160,7 +112,7 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 09 May 2014 18:51:07 GMT
+  recorded_at: Sat, 10 May 2014 19:09:18 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=39.7594564,-105.0113582&name=Bhsdg&radius=1000&sensor=false&types=food
@@ -182,9 +134,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 09 May 2014 18:51:07 GMT
+      - Sat, 10 May 2014 19:09:18 GMT
       Expires:
-      - Fri, 09 May 2014 18:56:07 GMT
+      - Sat, 10 May 2014 19:14:18 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -208,5 +160,166 @@ http_interactions:
            "status" : "ZERO_RESULTS"
         }
     http_version: 
-  recorded_at: Fri, 09 May 2014 18:51:07 GMT
+  recorded_at: Sat, 10 May 2014 19:09:19 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 10 May 2014 19:09:19 GMT
+      Expires:
+      - Sun, 11 May 2014 19:09:19 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2030",
+                       "short_name" : "2030",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West 30th Avenue",
+                       "short_name" : "W 30th Ave",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Highland",
+                       "short_name" : "Highland",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver County",
+                       "short_name" : "Denver County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80211",
+                       "short_name" : "80211",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "2030 West 30th Avenue, Denver, CO 80211, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.7594564,
+                       "lng" : -105.0113582
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.76080538029149,
+                          "lng" : -105.0100092197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.7581074197085,
+                          "lng" : -105.0127071802915
+                       }
+                    }
+                 },
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sat, 10 May 2014 19:09:19 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=39.7594564,-105.0113582&name=Bhsdg&radius=1000&sensor=false&types=food
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 10 May 2014 19:09:19 GMT
+      Expires:
+      - Sat, 10 May 2014 19:14:19 GMT
+      Cache-Control:
+      - public, max-age=300
+      Vary:
+      - Accept-Language
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "html_attributions" : [],
+           "results" : [],
+           "status" : "ZERO_RESULTS"
+        }
+    http_version: 
+  recorded_at: Sat, 10 May 2014 19:09:20 GMT
 recorded_with: VCR 2.9.0
