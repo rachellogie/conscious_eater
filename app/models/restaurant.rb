@@ -1,6 +1,8 @@
 class Restaurant < ActiveRecord::Base
 
-  DIETARY_OPTIONS = ["vegan", "dairy free", "vegetarian option", "gluten free", "organic", "non-GMO"]
+  DIETARY_OPTIONS = [ "gluten free options", "dairy free options", "vegan options", "vegetarian options",
+                     "organic ingredients", "non-GMO ingredients", "grass-fed beef", "100% gluten free",
+                     "100% vegetarian", "100% vegan",]
   acts_as_taggable_on :dietary_options
 
   validates :name, presence: true

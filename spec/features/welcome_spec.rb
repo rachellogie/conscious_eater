@@ -14,7 +14,7 @@ feature 'Homepage' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       select "Highlands, Denver", :from => "restaurant[location]"
       click_on "Add this Restaurant"
 
@@ -23,7 +23,7 @@ feature 'Homepage' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Shine"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       select "Pearl Street, Boulder", :from => "restaurant[location]"
       click_on "Add this Restaurant"
 
@@ -34,7 +34,7 @@ feature 'Homepage' do
 
       visit '/'
       select "Pearl Street, Boulder", :from => "homepage_location"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Go"
       expect(page).to have_content "Shine"
       expect(page).to_not have_content "Linger"

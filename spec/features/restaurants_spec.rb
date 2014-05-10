@@ -14,10 +14,10 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Add this Restaurant"
       expect(page).to have_content "Linger"
-      expect(page).to have_content "gluten free"
+      expect(page).to have_content "gluten free options"
     end
   end
 
@@ -28,15 +28,15 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Add this Restaurant"
       expect(page).to have_content "gluten free"
       click_on "Edit Restaurant Information"
       select "Pearl", :from => "restaurant[location]"
-      uncheck("option[gluten free]")
-      check("option[dairy free]")
+      uncheck("option[gluten free options]")
+      check("option[dairy free options]")
       click_on "Update"
-      expect(page).to_not have_content "gluten free"
+      expect(page).to_not have_content "gluten free options"
       expect(page).to have_content "dairy free"
       expect(page).to have_content "Pearl"
     end
@@ -49,7 +49,7 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Add this Restaurant"
       click_on "Take me back to the restaurant list"
       expect(page).to have_content "These are all the restaurants"
@@ -63,7 +63,7 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[vegan]")
+      check("option[vegan options]")
       click_on "Add this Restaurant"
       click_on "delete"
       expect(page).to_not have_content "Linger"
@@ -88,7 +88,7 @@ feature 'Restaurants manager' do
       click_on "All Restaurants"
       click_on "Add a Restaurant"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[vegan]")
+      check("option[vegan options]")
       click_on "Add this Restaurant"
       expect(page).to have_content "Name can't be blank"
     end
@@ -101,12 +101,12 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Add this Restaurant"
-      expect(page).to have_content "gluten free"
+      expect(page).to have_content "gluten free options"
       click_on "Edit Restaurant Information"
       select "Pearl", :from => "restaurant[location]"
-      uncheck("option[gluten free]")
+      uncheck("option[gluten free options]")
       click_on "Update"
       expect(page).to have_content "You must check at least 1 diet option"
     end
@@ -119,9 +119,9 @@ feature 'Restaurants manager' do
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "bhsdg"
       fill_in "restaurant[website]", with: "http://bhsdg.com/"
-      check("option[gluten free]")
+      check("option[gluten free options]")
       click_on "Add this Restaurant"
-      expect(page).to have_content "gluten free"
+      expect(page).to have_content "gluten free options"
       expect(page).to have_content "Bhsdg"
     end
   end

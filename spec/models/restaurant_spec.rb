@@ -4,7 +4,7 @@ describe Restaurant do
 
   describe 'validations' do
     before do
-      @restaurant = Restaurant.new(name: "Shine", website: "http://www.shineboulder.com/", location: "Boulder", dietary_option_list: "gluten free")
+      @restaurant = Restaurant.new(name: "Shine", website: "http://www.shineboulder.com/", location: "Boulder", dietary_option_list: "gluten free options")
       expect(@restaurant).to be_valid
     end
 
