@@ -22,6 +22,7 @@ class RestaurantsController < ApplicationController
     end
     @restaurant.location = params[:restaurant][:location]
     @restaurant.website = params[:restaurant][:website]
+    @restaurant.address = params[:restaurant][:address]
     initial_time = Time.now
     if @restaurant.save
       end_time = Time.now

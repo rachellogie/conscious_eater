@@ -126,7 +126,7 @@ feature 'Restaurants manager' do
     end
   end
 
-  scenario 'User can add the kitchen' do
+  scenario 'User can add a restaurant that has no website from google api' do
     VCR.use_cassette('restaurants/addthekitchen') do
       visit '/'
       click_on "All Restaurants"
@@ -138,6 +138,22 @@ feature 'Restaurants manager' do
       click_on "Add this Restaurant"
       expect(page).to have_content "The Kitchen"
       expect(page).to have_content "Boulder"
+    end
+  end
+
+  scenario 'User can add address manually if not in google' do
+    VCR.use_cassette('restaurants/addthekitchen') do
+      visit '/'
+      click_on "All Restaurants"
+      click_on "Add a Restaurant"
+      fill_in "restaurant[name]", with: "adfg"
+      fill_in "restaurant[website]", with: "http://adfg.com/"
+      select "Pearl Street, Boulder", :from => "restaurant[location]"
+      check("option[gluten free options]")
+      fill_in "restaurant[address]", with: "1039 Pearl Street, Boulder, CO"
+      click_on "Add this Restaurant"
+      expect(page).to have_content "Adfg"
+      expect(page).to have_content "1039 Pearl Street"
     end
   end
 

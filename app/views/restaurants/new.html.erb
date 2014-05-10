@@ -1,3 +1,5 @@
+<h2>Add a Restaurant</h2>
+
 <% if @restaurant %>
   <% if @restaurant.errors %>
     <% @restaurant.errors.full_messages.each do |message| %>
@@ -15,11 +17,6 @@
   </p>
 
   <p>
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-  </p>
-
-  <p>
     <%= f.label :location %>
     <%= f.select :location, [['Highlands, Denver', 'Highlands, Denver'], ['Pearl Street, Boulder', 'Pearl Street, Boulder']] %>
   </p>
@@ -33,6 +30,17 @@
     </p>
   <% end %>
 
+  <p>Optional fields: </p>
+
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
 
   <p>
     <%= f.submit "Add this Restaurant" %>
