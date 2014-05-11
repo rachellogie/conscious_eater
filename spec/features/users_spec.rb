@@ -12,4 +12,10 @@ feature 'User authentication' do
     click_on 'Sign up'
     expect(page).to have_content "Welcome bob@example.com"
   end
+
+  scenario 'Only signed in users can add a restaurant' do
+    visit '/restaurants'
+    expect(page).to_not have_content 'Add a Restaurant'
+  end
+
 end

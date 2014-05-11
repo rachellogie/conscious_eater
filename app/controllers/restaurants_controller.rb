@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
 
   def index
     if params[:search] && params[:option]
-       @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
+      @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
     elsif params[:search]
       @restaurants = Restaurant.where(location: params[:homepage_location])
     else
@@ -11,7 +11,11 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new
+    if user_signed_in?
+      @restaurant = Restaurant.new
+    else
+      render :errors
+    end
   end
 
   def create
