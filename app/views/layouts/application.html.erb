@@ -13,6 +13,7 @@
   <nav>
     <div id="nav_container">
       <ul>
+        <%= render 'layouts/user_widget' %>
         <li><a href="/restaurants">All Restaurants</a></li>
         <li><a href="/">New Search</a></li>
       </ul>
@@ -25,6 +26,12 @@
     </h3>
   </div>
 </header>
+
+<div id="sign_in_flash">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
+
 
 
 <div id="main">
