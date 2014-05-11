@@ -42,7 +42,11 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
+    if user_signed_in?
+      @restaurant = Restaurant.find(params[:id])
+    else
+      render :errors
+    end
   end
 
   def update

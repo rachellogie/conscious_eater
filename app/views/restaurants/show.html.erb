@@ -4,7 +4,7 @@
 
 <p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
 <p>Neighborhood: <%= @restaurant.location %></br>
-<a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
+  <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
 
 
 <ul>
@@ -20,9 +20,12 @@
 <% end %>
 
 
-<p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>
+
 <p><a href="/restaurants">Take me back to the restaurant list</a></p>
 
-<%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
-  <%= f.submit :delete %>
+<% if user_signed_in? %>
+  <p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>
+  <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
+    <%= f.submit :delete %>
+  <% end %>
 <% end %>
