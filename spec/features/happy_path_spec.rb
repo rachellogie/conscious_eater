@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'happy path' do
   scenario 'user can save their dietary preferences and see them on their page' do
-    VCR.use_cassette('happy_path', :record => :all) do
+    VCR.use_cassette('happy_path') do
       sign_in_user
       click_on "All Restaurants"
       click_on "Add a Restaurant"
@@ -26,7 +26,7 @@ feature 'happy path' do
   end
 
   scenario "User can visit their page and see their restaurants" do
-    VCR.use_cassette('happy_path/stuff', :record => :all) do
+    VCR.use_cassette('happy_path/stuff') do
       sign_in_user
       restaurant = Restaurant.create!(name: "Linger", location: "Pearl Street, Boulder", dietary_option_list: "dairy free options")
       visit restaurant_path(restaurant)
@@ -35,4 +35,5 @@ feature 'happy path' do
       expect(page).to have_content "Linger"
     end
   end
+
 end

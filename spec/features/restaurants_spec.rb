@@ -161,7 +161,18 @@ feature 'Restaurants manager' do
       visit restaurant_path(restaurant)
       click_on "Favorite this restaurant"
       expect(page).to have_content "Restaurant has been favorited!"
-      #FavoriteRestaurant.last.restaurant = restaurant
+    end
+  end
+
+  scenario 'User can only favorite a restaurant once' do
+    VCR.use_cassette('restaurants/once') do
+      restaurant = Restaurant.create!(name: "Linger", location: "Pearl Street, Boulder", dietary_option_list: "gluten free options")
+      visit restaurant_path(restaurant)
+      click_on "Favorite this restaurant"
+      expect(page).to have_content "Restaurant has been favorited!"
+      click_on "Favorite this restaurant"
+      expect(page).to have_content "You already have this as a favorite!"
+      expect(page).to_not have_content "Restaurant has been favorited!"
     end
   end
 end
