@@ -25,7 +25,9 @@
 
 <% if user_signed_in? %>
   <p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>
-  <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
-    <%= f.submit :delete %>
+  <% if current_user.admin? %>
+    <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
+      <%= f.submit :delete %>
+    <% end %>
   <% end %>
 <% end %>

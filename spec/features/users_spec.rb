@@ -41,4 +41,16 @@ feature 'User authentication' do
     expect(page).to_not have_content 'Edit Restaurant Information'
   end
 
+  scenario 'non admin cannot delete a restaurant' do
+    visit '/'
+    click_on 'Sign in'
+    fill_in 'Email', with: 'bob@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Sign in'
+    visit '/restaurants'
+    click_on 'see restaurant'
+    expect(page).to_not have_button 'delete'
+
+  end
+
 end

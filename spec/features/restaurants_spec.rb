@@ -68,20 +68,6 @@ feature 'Restaurants manager' do
     end
   end
 
-  scenario 'User can delete a restaurant' do
-    VCR.use_cassette('restaurants/delete') do
-      visit '/'
-      click_on "All Restaurants"
-      click_on "Add a Restaurant"
-      fill_in "restaurant[name]", with: "Linger"
-      fill_in "restaurant[website]", with: "http://lingerdenver.com/"
-      check("option[vegan options]")
-      click_on "Add this Restaurant"
-      click_on "delete"
-      expect(page).to_not have_content "Linger"
-    end
-  end
-
   scenario 'User cannot add a restaurant without at least 1 dietary option' do
     VCR.use_cassette('restaurants/adderrors') do
       visit '/'
