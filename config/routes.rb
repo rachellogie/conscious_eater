@@ -6,19 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get '/restaurants', to: 'restaurants#index'
+  resources :restaurants do
+    resources :favorite_restaurants, only: :create
+  end
 
-  get '/restaurants/new', to: 'restaurants#new'
-
-  post '/restaurants', to: 'restaurants#create'
-
-  get '/restaurants/:id', to: 'restaurants#show'
-
-  get '/restaurants/:id/edit', to: 'restaurants#edit'
-
-  patch '/restaurants/:id', to: 'restaurants#update'
-
-  delete '/restaurants/:id', to: 'restaurants#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -155,4 +155,13 @@ feature 'Restaurants manager' do
     end
   end
 
+  scenario 'User can add a restaurant to their restaurant pick and see it on their mypage' do
+    VCR.use_cassette('restaurants/picks') do
+      restaurant = Restaurant.create!(name: "Linger", location: "Pearl Street, Boulder", dietary_option_list: "gluten free options")
+      visit restaurant_path(restaurant)
+      click_on "Favorite this restaurant"
+      expect(page).to have_content "Restaurant has been favorited!"
+      #FavoriteRestaurant.last.restaurant = restaurant
+    end
+  end
 end

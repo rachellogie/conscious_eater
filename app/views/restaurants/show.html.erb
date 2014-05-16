@@ -20,6 +20,9 @@
 <% end %>
 
 
+<%= form_for [@restaurant, @favorite_restaurant] do |f| %>
+  <%= f.submit "Favorite this restaurant" %>
+<% end %>
 
 <p><a href="/restaurants">Take me back to the restaurant list</a></p>
 

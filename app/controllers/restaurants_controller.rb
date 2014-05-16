@@ -33,11 +33,12 @@ class RestaurantsController < ApplicationController
       puts "Time elapsed: #{end_time - initial_time}"
       redirect_to "/restaurants/#{@restaurant.id}"
     else
-      render restaurants_new_path
+      render new_restaurant_path
     end
   end
 
   def show
+    @favorite_restaurant = FavoriteRestaurant.new
     if Restaurant.exists?(params[:id])
       @restaurant = Restaurant.find(params[:id])
     else
