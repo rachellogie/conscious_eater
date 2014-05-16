@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
+  get '/profile', to: 'profiles#show', as: :profile
   resources :restaurants do
     resources :favorite_restaurants, only: :create
   end

@@ -13,6 +13,7 @@
   <nav>
     <div id="nav_container">
       <ul>
+        <li><%= link_to 'My Profile', profile_path(current_user) %></li>
         <%= render 'layouts/user_widget' %>
         <li><a href="/restaurants">All Restaurants</a></li>
         <li><a href="/">New Search</a></li>
