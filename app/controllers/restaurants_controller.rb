@@ -2,6 +2,11 @@ class RestaurantsController < ApplicationController
 
   def index
     if params[:search] && params[:option]
+      if params[:save]
+        params[:option].each do |preference|
+          Preference.create(preference_name: preference.first, user_id: current_user.id)
+        end
+      end
       @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
     elsif params[:search]
       @restaurants = Restaurant.where(location: params[:homepage_location])

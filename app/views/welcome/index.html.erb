@@ -17,7 +17,11 @@
             <%= check_box_tag "option[#{option}]" %> <%= option %>
           </p>
         <% end %>
+
+        <%= check_box_tag :save %>
+        <%= label_tag(:save, "Save my dietary preferences") %>
       </div>
+
 
       <div id="submit_button">
         <input type="submit" value="Go"/>

@@ -3,7 +3,6 @@ require 'spec_helper'
 feature 'happy path' do
   scenario 'user can save their dietary preferences and see them on their page' do
     VCR.use_cassette('happy_path', :record => :all) do
-      pending
       sign_in_user
       click_on "All Restaurants"
       click_on "Add a Restaurant"
@@ -16,11 +15,13 @@ feature 'happy path' do
       select "Pearl Street, Boulder", :from => "homepage_location"
       check("option[gluten free options]")
       check("option[dairy free options]")
-      check("save[true]")
+      check("save")
       click_on "Go"
-      click_on 'my page'
-      expect(page).to have_content 'My Page'
-      expect(page).to have_content 'My preferences: '
+      click_on 'My Profile'
+      expect(page).to have_content 'Here are all your favorite restaurants:'
+      expect(page).to have_content 'These are your preferences:'
+      expect(page).to have_content 'gluten free options'
+      expect(page).to have_content 'dairy free options'
     end
   end
 
