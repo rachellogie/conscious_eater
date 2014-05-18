@@ -25,14 +25,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new
+    @restaurant = Restaurant.new(allowed_parameters)
     @restaurant.name = params[:restaurant][:name].capitalize
     if params[:option]
       @restaurant.dietary_option_list = params[:option].keys.join(", ")
     end
-    @restaurant.location = params[:restaurant][:location]
-    @restaurant.website = params[:restaurant][:website]
-    @restaurant.address = params[:restaurant][:address]
     initial_time = Time.now
     if @restaurant.save
       end_time = Time.now
@@ -62,9 +59,8 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.name = params[:restaurant][:name]
-    @restaurant.location = params[:restaurant][:location]
-    @restaurant.website = params[:restaurant][:website]
+    @restaurant.update_attributes(allowed_parameters)
+    @restaurant.name = params[:restaurant][:name].capitalize
     if params[:option]
       @restaurant.dietary_option_list = params[:option].keys.join(", ")
     else
@@ -80,6 +76,10 @@ class RestaurantsController < ApplicationController
   def destroy
     Restaurant.find(params[:id]).destroy
     redirect_to "/restaurants"
+  end
+
+  def allowed_parameters
+    params.require(:restaurant).permit(:address, :location, :website)
   end
 
 end
