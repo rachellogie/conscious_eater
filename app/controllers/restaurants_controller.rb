@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       end_time = Time.now
       puts "Time elapsed: #{end_time - initial_time}"
-      redirect_to "/restaurants/#{@restaurant.id}"
+      redirect_to restaurant_path(@restaurant)
     else
       render new_restaurant_path
     end
@@ -67,7 +67,7 @@ class RestaurantsController < ApplicationController
       @restaurant.dietary_option_list = ''
     end
     if @restaurant.save
-      redirect_to "/restaurants/#{@restaurant.id}"
+      redirect_to restaurant_path(@restaurant)
     else
       render :edit
     end
@@ -75,7 +75,7 @@ class RestaurantsController < ApplicationController
 
   def destroy
     Restaurant.find(params[:id]).destroy
-    redirect_to "/restaurants"
+    redirect_to restaurants_path
   end
 
   def allowed_parameters
