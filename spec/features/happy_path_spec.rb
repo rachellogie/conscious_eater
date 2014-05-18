@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 feature 'happy path' do
+
+  before do
+    sign_up_user
+  end
+
   scenario 'user can save their dietary preferences and see them on their page' do
     VCR.use_cassette('happy_path') do
-      sign_in_user
       click_on "All Restaurants"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
@@ -27,7 +31,6 @@ feature 'happy path' do
 
   scenario "User can visit their page and see their restaurants" do
     VCR.use_cassette('happy_path/stuff') do
-      sign_in_user
       restaurant = Restaurant.create!(name: "Linger", location: "Pearl Street, Boulder", dietary_option_list: "dairy free options")
       visit restaurant_path(restaurant)
       click_on "Favorite this restaurant"

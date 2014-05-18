@@ -4,13 +4,7 @@ feature 'User authentication' do
 
   before :each do
     VCR.use_cassette('users/before') do
-      visit '/'
-      click_on 'Sign in'
-      click_on 'Sign up'
-      fill_in 'Email', with: 'bob@example.com'
-      fill_in 'Password', with: 'password'
-      fill_in 'Password confirmation', with: 'password'
-      click_on 'Sign up'
+      sign_up_user
       visit '/restaurants'
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
@@ -21,11 +15,7 @@ feature 'User authentication' do
   end
 
   scenario 'User can sign in' do
-    visit '/'
-    click_on 'Sign in'
-    fill_in 'Email', with: 'bob@example.com'
-    fill_in 'Password', with: 'password'
-    click_button 'Sign in'
+    sign_in_user
     expect(page).to have_content "Welcome bob@example.com"
   end
 
@@ -42,11 +32,7 @@ feature 'User authentication' do
   end
 
   scenario 'non admin cannot delete a restaurant' do
-    visit '/'
-    click_on 'Sign in'
-    fill_in 'Email', with: 'bob@example.com'
-    fill_in 'Password', with: 'password'
-    click_button 'Sign in'
+    sign_in_user
     visit '/restaurants'
     click_on 'see restaurant'
     expect(page).to_not have_button 'delete'

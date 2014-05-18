@@ -1,6 +1,6 @@
 module CapybaraHelpers
 
-  def sign_in_user
+  def sign_up_user
     visit '/'
     click_on 'Sign in'
     click_on 'Sign up'
@@ -9,4 +9,13 @@ module CapybaraHelpers
     fill_in 'Password confirmation', with: 'password'
     click_on 'Sign up'
   end
+
+  def sign_in_user
+    visit '/'
+    click_on 'Sign in'
+    fill_in 'Email', with: 'bob@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Sign in'
+  end
+
 end
