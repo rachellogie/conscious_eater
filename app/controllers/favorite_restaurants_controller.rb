@@ -9,4 +9,10 @@ class FavoriteRestaurantsController < ApplicationController
     end
     redirect_to restaurant_path(params[:restaurant_id])
   end
+
+  def destroy
+    FavoriteRestaurant.find(params[:id]).destroy
+    redirect_to profile_path
+  end
+
 end

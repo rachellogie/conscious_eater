@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/profile', to: 'profiles#show', as: :profile
   resources :restaurants do
-    resources :favorite_restaurants, only: :create
+    resources :favorite_restaurants, only: [:create, :destroy]
   end
 
 

@@ -10,6 +10,9 @@ class Restaurant < ActiveRecord::Base
 
   after_create :add_metadata
 
+  has_many :favorite_restaurants
+  has_many :users, through: :favorite_restaurants
+
   def add_metadata
     search = PlacesSearch.new(ENV["GOOGLE_API_KEY"], self.name, self.location)
     if search.matches?
