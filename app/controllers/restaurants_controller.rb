@@ -3,6 +3,10 @@ class RestaurantsController < ApplicationController
   def index
     if params[:search] && params[:option]
       if params[:save]
+        #need this to overwrite
+        #delete everything from table where user_id == current_user.id
+        Preference.where(user_id: current_user.id).destroy_all if !Preference.find_by(user_id: current_user.id).nil?
+        #binding.pry
         params[:option].each do |preference|
           Preference.create(preference_name: preference.first, user_id: current_user.id)
         end
