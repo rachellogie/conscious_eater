@@ -87,7 +87,12 @@ a:hover {
 
 #search_options {
   margin: auto;
-  width: 300px;
+  width: 900px;
+}
+
+p.options {
+  display: inline-block;
+  padding: 0 10px;
 }
 
 #submit_button {
@@ -135,3 +140,10 @@ footer {
 .signed-in-message {
   color: #FDB254;
 }
+
+//--------------------js-buttons-------
+
+.js-buttons {
+  display:none;
+}
+

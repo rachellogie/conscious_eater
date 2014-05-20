@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require jquery-ui-1.10.4.custom.css
  *= require_self
  *= require chosen
  */

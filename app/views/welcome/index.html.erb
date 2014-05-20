@@ -11,12 +11,16 @@
         </select>
       </div>
 
+
       <div id="search_options">
-        <% Restaurant::DIETARY_OPTIONS.each do |option| %>
-          <p>
-            <%= check_box_tag "option[#{option}]" %> <%= option %>
-          </p>
-        <% end %>
+        <div id="format">
+          <% Restaurant::DIETARY_OPTIONS.each do |option| %>
+            <p class="options">
+              <%= check_box_tag "option[#{option}]" %>
+              <%= label_tag "option[#{option}]", option %>
+            </p>
+          <% end %>
+        </div>
 
         <%= check_box_tag :save %>
         <%= label_tag(:save, "Save my dietary preferences") %>
