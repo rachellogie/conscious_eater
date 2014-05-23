@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :favorite_restaurants, only: [:create, :destroy]
   end
 
+  get '/surprise/:id', to: 'surprise#show', as: :surprise
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

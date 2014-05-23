@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def index
+
     if params[:search] && params[:option]
       if params[:save]
         Preference.where(user_id: current_user.id).destroy_all if !Preference.find_by(user_id: current_user.id).nil?
@@ -9,11 +10,18 @@ class RestaurantsController < ApplicationController
         end
       end
       @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
+
     elsif params[:search]
       @restaurants = Restaurant.where(location: params[:homepage_location])
     else
       @restaurants = Restaurant.all
     end
+
+    if params[:surprise]
+      @surprise = @restaurants.sample
+      render 'welcome/index'
+    end
+
   end
 
   def new

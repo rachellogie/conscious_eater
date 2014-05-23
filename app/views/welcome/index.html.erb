@@ -28,11 +28,18 @@
         <% end %>
       </div>
 
-
       <div id="submit_button">
-        <input type="submit" value="Go"/>
+        <input type="submit" name="go" value="Go"/>
+        <input type="submit" name="surprise" value="Surprise me"/>
       </div>
     </form>
+
+    <div id="surprise">
+      <% if @surprise %>
+        <%= link_to @surprise.name, @surprise %>
+      <% end %>
+    </div>
+
   </div>
 </div>
 

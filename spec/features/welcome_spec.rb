@@ -38,4 +38,14 @@ feature 'Homepage' do
     end
   end
 
+  scenario 'user can click the pick for me button and it will show a random restaurant' do
+    VCR.use_cassette('welcome/random_pick') do
+      restaurant = Restaurant.create!(name: "Linger", location: "Highlands, Denver", dietary_option_list: "dairy free options")
+      visit '/'
+      expect(page).to_not have_content "Linger"
+      click_on "Surprise me"
+      expect(page).to have_content "Linger"
+    end
+  end
+
 end
