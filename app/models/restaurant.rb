@@ -18,7 +18,7 @@ class Restaurant < ActiveRecord::Base
     if search.matches?
       self.rating = search.get_rating
       self.address = search.get_address
-      self.photo_uri = search.get_photo[9..-3]
+      self.photo_uri = search.get_photo
       self.website = search.get_website
       self.name = search.get_name
       self.save

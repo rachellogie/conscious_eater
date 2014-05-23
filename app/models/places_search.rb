@@ -35,11 +35,14 @@ class PlacesSearch
   end
 
   def get_photo
-    photo_reference = get_json_restaurant_data["photos"].first["photo_reference"]
-    response = Faraday.get "#{@api_root}place/photo?maxwidth=400&photoreference=#{photo_reference}&sensor=false&key=#{@key}"
-    json_data = response.body
-    match = json_data.scan /<A\sHREF.+">/
-    match.first
+    if !get_json_restaurant_data["photos"].nil?
+      photo_reference = get_json_restaurant_data["photos"].first["photo_reference"]
+      response = Faraday.get "#{@api_root}place/photo?maxwidth=400&photoreference=#{photo_reference}&sensor=false&key=#{@key}"
+      json_data = response.body
+      match = json_data.scan /<A\sHREF.+">/
+      match.first[9..-3]
+    else
+      "https://47006bd19c074195238a-b0b757299a8f3a7022a498c3b4069649.ssl.cf2.rackcdn.com/media/photos/3956/large-f3c5d0c3666eec8c.jpg?1369865351"    end
   end
 
   def get_website
