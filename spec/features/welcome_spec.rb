@@ -5,11 +5,6 @@ feature 'Homepage' do
     sign_up_user
   end
 
-  scenario 'User can see app name on the homepage' do
-    visit root_path
-    expect(page).to have_content "The Conscious Eater"
-  end
-
   scenario 'User can search by location' do
     VCR.use_cassette('welcome/search') do
       visit root_path

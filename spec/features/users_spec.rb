@@ -36,7 +36,11 @@ feature 'User authentication' do
     visit '/restaurants'
     click_on 'see restaurant'
     expect(page).to_not have_button 'delete'
+  end
 
+  scenario 'non signed in users cant save dietary options' do
+    visit '/'
+    expect(page).to_not have_content 'Save my dietary preferences'
   end
 
 end

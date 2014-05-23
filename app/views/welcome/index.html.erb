@@ -22,8 +22,10 @@
           <% end %>
         </div>
 
-        <%= check_box_tag :save %>
-        <%= label_tag(:save, "Save my dietary preferences") %>
+        <% if user_signed_in? %>
+          <%= check_box_tag :save %>
+          <%= label_tag(:save, "Save my dietary preferences") %>
+        <% end %>
       </div>
 
 
