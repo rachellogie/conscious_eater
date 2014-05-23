@@ -25,7 +25,7 @@ describe 'PlacesSearch' do
   it "returns a photo for a specific restaurant" do
     VCR.use_cassette('places_search/photo') do
       rating = @search.get_photo
-      expect(rating).to eq "<A HREF=\"https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg\">"
+      expect(rating).to eq "https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg"
     end
   end
 

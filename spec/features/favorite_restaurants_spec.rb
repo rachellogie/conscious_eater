@@ -13,7 +13,16 @@ feature 'favorite restaurants' do
       click_on "Remove from favorites"
       expect(page).to_not have_content "Linger"
     end
+  end
 
+  scenario 'number of favorites will be displayed on restaurant show page' do
+    VCR.use_cassette('favorite_restaurants/faves') do
+      sign_up_user
+      restaurant = Restaurant.create!(name: "Linger", location: "Pearl Street, Boulder", dietary_option_list: "dairy free options")
+      visit restaurant_path(restaurant)
+      click_on "Favorite this restaurant"
+      expect(page).to have_content "1 Favorite"
+    end
   end
 
 end
