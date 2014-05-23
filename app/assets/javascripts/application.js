@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-1.10.2.js
+
 //= require jquery-ui-1.10.4.custom
-//= require turbolinks
-//= require chosen.jquery.min
+//= require chosen-jquery
 //= require_tree .
