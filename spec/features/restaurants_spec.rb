@@ -14,6 +14,11 @@ feature 'Restaurants manager' do
 
   scenario 'User can add a restaurant' do
     VCR.use_cassette('restaurants/add') do
+
+      # user can add a valid restaurant
+      # the google places name shows up on the page
+      # validations messages appear correctly
+
       visit '/'
       click_on "All Restaurants"
       click_on "Add a Restaurant"
@@ -86,14 +91,18 @@ feature 'Restaurants manager' do
   end
 
   scenario 'User will see errors if they try to update a restaurant without diet options' do
+    # no need for a cassette, because you don't hit the api
     VCR.use_cassette('restaurants/errors2') do
       visit '/'
       click_on "All Restaurants"
+
+      # insert a record into the database manually with options
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
       check("option[gluten free options]")
       click_on "Add this Restaurant"
+
       expect(page).to have_content "gluten free options"
       click_on "Edit Restaurant Information"
       select "Pearl", :from => "restaurant[location]"

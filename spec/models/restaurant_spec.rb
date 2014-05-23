@@ -17,6 +17,7 @@ describe Restaurant do
       @restaurant.dietary_option_list = nil
       expect(@restaurant).to_not be_valid
     end
-  end
 
+  end
 end
+

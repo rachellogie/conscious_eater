@@ -26,7 +26,10 @@
       <% checked = true  %>
     <% end %>
     <p>
-      <%= check_box_tag "option[#{option}]","0", checked %> <%= option %>
+      <label>
+        <%= check_box_tag "option[#{option}]","0", checked %>
+        <%= option %>
+      </label>
     </p>
   <% end %>
 
