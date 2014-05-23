@@ -26,7 +26,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(allowed_parameters)
-    @restaurant.name = params[:restaurant][:name].capitalize
+    @restaurant.name = params[:restaurant][:name].titleize
     if params[:option]
       @restaurant.dietary_option_list = params[:option].keys.join(", ")
     end
