@@ -3,13 +3,9 @@ class RestaurantsController < ApplicationController
   def index
     if params[:search] && params[:option]
       if params[:save]
-        Preference.where(user_id: current_user.id).destroy_all if !Preference.find_by(user_id: current_user.id).nil?
-        params[:option].each do |preference|
-          Preference.create(preference_name: preference.first, user_id: current_user.id)
-        end
+        populate_preferences(params[:option])
       end
       @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
-
     elsif params[:search]
       @restaurants = Restaurant.where(location: params[:homepage_location])
     else
@@ -80,6 +76,13 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def populate_preferences(options)
+    Preference.where(user_id: current_user.id).destroy_all if !Preference.find_by(user_id: current_user.id).nil?
+    options.each do |preference|
+      Preference.create(preference_name: preference.first, user_id: current_user.id)
+    end
+  end
 
   def populate_restaurant_from_params(restaurant, attributes)
     restaurant.attributes = attributes
