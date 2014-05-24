@@ -288,6 +288,7 @@ input.ui-button {
 .ui-buttonset .ui-button {
 	margin-left: 0;
 	margin-right: -.3em;
+    border-radius: 5px;
 }
 
 /* workarounds */
@@ -784,7 +785,7 @@ body .ui-tooltip {
 ----------------------------------*/
 .ui-widget {
 	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
-	font-size: 1.1em;
+	font-size: .8em;
 }
 .ui-widget .ui-widget {
 	font-size: 1em;
@@ -822,12 +823,12 @@ body .ui-tooltip {
 	border: 1px solid #cccccc;
 	background: #f6f6f6 url("../../../../../../Downloads/jquery-ui-1.10.4.custom/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
 	font-weight: bold;
-	color: #1c94c4;
+	color: #1596A2;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #1c94c4;
+	color: #1596A2;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -836,10 +837,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #fbcb09;
-	background: #fdf5ce url("../../../../../../Downloads/jquery-ui-1.10.4.custom/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+	border: 1px solid #CCCCCC;
+	background: #CCCCCC url("../../../../../../Downloads/jquery-ui-1.10.4.custom/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
 	font-weight: bold;
-	color: #c77405;
+	color: black;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -849,21 +850,21 @@ body .ui-tooltip {
 .ui-state-focus a:hover,
 .ui-state-focus a:link,
 .ui-state-focus a:visited {
-	color: #c77405;
+	color: #999;
 	text-decoration: none;
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-	border: 1px solid #fbd850;
-	background: #ffffff url("../../../../../../Downloads/jquery-ui-1.10.4.custom/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+	border: 1px solid #999;
+	background: #999 url("../../../../../../Downloads/jquery-ui-1.10.4.custom/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
 	font-weight: bold;
-	color: #eb8f00;
+	color: black;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #eb8f00;
+	color: #595959;
 	text-decoration: none;
 }
 

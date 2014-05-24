@@ -11,26 +11,29 @@
         </select>
       </div>
 
+      <div id="main_search">
 
-      <div id="search_options">
-        <div id="format">
-          <% Restaurant::DIETARY_OPTIONS.each do |option| %>
-            <p class="options">
-              <%= check_box_tag "option[#{option}]" %>
-              <%= label_tag "option[#{option}]", option %>
-            </p>
+        <div id="search_options">
+          <p>I'm looking for:</p>
+          <div id="format">
+            <% Restaurant::DIETARY_OPTIONS.each do |option| %>
+              <p class="options">
+                <%= check_box_tag "option[#{option}]" %>
+                <%= label_tag "option[#{option}]", option %>
+              </p>
+            <% end %>
+          </div>
+
+          <% if user_signed_in? %>
+            <%= check_box_tag :save %>
+            <%= label_tag(:save, "Save my dietary preferences") %>
           <% end %>
         </div>
 
-        <% if user_signed_in? %>
-          <%= check_box_tag :save %>
-          <%= label_tag(:save, "Save my dietary preferences") %>
-        <% end %>
-      </div>
-
-      <div id="submit_button">
-        <input type="submit" name="go" value="Go"/>
-        <input type="submit" name="surprise" value="Surprise me"/>
+        <div id="submit_button">
+          <input type="submit" name="go" value="Go"/>
+          <input type="submit" name="surprise" value="Surprise me"/>
+        </div>
       </div>
     </form>
 
