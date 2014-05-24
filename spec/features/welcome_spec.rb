@@ -8,8 +8,7 @@ feature 'Homepage' do
 
   scenario 'User can search by location' do
     VCR.use_cassette('welcome/search') do
-      visit root_path
-      click_on "All Restaurants"
+      visit restaurants_path
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Shine"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"

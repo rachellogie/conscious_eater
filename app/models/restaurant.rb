@@ -1,7 +1,7 @@
 class Restaurant < ActiveRecord::Base
 
   DIETARY_OPTIONS = [ "gluten free options", "dairy free options", "vegan options", "vegetarian options",
-                     "organic ingredients", "non-GMO ingredients", "grass-fed beef", "100% gluten free",
+                     "organic ingredients", "grass-fed beef", "100% gluten free",
                      "100% vegetarian", "100% vegan",]
 
   acts_as_taggable_on :dietary_options

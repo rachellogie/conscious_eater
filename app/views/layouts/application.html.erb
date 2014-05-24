@@ -15,15 +15,14 @@
       <ul>
         <li><%= link_to 'My Profile', profile_path if user_signed_in? %></li>
         <%= render 'layouts/user_widget' %>
-        <li><a href="/restaurants">All Restaurants</a></li>
         <li><a href="/">New Search</a></li>
       </ul>
     </div>
   </nav>
   <div id="header_container">
-    <h1><span>Picky Eater</span></h1>
+    <h1><span><%= link_to 'Picky Eater', root_path %></span></h1>
 
-    <h3><span>Easily find restaurants in the <br>Denver/Boulder area that suit your dietary preferences.</span>
+    <h3><span>Find restaurants in the Denver/Boulder area <br>that suit your dietary preferences.</span>
     </h3>
   </div>
 </header>
