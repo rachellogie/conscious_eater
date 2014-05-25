@@ -4,13 +4,31 @@ body {
   background-color: #FDB254;
 }
 
-
 #header_container,
 #nav_container,
 #main_container,
 #footer_container{
   margin: auto;
   max-width: 980px;
+}
+
+//-------------columns----------
+
+
+.one_third {
+  width: 300px;
+}
+
+.one_fourth {
+  width: 150px;
+}
+
+.one_third, .one_fourth {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  float: left;
 }
 
 //-----------header------------
@@ -135,7 +153,7 @@ p.options {
 
 #go {
   font-size: 30px;
-  background-color: #6bb323;
+  background-color: #B1CD02;
   color: white;
   border: 2px solid white;
 }
@@ -175,11 +193,12 @@ footer {
 
 //------------all restaurants page --------
 
-.display_restaurants {
+.display_restaurant {
   border: 1px solid black;
   border-radius: 15px;
   padding: 10px;
   margin: 20px;
+  overflow:hidden;
 }
 
 //--------------devise--------------------
@@ -202,5 +221,20 @@ footer {
   display:none;
 }
 
+
+//-------------------restaurants index------------
+
+.display_restaurant img {
+  height: 150px;
+  width: 150px;
+}
+
+.display_restaurant p {
+  margin: 0px;
+}
+
+.smaller {
+  font-size: 15px;
+}
 
 

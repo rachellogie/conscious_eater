@@ -1,18 +1,25 @@
 <h1>These are all the restaurants</h1>
 
-
-
-
 <% @restaurants.each do |restaurant| %>
-
-  <div class="display_restaurants">
-  <p><%= restaurant.name %> <a href="/restaurants/<%= restaurant.id %>">see restaurant</a></p>
+  <div class="display_restaurant">
+    <div class="one_fourth">
+      <img src="<%= restaurant.photo_uri %>"/>
+    </div>
+    <div class="one_third">
+      <div class="restaurant_info">
+        <p><%= restaurant.name %> <a href="/restaurants/<%= restaurant.id %>">see restaurant</a></p>
+        <p class="smaller"><%= restaurant.location %></p>
+        <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
+      </div>
+    </div>
+    <div class="one_third">
+      <p><%= restaurant.dietary_option_list %></p>
+    </div>
   </div>
 <% end %>
 
-
 <% if user_signed_in? %>
-<p>
-<a href="/restaurants/new">Add a Restaurant</a>
-</p>
+  <p>
+    <a href="/restaurants/new">Add a Restaurant</a>
+  </p>
 <% end %>
