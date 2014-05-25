@@ -1,5 +1,5 @@
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   background-color: #FDB254;
 }
@@ -91,9 +91,11 @@ p.options {
   padding: 0 4px;
 }
 
-#submit_button {
+.submit_button {
   margin: auto;
   width: 100px;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .dropbox {
@@ -110,7 +112,7 @@ p.options {
   width: 620px;
   margin: auto;
   box-shadow: inset 0 1px 12px rgba(0,0,0,0.15),0 1px 1px rgba(255,255,255,0.1);
-  background-color: #cc9145;
+  background-color: #d79746;
   text-align: center;
 }
 
@@ -124,6 +126,30 @@ p.options {
     margin: 5px 0;
 }
 
+#search_options p#save_preferences {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#go {
+  font-size: 30px;
+  color: #68810e;
+
+}
+
+#random {
+ font-size: 15px;
+  color: #8e8e8e;
+}
+
+#main_search span {
+  font-size: 15px;
+}
+
+#submit_button input:hover {
+  box-shadow: inset 0 1px 12px rgba(104, 129, 14,0.70),0 1px 1px rgba(255,255,255,0.1);
+}
 
 
 //------------footer---------

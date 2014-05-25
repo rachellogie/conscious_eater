@@ -12,7 +12,7 @@
       </div>
 
       <div id="main_search">
-        <p>I'm looking for...</p>
+        <p>I'm looking for <span>(select all that apply)</span>...</p>
         <div id="search_options">
 
           <div id="format">
@@ -24,15 +24,17 @@
             <% end %>
           </div>
 
+          <p id="save_preferences">
           <% if user_signed_in? %>
             <%= check_box_tag :save %>
             <%= label_tag(:save, "Save my dietary preferences") %>
           <% end %>
+          </p>
         </div>
 
         <div id="submit_button">
-          <input type="submit" name="go" value="Go"/>
-          <input type="submit" name="surprise" value="Surprise me"/>
+          <input type="submit" name="go" value="Go" class="submit_button" id="go"/>
+          <p class="bottom"><input type="submit" name="surprise" value="Surprise me" class="submit_button" id="random"/></p>
         </div>
       </div>
     </form>
