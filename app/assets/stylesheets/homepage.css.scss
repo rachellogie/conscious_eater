@@ -25,7 +25,7 @@ header {
 h1 {
     font-family: 'Pacifico', cursive;
     color: white;
-  clear: both;
+//  clear: both;
 }
 
 h3 {
@@ -50,7 +50,7 @@ h3 {
   float: right;
   padding: 10px;
   padding-top: 20px;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 #nav_container ul {
@@ -100,6 +100,7 @@ p.options {
 
 .dropbox {
   display: inline-block;
+  margin-top: 5px;
 }
 
 #search_location {
@@ -134,12 +135,13 @@ p.options {
 
 #go {
   font-size: 30px;
-  color: #68810e;
-
+  background-color: #6bb323;
+  color: white;
+  border: 2px solid white;
 }
 
 #random {
- font-size: 15px;
+ font-size: 13px;
   color: #8e8e8e;
 }
 
@@ -149,6 +151,16 @@ p.options {
 
 #submit_button input:hover {
   box-shadow: inset 0 1px 12px rgba(104, 129, 14,0.70),0 1px 1px rgba(255,255,255,0.1);
+}
+
+.bottom{
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.bottom input {
+  margin-left: 10px;
+  border: 1px solid white;
 }
 
 

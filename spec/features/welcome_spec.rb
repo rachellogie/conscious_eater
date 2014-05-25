@@ -32,7 +32,7 @@ feature 'Homepage' do
   scenario 'user can click the pick for me button and it will show a random restaurant' do
     visit root_path
     expect(page).to_not have_content "Linger"
-    click_on "Surprise me"
+    click_on "Choose for me"
     expect(page).to have_content "Linger"
   end
 
