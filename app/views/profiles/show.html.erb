@@ -1,15 +1,40 @@
-<h1>This is your profile</h1>
+<h1>My Profile</h1>
 
-<h2>Here are all your favorite restaurants: </h2>
+<h2>My favorite restaurants: </h2>
 
 <% @favorite_restaurants.each do |restaurant| %>
-  <p><%= link_to restaurant.name, restaurant_path(restaurant) %><a href="/restaurants/<%= restaurant.id %>/favorite_restaurants/<%= FavoriteRestaurant.find_by(restaurant_id: restaurant.id).id %>" data-method='delete'>    Remove from favorites</a></p>
+  <div class="display_restaurant">
+    <div class="one_fourth">
+      <img src="<%= restaurant.photo_uri %>"/>
+    </div>
+    <div class="one_third">
+      <div class="restaurant_info">
+        <p><%= link_to restaurant.name, restaurant_path(restaurant) %>
+
+        <p class="smaller"><%= restaurant.location %></p>
+
+        <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
+      </div>
+      <% restaurant.dietary_option_list.each do |option| %>
+        <div class="option_tags"><%= option %></div>
+      <% end %>
+      <div>
+        <a href="/restaurants/<%= restaurant.id %>/favorite_restaurants/<%= FavoriteRestaurant.find_by(restaurant_id: restaurant.id).id %>" data-method='delete'>
+          Remove from favorites</a></p>
+      </div>
+    </div>
+  </div>
 <% end %>
 
-<h2>These are your preferences: </h2>
+
+
+
+
+
+<h2>My preferences: </h2>
 
 <ul>
-<% @preferences.each do |preference| %>
-<li><%= preference.preference_name %></li>
-<% end %>
+  <% @preferences.each do |preference| %>
+    <li><%= preference.preference_name %></li>
+  <% end %>
 </ul>

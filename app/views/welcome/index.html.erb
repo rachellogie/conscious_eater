@@ -4,7 +4,7 @@
       <input type="hidden" name="search" value="true"/>
 
       <div id="search_location">
-        <p class="dropbox">Find Restaurants in: </p>
+        <p class="dropbox">Find restaurants in: </p>
         <select name="homepage_location" class="dropbox" id="chosen-dropbox">
           <option value="Highlands, Denver">Highlands, Denver</option>
           <option value="Pearl Street, Boulder">Pearl Street, Boulder</option>
@@ -13,6 +13,7 @@
 
       <div id="main_search">
         <p>I'm looking for <span>(select all that apply)</span>...</p>
+
         <div id="search_options">
           <div id="format">
             <% Restaurant::DIETARY_OPTIONS.each do |option| %>
@@ -24,25 +25,41 @@
           </div>
 
           <p id="save_preferences">
-          <% if user_signed_in? %>
-            <%= check_box_tag :save %>
-            <%= label_tag(:save, "Save my dietary preferences") %>
-          <% end %>
+            <% if user_signed_in? %>
+              <%= check_box_tag :save %>
+              <%= label_tag(:save, "Save my dietary preferences") %>
+            <% end %>
           </p>
         </div>
 
         <div id="submit_button">
           <input type="submit" name="go" value="Go" class="submit_button" id="go"/>
-          <p class="bottom">or<input type="submit" name="surprise" value="Choose for me" class="submit_button" id="random"/></p>
+
+          <p class="bottom">or<input type="submit" name="surprise" value="Choose for me" class="submit_button" id="random"/>
+          </p>
         </div>
       </div>
     </form>
 
-    <div id="surprise">
-      <% if @surprise %>
-        <%= link_to @surprise.name, @surprise %>
-      <% end %>
-    </div>
+    <% if @surprise %>
+      <div class="display_restaurant" id="surprise">
+        <div class="one_fourth">
+          <img src="<%= @surprise.photo_uri %>"/>
+        </div>
+        <div class="one_third">
+          <div class="restaurant_info">
+            <p><%= link_to @surprise.name, @surprise %></a></p>
+
+            <p class="smaller"><%= @surprise.location %></p>
+
+            <p class="smaller"><%= @surprise.rating %> out of 5 stars</p>
+          </div>
+          <% @surprise.dietary_option_list.each do |option| %>
+            <div class="option_tags"><%= option %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
   </div>
 </div>

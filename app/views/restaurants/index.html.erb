@@ -11,9 +11,9 @@
         <p class="smaller"><%= restaurant.location %></p>
         <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
       </div>
-    </div>
-    <div class="one_third">
-      <p><%= restaurant.dietary_option_list %></p>
+      <% restaurant.dietary_option_list.each do |option| %>
+      <div class="option_tags"><%= option %></div>
+      <% end %>
     </div>
   </div>
 <% end %>

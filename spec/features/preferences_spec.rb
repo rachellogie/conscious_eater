@@ -11,8 +11,7 @@ feature 'preferences' do
     check("save")
     click_on "Go"
     click_on 'My Profile'
-    expect(page).to have_content 'Here are all your favorite restaurants:'
-    expect(page).to have_content 'These are your preferences:'
+    expect(page).to have_content 'My preferences:'
     expect(page).to have_content 'gluten free options'
     expect(page).to have_content 'dairy free options'
 
