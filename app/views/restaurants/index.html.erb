@@ -1,5 +1,6 @@
-<h1>These are all the restaurants</h1>
+<h2>These are all the restaurants</h2>
 
+<% counter = 0 %>
 <% @restaurants.each do |restaurant| %>
   <div class="display_restaurant">
     <div class="one_fourth">
@@ -8,14 +9,20 @@
     <div class="one_third">
       <div class="restaurant_info">
         <p><a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %> </a></p>
+
         <p class="smaller"><%= restaurant.location %></p>
+
         <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
       </div>
       <% restaurant.dietary_option_list.each do |option| %>
-      <div class="option_tags"><%= option %></div>
+        <div class="option_tags"><%= option %></div>
       <% end %>
     </div>
   </div>
+  <% counter +=1 %>
+  <% if counter.even? %>
+    <hr>
+  <% end %>
 <% end %>
 
 <% if user_signed_in? %>

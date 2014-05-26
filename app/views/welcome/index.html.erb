@@ -42,6 +42,8 @@
     </form>
 
     <% if @surprise %>
+      <p>Here's what we picked for you:</p>
+      <hr>
       <div class="display_restaurant" id="surprise">
         <div class="one_fourth">
           <img src="<%= @surprise.photo_uri %>"/>
