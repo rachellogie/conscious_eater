@@ -10,6 +10,12 @@ class FactsController < ApplicationController
     redirect_to restaurant_path(restaurant)
   end
 
+  def destroy
+    restaurant = Restaurant.find(params[:restaurant_id])
+    Fact.find(params[:id]).destroy
+    redirect_to restaurant_path(restaurant)
+  end
+
   private
 
   def facts_params

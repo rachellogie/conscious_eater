@@ -8,11 +8,12 @@ feature 'Facts' do
     visit '/'
     click_on 'Go'
     click_on 'Linger'
-    click_on 'Add Fact'
     fill_in 'fact[body]', with: '75% of the menu is organic'
     click_on 'Add Fact'
     expect(page).to have_content '75% of the menu is organic'
     expect(page).to have_content 'Added by bob'
+    click_on 'Delete my fact'
+    expect(page).to_not have_content '75% of the menu is organic'
   end
 
 end
