@@ -126,4 +126,5 @@ feature 'Restaurants manager' do
     expect(page).to have_content "You already have this as a favorite!"
     expect(page).to_not have_content "Restaurant has been favorited!"
   end
+
 end

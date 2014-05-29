@@ -12,4 +12,6 @@ class Restaurant < ActiveRecord::Base
   has_many :favorite_restaurants
   has_many :users, through: :favorite_restaurants
 
+  has_many :facts
+
 end

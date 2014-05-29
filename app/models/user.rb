@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :favorite_restaurants
   has_many :favorite_restaurants
   has_many :preferences
+
+  has_many :facts
 end

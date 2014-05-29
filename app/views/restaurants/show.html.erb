@@ -23,8 +23,8 @@
   <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
     <%= f.submit "Favorite this restaurant" %>
   <% end %>
-<% end %>
 
+<% end %>
 
 <% num_favorites = @restaurant.users.length %>
 <% if num_favorites == 1 %>
@@ -32,6 +32,28 @@
 <% else %>
   <p><%= num_favorites %> Favorites</p>
 <% end %>
+
+<p>Tidbits people have shared about <%= @restaurant.name %>:</p>
+
+<ul>
+  <% @restaurant.facts.each do |fact| %>
+    <li><%= fact.body %>   Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago</li>
+  <% end %>
+</ul>
+
+<p>Have something about this restaurant you want to share?</p>
+<% if user_signed_in? %>
+  <%= form_for [@restaurant, @fact] do |f| %>
+    <%= f.label :body, 'Enter your fact: ' %>
+    <%= f.text_field :body %>
+    <%= f.submit "Add Fact" %>
+  <% end %>
+<% else %>
+  <p>You must <%= link_to 'sign in', new_user_session_path %> if you want to share something.</p>
+<% end %>
+
+
+
 
 <p><a href="/restaurants">Take me back to the restaurant list</a></p>
 
