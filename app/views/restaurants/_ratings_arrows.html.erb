@@ -1,0 +1,7 @@
+<div id="arrows_div">
+
+  <a href="/restaurants/<%= @restaurant.id %>/facts/<%= fact.id %>}/likes?up=true" data-method="post"> <%= image_tag("up_arrow.png", id: "up_arrow", class: "arrows") %></a>
+  <input class="arrows" id="votes" type="text" value="<%= fact.get_likes.size %>" readonly/>
+  <a href="/restaurants/<%= @restaurant.id %>/facts/<%= fact.id %>}/likes?down=true" data-method="post"><%= image_tag("down_arrow.png", id: "down_arrow", class: "arrows") %></a>
+
+</div>

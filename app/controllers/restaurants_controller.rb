@@ -31,7 +31,6 @@ class RestaurantsController < ApplicationController
     if Restaurant.exists?(params[:id])
       @restaurant = Restaurant.find(params[:id])
       @fact = Fact.new
-      #@facts = @restaurant.facts
     else
       render 'errors/404', status: 404
     end

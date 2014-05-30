@@ -30,7 +30,6 @@ feature 'Homepage' do
   end
 
   scenario 'user can click the pick for me button and it will show a random restaurant' do
-    pending
     visit root_path
     expect(page).to_not have_content "Linger"
     click_on "Choose for me"

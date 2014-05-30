@@ -31,6 +31,7 @@ GEM
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
       activesupport (>= 3, < 5)
+    acts_as_votable (0.9.0)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
@@ -194,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 3.1.1)
+  acts_as_votable (~> 0.9.0)
   capybara (~> 2.2.1)
   chosen-rails (~> 1.1.0)
   coffee-rails (~> 4.0.0)

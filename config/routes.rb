@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :restaurants do
     resources :favorite_restaurants, only: [:create, :destroy]
-    resources :facts
+    resources :facts do
+      resources :likes, only: :create
+    end
   end
 
   get '/surprise/:id', to: 'surprise#show', as: :surprise
