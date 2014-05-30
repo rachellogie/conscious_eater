@@ -35,14 +35,23 @@
 
 <p>Tidbits people have shared about <%= @restaurant.name %>:</p>
 
-<ul>
-  <% @restaurant.facts.each do |fact| %>
-    <li><%= render 'restaurants/ratings_arrows', fact: fact%><%= fact.body %>   Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago</li>
-    <% if user_signed_in? && current_user.id == fact.user_id %>
-      <li><%= link_to 'Delete my fact', restaurant_fact_path(@restaurant, fact), :confirm => 'Are you sure?', :method => :delete %></li>
+<div class="facts">
+
+    <% @restaurant.facts.each do |fact| %>
+      <%= render 'restaurants/ratings_arrows', fact: fact %>
+    <div id="facts_p">
+      <p><%= fact.body %></p>
+      <p class="smaller">
+        Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
+        <% if user_signed_in? && current_user.id == fact.user_id %>
+          <%= link_to 'Delete my fact', restaurant_fact_path(@restaurant, fact), :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
+      </p>
+    </div>
+    <p>   </p>
     <% end %>
-  <% end %>
-</ul>
+
+</div>
 
 <p>Have something about this restaurant you want to share?</p>
 <% if user_signed_in? %>
