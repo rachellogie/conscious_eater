@@ -18,7 +18,8 @@
           <div id="format">
             <% Restaurant::DIETARY_OPTIONS.each do |option| %>
               <p class="options">
-                <%= check_box_tag "option[#{option}]" %>
+                <% checked = WelcomeHelper.see_if_checked(option, current_user) %>
+                <%= check_box_tag "option[#{option}]" , 'yes', checked %>
                 <%= label_tag "option[#{option}]", option %>
               </p>
             <% end %>
@@ -41,6 +42,7 @@
       </div>
     </form>
 
+    <a id="surprise_section"></a>
     <% if @surprise %>
       <p>Here's what we picked for you:</p>
       <hr>

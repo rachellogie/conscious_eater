@@ -38,7 +38,7 @@
 <ul>
   <% @restaurant.facts.each do |fact| %>
     <li><%= fact.body %>   Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago</li>
-    <% if current_user.id == fact.user_id %>
+    <% if user_signed_in? && current_user.id == fact.user_id %>
       <li><%= link_to 'Delete my fact', restaurant_fact_path(@restaurant, fact), :confirm => 'Are you sure?', :method => :delete %></li>
     <% end %>
   <% end %>
@@ -56,9 +56,7 @@
 <% end %>
 
 
-
-
-<p><a href="/restaurants">Take me back to the restaurant list</a></p>
+<p><a href="/restaurants">Show me all the restaurants ever</a></p>
 
 <% if user_signed_in? %>
   <p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>

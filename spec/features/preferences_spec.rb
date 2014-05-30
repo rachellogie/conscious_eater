@@ -17,6 +17,8 @@ feature 'preferences' do
 
     visit '/'
     select "Pearl Street, Boulder", :from => "homepage_location"
+    uncheck("option[gluten free options]")
+    uncheck("option[dairy free options]")
     check("option[vegetarian options]")
     check("option[vegan options]")
     check("save")

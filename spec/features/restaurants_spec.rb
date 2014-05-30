@@ -52,8 +52,8 @@ feature 'Restaurants manager' do
   scenario 'User can return to all restaurants from an individual restaurant page' do
     restaurant = create_restaurant
     visit restaurant_path(restaurant)
-    click_on "Take me back to the restaurant list"
-    expect(page).to have_content "These are all the restaurants"
+    click_on "Show me all the restaurants ever"
+    expect(page).to have_content "Here ya go..."
   end
 
   scenario 'User will see errors if they try to update a restaurant without diet options' do
@@ -65,7 +65,6 @@ feature 'Restaurants manager' do
     uncheck("option[gluten free options]")
     click_on "Update"
     expect(page).to have_content "You must check at least 1 diet option"
-
   end
 
   scenario 'User can add a restaurant that is not in google' do
