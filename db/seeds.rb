@@ -26,7 +26,11 @@ Restaurant.create(name: "Linger", location: "Highlands, Denver",
 Restaurant.create(name: "Root Down", location: "Highlands, Denver",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 
+Restaurant.create(name: "Black Cat", location: "Pearl Street, Boulder",
+                  dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 
+Restaurant.create(name: "Mountain Sun", location: "Pearl Street, Boulder",
+                  dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 
 
 

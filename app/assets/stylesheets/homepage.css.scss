@@ -26,7 +26,11 @@ h1 {
   width: 140px;
 }
 
-.one_third, .one_fourth, {
+.one_half {
+  width: 450px;
+}
+
+.one_third, .one_fourth, .one_half {
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
@@ -293,5 +297,11 @@ ul {
   p {
     margin: 0;
   }
+}
+
+///-----------------------restaurants show
+
+.show_sections {
+  min-height: 300px;
 }
 

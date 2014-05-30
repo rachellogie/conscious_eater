@@ -1,46 +1,60 @@
 <h2><%= @restaurant.name %></h2>
+<div class="show_sections">
+  <div class="one_half">
+    <img src="<%= @restaurant.photo_uri %>"/>
+  </div>
 
-<img src="<%= @restaurant.photo_uri %>"/>
+  <div id="restaurant_info" class="one_half">
 
-<p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
-<p>Neighborhood: <%= @restaurant.location %></br>
-  <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
+    <p>Neighborhood: <%= @restaurant.location %></br>
+      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
 
+    <p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
 
-<ul>
-  <% @restaurant.dietary_option_list.each do |option| %>
+    <% if @restaurant.rating %>
+      <p><%= @restaurant.rating %> out of 5 stars</p>
+    <% end %>
+  </div>
+</div>
+<hr>
 
-    <li> <%= option %></li>
+<div class="show_sections">
+  <div class="one_half">
+    <ul>
+      <% @restaurant.dietary_option_list.each do |option| %>
+        <li> <%= option %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="one_half">
+    <div>
+      <% if user_signed_in? %>
+        <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
+          <%= f.submit "Favorite this restaurant" %>
+        <% end %>
+      <% end %>
 
-  <% end %>
-</ul>
+      <% num_favorites = @restaurant.users.length %>
+      <% if num_favorites == 1 %>
+        <p><%= num_favorites %> Favorite</p>
+      <% else %>
+        <p><%= num_favorites %> Favorites</p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% if @restaurant.rating %>
-  <p><%= @restaurant.rating %> out of 5 stars</p>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
-    <%= f.submit "Favorite this restaurant" %>
-  <% end %>
-
-<% end %>
-
-<% num_favorites = @restaurant.users.length %>
-<% if num_favorites == 1 %>
-  <p><%= num_favorites %> Favorite</p>
-<% else %>
-  <p><%= num_favorites %> Favorites</p>
-<% end %>
+<hr>
 
 <p>Tidbits people have shared about <%= @restaurant.name %>:</p>
 
 <div class="facts">
 
-    <% @restaurant.facts.each do |fact| %>
-      <%= render 'restaurants/ratings_arrows', fact: fact %>
+  <% @restaurant.facts.each do |fact| %>
+    <%= render 'restaurants/ratings_arrows', fact: fact %>
     <div id="facts_p">
       <p><%= fact.body %></p>
+
       <p class="smaller">
         Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
         <% if user_signed_in? && current_user.id == fact.user_id %>
@@ -48,8 +62,8 @@
         <% end %>
       </p>
     </div>
-    <p>   </p>
-    <% end %>
+    <p></p>
+  <% end %>
 
 </div>
 
