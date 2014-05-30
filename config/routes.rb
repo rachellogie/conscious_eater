@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get '/surprise/:id', to: 'surprise#show', as: :surprise
 
+  get '/about_me', to: 'welcome#about_me'
+
 end
