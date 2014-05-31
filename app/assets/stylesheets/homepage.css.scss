@@ -27,7 +27,7 @@ h1 {
 }
 
 .one_half {
-  width: 450px;
+  width: 410px;
 }
 
 .one_third, .one_fourth, .one_half {
@@ -116,9 +116,7 @@ p.options {
 
 .submit_button {
   margin: auto;
-  width: 100px;
   border-radius: 5px;
-  background-color: white;
 }
 
 .dropbox {
@@ -138,6 +136,10 @@ p.options {
   box-shadow: inset 0 1px 12px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.1);
   text-align: center;
+
+  p {
+    margin-bottom: 5px;
+  }
 }
 
 #search_options {
@@ -150,29 +152,31 @@ p.options {
 }
 
 #search_options p#save_preferences {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 10px;
   font-size: 15px;
 }
 
 #go {
-  font-size: 30px;
-  background-color: #B3C754;
+  font-size: 26px;
   color: white;
-  border: 2px solid white;
+  border: none;
+  width: 80px;
 }
 
 #random {
   font-size: 13px;
   color: #8e8e8e;
+  margin-bottom: 30px;
+
+  &:hover {
+    color: white;
+  }
 }
+
 
 #main_search span {
   font-size: 15px;
-}
-
-#submit_button input:hover {
-  box-shadow: inset 0 1px 12px rgba(104, 129, 14, 0.70), 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 .bottom {
@@ -192,6 +196,7 @@ footer {
   background-color: #3A2923;
   color: white;
   text-align: right;
+  font-size: 16px;
 }
 
 //--------------devise--------------------
@@ -268,7 +273,6 @@ hr {
 }
 
 #up_arrow:hover {
-  //  background-color: white;
   opacity: .5;
 }
 
@@ -303,5 +307,85 @@ ul {
 
 .show_sections {
   min-height: 300px;
+  clear: both;
+
+  p {
+    margin-top: 0;
+  }
 }
+
+img#restaurant_photo {
+    width: 400px;
+    max-height: 285px;
+    border: 4px solid white;
+    margin-left: 0;
+}
+
+p.bold {
+  font-weight: bold;
+  margin-bottom: 0;
+
+
+}
+
+#smaller {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input[type=submit], .link_buttons {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding:10px;
+  vertical-align:top;
+
+  &:hover {
+    background-color: grey;
+    color: white;
+  }
+}
+
+.option_tags_big {
+  font-size: 16px;
+  display: inline-block;
+  padding: 5px;
+  margin: 4px;
+  border-radius: 5px;
+  color: white;
+  background: rgba(0, 0, 0, 0.20);
+}
+
+.heart_img {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.favorite_button {
+  background: image-url('heart.png') no-repeat 5% center;
+  display: inline-block;
+}
+
+input.favorite_button {
+  width: 220px;
+  text-align: right;
+}
+
+.new_favorite_restaurant {
+  display: inline-block;
+}
+
+p.neighborhood {
+  margin-bottom: 2px;
+}
+
+
+
+
+
+
 

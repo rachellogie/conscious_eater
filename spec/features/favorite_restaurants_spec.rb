@@ -17,8 +17,9 @@ feature 'favorite restaurants' do
     sign_up_user
     restaurant = create_restaurant
     visit restaurant_path(restaurant)
+    expect(page).to have_content "0"
     click_on "Favorite this restaurant"
-    expect(page).to have_content "1 Favorite"
+    expect(page).to have_content "1"
   end
 
 end

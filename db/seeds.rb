@@ -1,37 +1,46 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+def seed_each_restaurant(restaurant)
+  search = PlacesSearch.new(ENV["GOOGLE_API_KEY"], restaurant.name, restaurant.location)
+  restaurant.rating = search.get_rating
+  restaurant.address = search.get_address
+  restaurant.photo_uri = search.get_photo
+  restaurant.website = search.get_website
+  restaurant.name = search.get_name
+  restaurant.save!
+end
 
 Restaurant.destroy_all
 
-Restaurant.create(name: "Salt", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "Salt", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Shine", location: "Pearl Street, Boulder",
+restaurant = Restaurant.create(name: "Shine", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, 100% gluten free, vegan options" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "The Kitchen", location: "Pearl Street, Boulder",
+restaurant = Restaurant.create(name: "The Kitchen", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, organic ingredients, vegan options" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Leaf", location: "Pearl Street, Boulder",
+restaurant = Restaurant.create(name: "Leaf", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, 100% vegetarian, organic ingredients" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Linger", location: "Highlands, Denver",
+restaurant = Restaurant.create(name: "Linger", location: "Highlands, Denver",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Root Down", location: "Highlands, Denver",
+restaurant = Restaurant.create(name: "Root Down", location: "Highlands, Denver",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Black Cat", location: "Pearl Street, Boulder",
+restaurant = Restaurant.create(name: "Black Cat", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
+seed_each_restaurant(restaurant)
 
-Restaurant.create(name: "Mountain Sun", location: "Pearl Street, Boulder",
+restaurant = Restaurant.create(name: "Mountain Sun", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
-
+seed_each_restaurant(restaurant)
 
 
 

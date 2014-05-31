@@ -1,88 +1,84 @@
 <h2><%= @restaurant.name %></h2>
 <div class="show_sections">
   <div class="one_half">
-    <img src="<%= @restaurant.photo_uri %>"/>
+    <img id="restaurant_photo" src="<%= @restaurant.photo_uri %>"/>
   </div>
 
   <div id="restaurant_info" class="one_half">
-
-    <p>Neighborhood: <%= @restaurant.location %></br>
-      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><%= @restaurant.address %></a></p>
-
-    <p><a href=<%= @restaurant.website %>>Restaurant Website</a></p>
-
     <% if @restaurant.rating %>
       <p><%= @restaurant.rating %> out of 5 stars</p>
     <% end %>
-  </div>
-</div>
-<hr>
 
-<div class="show_sections">
-  <div class="one_half">
-    <ul>
-      <% @restaurant.dietary_option_list.each do |option| %>
-        <li> <%= option %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="one_half">
+    <p class="neighborhood">Neighborhood: <%= @restaurant.location %></p>
+
+    <p class="smaller"><%= @restaurant.address %>
+      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><br> Show me on the
+        map »</a></p>
+
+    <p class="smaller"><a href=<%= @restaurant.website %>>Restaurant Website »</a></p>
     <div>
       <% if user_signed_in? %>
         <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
-          <%= f.submit "Favorite this restaurant" %>
+          <%= f.submit "Favorite this restaurant", class: "favorite_button" %>
         <% end %>
       <% end %>
 
       <% num_favorites = @restaurant.users.length %>
-      <% if num_favorites == 1 %>
-        <p><%= num_favorites %> Favorite</p>
-      <% else %>
-        <p><%= num_favorites %> Favorites</p>
-      <% end %>
+      <p class="new_favorite_restaurant"><%= num_favorites %> <%= image_tag("heart.png", class: "heart_img") %></p>
     </div>
+
   </div>
 </div>
 
-<hr>
-
-<p>Tidbits people have shared about <%= @restaurant.name %>:</p>
-
-<div class="facts">
-
-  <% @restaurant.facts.each do |fact| %>
-    <%= render 'restaurants/ratings_arrows', fact: fact %>
-    <div id="facts_p">
-      <p><%= fact.body %></p>
-
-      <p class="smaller">
-        Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
-        <% if user_signed_in? && current_user.id == fact.user_id %>
-          <%= link_to 'Delete my fact', restaurant_fact_path(@restaurant, fact), :confirm => 'Are you sure?', :method => :delete %>
-        <% end %>
-      </p>
-    </div>
-    <p></p>
+<div class="show_sections">
+  <% @restaurant.dietary_option_list.each do |option| %>
+    <div class="option_tags_big"><%= option %></div>
   <% end %>
 
+
+<hr>
+  <p class="bold">Tidbits people have shared about <%= @restaurant.name %>:</p>
+
+  <div class="facts">
+
+    <% @restaurant.facts.each do |fact| %>
+      <%= render 'restaurants/ratings_arrows', fact: fact %>
+      <div id="facts_p">
+        <p><%= fact.body %></p>
+
+        <p class="smaller">
+          Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
+          <% if user_signed_in? && current_user.id == fact.user_id %>
+            <%= link_to 'Delete my tidbit', restaurant_fact_path(@restaurant, fact), :confirm => 'Are you sure?', :method => :delete %>
+          <% end %>
+        </p>
+      </div>
+      <p></p>
+    <% end %>
+
+  </div>
+
+  <p class="bold" id="smaller">Have something about this restaurant you want to share?</p>
+  <% if user_signed_in? %>
+    <%= form_for [@restaurant, @fact] do |f| %>
+      <%= f.label :body, 'Enter your tidbit: ' , class: 'smaller'%>
+      <%= f.text_field :body %>
+      <%= f.submit "Add Tidbit" %>
+    <% end %>
+  <% else %>
+    <p>You must <%= link_to 'sign in', new_user_session_path %> if you want to share something.</p>
+  <% end %>
 </div>
 
-<p>Have something about this restaurant you want to share?</p>
-<% if user_signed_in? %>
-  <%= form_for [@restaurant, @fact] do |f| %>
-    <%= f.label :body, 'Enter your fact: ' %>
-    <%= f.text_field :body %>
-    <%= f.submit "Add Fact" %>
-  <% end %>
-<% else %>
-  <p>You must <%= link_to 'sign in', new_user_session_path %> if you want to share something.</p>
-<% end %>
+
+
 
 
 <p><a href="/restaurants">Show me all the restaurants ever</a></p>
 
 <% if user_signed_in? %>
-  <p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit Restaurant Information</a></p>
+
+  <%= link_to 'Edit Restaurant Information', edit_restaurant_path(@restaurant), class: 'link_buttons' %>
   <% if current_user.admin? %>
     <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
       <%= f.submit :delete %>
