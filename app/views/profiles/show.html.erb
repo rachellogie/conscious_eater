@@ -19,17 +19,12 @@
         <div class="option_tags"><%= option %></div>
       <% end %>
       <div>
-        <a href="/restaurants/<%= restaurant.id %>/favorite_restaurants/<%= FavoriteRestaurant.find_by(restaurant_id: restaurant.id).id %>" data-method='delete'>
-          Remove from favorites</a></p>
+        <% fave_restaurant = FavoriteRestaurant.find_by(restaurant_id: restaurant.id) %>
+        <%= link_to 'Remove from favorites', restaurant_favorite_restaurant_path(restaurant_id: restaurant.id, id: fave_restaurant.id), method: 'delete',  data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   </div>
 <% end %>
-
-
-
-
-
 
 <h4>My preferences: </h4>
 
