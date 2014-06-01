@@ -49,13 +49,6 @@ feature 'Restaurants manager' do
     expect(page).to have_content "Pearl"
   end
 
-  scenario 'User can return to all restaurants from an individual restaurant page' do
-    restaurant = create_restaurant
-    visit restaurant_path(restaurant)
-    click_on "Show me all the restaurants ever"
-    expect(page).to have_content "Here ya go..."
-  end
-
   scenario 'User will see errors if they try to update a restaurant without diet options' do
     restaurant = create_restaurant
     visit restaurant_path(restaurant)

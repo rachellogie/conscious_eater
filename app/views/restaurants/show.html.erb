@@ -41,7 +41,6 @@
   <p class="bold">Tidbits people have shared about <%= @restaurant.name %>:</p>
 
   <div class="facts">
-
     <% if @restaurant.facts.empty? %>
       <p class="not_bold">(Be the first to add something.)</p>
     <% else %>
@@ -62,7 +61,8 @@
     <% end %>
 
   </div>
-<p></p>
+  <p></p>
+
   <p class="bold" id="smaller">Have something about this restaurant you want to share?</p>
   <% if user_signed_in? %>
     <%= form_for [@restaurant, @fact] do |f| %>
@@ -74,13 +74,13 @@
     <p>You must <%= link_to 'sign in', new_user_session_path %> if you want to share something.</p>
   <% end %>
 </div>
-
-<p><a href="/restaurants">Show me all the restaurants ever</a></p>
-
+<br>
+<br>
 <% if user_signed_in? %>
 
   <%= link_to 'Edit Restaurant Information', edit_restaurant_path(@restaurant), class: 'link_buttons' %>
   <% if current_user.admin? %>
+
     <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
       <%= f.submit :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
