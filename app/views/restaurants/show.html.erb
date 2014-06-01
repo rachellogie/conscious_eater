@@ -16,6 +16,7 @@
         map »</a></p>
 
     <p class="smaller"><a href=<%= @restaurant.website %>>Restaurant Website »</a></p>
+
     <div>
       <% if user_signed_in? %>
         <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
@@ -35,33 +36,37 @@
     <div class="option_tags_big"><%= option %></div>
   <% end %>
 
-
-<hr>
+  <p></p>
+  <hr>
   <p class="bold">Tidbits people have shared about <%= @restaurant.name %>:</p>
 
   <div class="facts">
 
-    <% @restaurant.facts.each do |fact| %>
-      <%= render 'restaurants/ratings_arrows', fact: fact %>
-      <div id="facts_p">
-        <p><%= fact.body %></p>
+    <% if @restaurant.facts.empty? %>
+      <p class="not_bold">(Be the first to add something.)</p>
+    <% else %>
+      <% @restaurant.facts.each do |fact| %>
+        <%= render 'restaurants/ratings_arrows', fact: fact %>
+        <div id="facts_p">
+          <p><%= fact.body %></p>
 
-        <p class="smaller">
-          Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
-          <% if user_signed_in? && current_user.id == fact.user_id %>
-            <%= link_to 'Delete my tidbit', restaurant_fact_path(@restaurant, fact), data: { confirm: "Are you sure?" }, :method => :delete %>
-          <% end %>
-        </p>
-      </div>
-      <p></p>
+          <p class="smaller">
+            Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
+            <% if user_signed_in? && current_user.id == fact.user_id %>
+              <%= link_to 'Delete my tidbit', restaurant_fact_path(@restaurant, fact), data: {confirm: "Are you sure?"}, :method => :delete %>
+            <% end %>
+          </p>
+        </div>
+        <p></p>
+      <% end %>
     <% end %>
 
   </div>
-
+<p></p>
   <p class="bold" id="smaller">Have something about this restaurant you want to share?</p>
   <% if user_signed_in? %>
     <%= form_for [@restaurant, @fact] do |f| %>
-      <%= f.label :body, 'Enter your tidbit: ' , class: 'smaller'%>
+      <%= f.label :body, 'Enter your tidbit: ', class: 'smaller' %>
       <%= f.text_field :body %>
       <%= f.submit "Add Tidbit" %>
     <% end %>
@@ -77,7 +82,7 @@
   <%= link_to 'Edit Restaurant Information', edit_restaurant_path(@restaurant), class: 'link_buttons' %>
   <% if current_user.admin? %>
     <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}", method: "delete" do |f| %>
-      <%= f.submit :delete, data: { confirm: "Are you sure?" } %>
+      <%= f.submit :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
   <% end %>
 <% end %>

@@ -14,4 +14,9 @@ class Restaurant < ActiveRecord::Base
 
   has_many :facts
 
+  def facts
+    facts = super
+    facts.sort { |a,b| b.get_likes.size <=> a.get_likes.size }
+  end
+
 end
