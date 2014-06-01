@@ -385,6 +385,40 @@ p.not_bold {
   font-size: 16px;
 }
 
+//chosen-----------------------------------
+.chosen-container {
+  bottom: 2px;
+}
+.chosen-container-single .chosen-single {
+  background: white;
+  width: 220px;
+  font-size: 18px;
+  padding: 4px 0;
+  color: black;
+  border: 0;
+  box-shadow: none;
+}
+
+.chosen-container .chosen-drop  {
+  width:220px;
+  font-size: 18px;
+  background: white;
+  border:0;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+  background: white;
+  border:0;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -18px 9px;
+}
+
+.chosen-container-single .chosen-single div b {
+  background-position: 0px 8px;
+}
+
 
 
 
