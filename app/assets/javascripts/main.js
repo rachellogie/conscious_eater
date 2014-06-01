@@ -4,12 +4,16 @@ $(document).ready(function() {
 
   $( "#format" ).buttonset();
 
+  if (/surprise/.test(window.location.href)) {
+    $('body').animate({
+      scrollTop: $('#surprise_section').offset().top
+    })
+  }
 
-//  $('#up_arrow').on("click", function(){
-//    $("#arrows_div input").val(parseInt($("#arrows_div input").val())+1);
-
-//    @fact.liked_by current_user AJAX?
-//  });
-
+  if (/tidbit_edited/.test(window.location.href)) {
+    $('body').animate({
+      scrollTop: $('.facts').offset().top
+    })
+  }
 
 });

@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     elsif params[:down]
       fact.downvote_from current_user
     end
-    redirect_to restaurant_path(@restaurant)
+    redirect_to restaurant_path(@restaurant, :tidbit_edited => true)
   end
 
 end
