@@ -15,7 +15,7 @@ restaurant = Restaurant.new(name: "Salt", location: "Pearl Street, Boulder",
 seed_each_restaurant(restaurant)
 
 restaurant = Restaurant.create(name: "Shine", location: "Pearl Street, Boulder",
-                  dietary_option_list: "gluten free options, dairy free options, vegetarian options, 100% gluten free, vegan options" )
+                  dietary_option_list: "gluten free options, dairy free options, vegetarian options, 100% gluten free, vegan options, grass fed beef, organic ingredients" )
 seed_each_restaurant(restaurant)
 
 restaurant = Restaurant.create(name: "The Kitchen", location: "Pearl Street, Boulder",
