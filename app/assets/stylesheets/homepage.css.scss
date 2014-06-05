@@ -174,7 +174,6 @@ p.options {
   }
 }
 
-
 #main_search span {
   font-size: 15px;
 }
@@ -311,16 +310,15 @@ ul {
 }
 
 img#restaurant_photo {
-    width: 400px;
-    max-height: 285px;
-    border: 4px solid white;
-    margin-left: 0;
+  width: 400px;
+  max-height: 285px;
+  border: 4px solid white;
+  margin-left: 0;
 }
 
 p.bold {
   font-weight: bold;
   margin-bottom: 0;
-
 
 }
 
@@ -337,8 +335,8 @@ input[type=submit], .link_buttons {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
-  padding:10px;
-  vertical-align:top;
+  padding: 10px;
+  vertical-align: top;
 
   &:hover {
     background-color: grey;
@@ -385,10 +383,23 @@ p.not_bold {
   font-size: 16px;
 }
 
+p.address {
+  span, a {
+    float: left;
+    clear: both;
+  }
+}
+
+#restaurant_info > * {
+  float: left;
+  clear: both;
+}
+
 //chosen-----------------------------------
 .chosen-container {
   bottom: 2px;
 }
+
 .chosen-container-single .chosen-single {
   background: white;
   width: 220px;
@@ -399,16 +410,16 @@ p.not_bold {
   box-shadow: none;
 }
 
-.chosen-container .chosen-drop  {
-  width:220px;
+.chosen-container .chosen-drop {
+  width: 220px;
   font-size: 18px;
   background: white;
-  border:0;
+  border: 0;
 }
 
 .chosen-container-active.chosen-with-drop .chosen-single {
   background: white;
-  border:0;
+  border: 0;
 }
 
 .chosen-container-active.chosen-with-drop .chosen-single div b {
@@ -418,6 +429,7 @@ p.not_bold {
 .chosen-container-single .chosen-single div b {
   background-position: 0px 8px;
 }
+
 
 
 

@@ -11,31 +11,29 @@
 
     <p class="neighborhood">Neighborhood: <%= @restaurant.location %></p>
 
-    <p class="smaller"><%= @restaurant.address %>
-      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>"><br> Show me on the
-        map »</a></p>
+    <p class="smaller address">
+      <span><%= @restaurant.address %></span>
+      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>">
+        Show me on the map »
+      </a>
+    </p>
 
     <p class="smaller"><a href=<%= @restaurant.website %>>Restaurant Website »</a></p>
 
     <div>
-      <% if user_signed_in? %>
-        <%= form_for [@restaurant, @favorite_restaurant] do |f| %>
-          <%= f.submit "Favorite this restaurant", class: "favorite_button" %>
-        <% end %>
-      <% end %>
+      <%= render 'restaurants/favorite_restaurant_button' if user_signed_in? %>
 
-      <% num_favorites = @restaurant.users.length %>
-      <p class="new_favorite_restaurant"><%= num_favorites %> <%= image_tag("heart.png", class: "heart_img") %></p>
+      <p class="new_favorite_restaurant">
+        <%= @restaurant.num_favorites %>
+        <%= image_tag("heart.png", class: "heart_img") %>
+      </p>
     </div>
 
   </div>
 </div>
 
 <div class="show_sections">
-  <% @restaurant.dietary_option_list.each do |option| %>
-    <div class="option_tags_big"><%= option %></div>
-  <% end %>
-
+  <%= render partial: "restaurants/restaurant_dietary_option_tags", collection: @restaurant.dietary_option_list, as: :option %>
   <p></p>
   <hr>
   <p class="bold">Tidbits people have shared about <%= @restaurant.name %>:</p>
@@ -44,32 +42,14 @@
     <% if @restaurant.facts.empty? %>
       <p class="not_bold">(Be the first to add something.)</p>
     <% else %>
-      <% @restaurant.facts.each do |fact| %>
-        <%= render 'restaurants/ratings_arrows', fact: fact %>
-        <div id="facts_p">
-          <p><%= fact.body %></p>
-
-          <p class="smaller">
-            Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
-            <% if user_signed_in? && current_user.id == fact.user_id %>
-              <%= link_to 'Delete my tidbit', restaurant_fact_path(@restaurant, fact), data: {confirm: "Are you sure?"}, :method => :delete %>
-            <% end %>
-          </p>
-        </div>
-        <p></p>
-      <% end %>
+      <%= render partial: "restaurant_facts", collection: @restaurant.facts, as: :fact %>
     <% end %>
-
   </div>
   <p></p>
 
   <p class="bold" id="smaller">Have something about this restaurant you want to share?</p>
   <% if user_signed_in? %>
-    <%= form_for [@restaurant, @fact] do |f| %>
-      <%= f.label :body, 'Enter your tidbit: ', class: 'smaller' %>
-      <%= f.text_field :body %>
-      <%= f.submit "Add Tidbit" %>
-    <% end %>
+    <%= render "add_fact_form" %>
   <% else %>
     <p>You must <%= link_to 'sign in', new_user_session_path %> if you want to share something.</p>
   <% end %>

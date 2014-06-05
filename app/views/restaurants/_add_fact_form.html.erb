@@ -1,0 +1,5 @@
+<%= form_for [@restaurant, @fact] do |f| %>
+  <%= f.label :body, 'Enter your tidbit: ', class: 'smaller' %>
+  <%= f.text_field :body %>
+  <%= f.submit "Add Tidbit" %>
+<% end %>

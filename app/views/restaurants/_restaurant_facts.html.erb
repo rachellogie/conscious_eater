@@ -1,0 +1,12 @@
+  <%= render 'restaurants/ratings_arrows', fact: fact %>
+  <div id="facts_p">
+    <p><%= fact.body %></p>
+
+    <p class="smaller">
+      Added by <%= fact_user_name(fact) %> <%= time_ago_in_words(fact.created_at) %> ago
+      <% if current_user == fact.user %>
+        <%= link_to 'Delete my tidbit', restaurant_fact_path(@restaurant, fact), data: {confirm: "Are you sure?"}, :method => :delete %>
+      <% end %>
+    </p>
+  </div>
+  <p></p>

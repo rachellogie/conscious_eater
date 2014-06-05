@@ -19,4 +19,8 @@ class Restaurant < ActiveRecord::Base
     facts.sort { |a,b| b.get_likes.size <=> a.get_likes.size }
   end
 
+  def num_favorites
+    users.length
+  end
+
 end
