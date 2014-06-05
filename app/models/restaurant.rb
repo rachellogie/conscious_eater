@@ -9,7 +9,7 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true, uniqueness: {case_sensitive: false, scope: :location}
   validates :dietary_option_list, presence: {message: "You must check at least 1 diet option"}
 
-  has_many :favorite_restaurants
+  has_many :favorite_restaurants, dependent: :destroy
   has_many :users, through: :favorite_restaurants
 
   has_many :facts

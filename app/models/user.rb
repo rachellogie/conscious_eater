@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :restaurants, through: :favorite_restaurants
-  has_many :favorite_restaurants
+  has_many :favorite_restaurants, dependent: :destroy
   has_many :preferences
 
   has_many :facts
