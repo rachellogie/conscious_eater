@@ -2,6 +2,6 @@
 <%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
 <% if user_signed_in? %>
   <p>
-    <a href="/restaurants/new">Add a Restaurant</a>
+    <%= link_to 'Add a Restaurant', new_restaurant_path %>
   </p>
 <% end %>
