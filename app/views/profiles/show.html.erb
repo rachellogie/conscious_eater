@@ -1,35 +1,9 @@
 <h2>My Profile</h2>
 
 <h4>My favorite restaurants: </h4>
-
-<% @favorite_restaurants.each do |restaurant| %>
-  <div class="display_restaurant">
-    <div class="one_fourth">
-      <img src="<%= restaurant.photo_uri %>"/>
-    </div>
-    <div class="one_third">
-      <div class="restaurant_info">
-        <p><%= link_to restaurant.name, restaurant_path(restaurant) %>
-
-        <p class="smaller"><%= restaurant.location %></p>
-
-        <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
-      </div>
-      <% restaurant.dietary_option_list.each do |option| %>
-        <div class="option_tags"><%= option %></div>
-      <% end %>
-      <div>
-        <% fave_restaurant = FavoriteRestaurant.find_by(restaurant_id: restaurant.id, user_id: current_user.id) %>
-        <%= link_to 'Remove from favorites', restaurant_favorite_restaurant_path(restaurant_id: restaurant.id, id: fave_restaurant.id), method: 'delete',  data: { confirm: "Are you sure?" } %>
-      </div>
-    </div>
-  </div>
-<% end %>
+  <%= render partial: "favorite_restaurants", collection: @favorite_restaurants, as: :restaurant %>
 
 <h4>My preferences: </h4>
-
 <ul>
-  <% @preferences.each do |preference| %>
-    <li><%= preference.preference_name %></li>
-  <% end %>
+  <%= render partial: "my_preferences", collection: @preferences, as: :preference %>
 </ul>
