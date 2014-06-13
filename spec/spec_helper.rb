@@ -47,4 +47,8 @@ VCR.configure do |c|
   c.hook_into :webmock
 
   c.filter_sensitive_data('<GOOGLE_API_KEY>') { ENV['GOOGLE_API_KEY']}
+
+  c.ignore_request do |request|
+    URI(request.uri).host == '127.0.0.1'
+  end
 end

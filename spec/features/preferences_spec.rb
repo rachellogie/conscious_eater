@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'requests/rails_helper'
 
 feature 'preferences' do
   scenario 'When user clicks save my preferences, it should overwrite previous preferences' do

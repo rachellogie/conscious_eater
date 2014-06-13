@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 
 group :development, :test do
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'selenium-webdriver', '~> 2.42.0'
   gem 'rspec-rails', '~> 2.14.2'
   gem 'capybara', '~> 2.2.1'
   gem 'launchy', '~>2.3.0'
