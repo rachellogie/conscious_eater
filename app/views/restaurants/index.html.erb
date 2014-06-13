@@ -1,7 +1,27 @@
 <h2>Here ya go...</h2>
+<div id="map_canvas"></div>
 <%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
 <% if user_signed_in? %>
   <p>
     <%= link_to 'Add a Restaurant', new_restaurant_path %>
   </p>
 <% end %>
+
+
+
+<script>
+  function initialize() {
+    var mapCanvas = document.getElementById('map_canvas');
+    var mapOptions = {
+      center: new google.maps.LatLng(40.018504, -105.278092),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+  }
+
+  $(document).ready(function(){
+    initialize();
+  });
+</script>
+

@@ -430,8 +430,13 @@ p.address {
   background-position: 0px 8px;
 }
 
+//---------------google map-------------------
 
-
+#map_canvas {
+  height: 300px;
+  width: 500px;
+  border: 1px solid black;
+}
 
 
 
