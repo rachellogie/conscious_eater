@@ -12,6 +12,10 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
 
+    #use params[:homepage_location] to get the lat and long of the map?
+    #@latitude =
+    #@longitude =
+
     if params[:surprise]
       @surprise = @restaurants.sample
       render 'welcome/index'

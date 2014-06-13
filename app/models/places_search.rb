@@ -14,13 +14,14 @@ class PlacesSearch
     {"Pearl Street, Boulder" => "1942 Broadway St, Boulder, CO 80302", "Highlands, Denver" => "2030 W. 30th Ave., Denver, CO 80211"}
   end
 
-  def get_json_restaurant_data
+  def get_json_restaurant_data(coordinates=false)
     @restaurant_data ||= begin
       address = neighborhoods[@location]
       response = Faraday.get "#{@api_root}geocode/json?address=#{address}{&sensor=false&key=#{@key}"
       json_location_data = JSON.parse(response.body)["results"].first["geometry"]["location"]
       latitude = json_location_data["lat"]
       longitude = json_location_data["lng"]
+      return { latitude: latitude, longitude: longitude } if coordinates
       response = Faraday.get "#{@api_root}place/nearbysearch/json?location=#{latitude},#{longitude}&radius=1000&types=food&name=#{@restaurant_name}&sensor=false&key=#{@key}"
       JSON.parse(response.body)["results"].first
     end

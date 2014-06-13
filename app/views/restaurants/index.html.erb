@@ -1,5 +1,5 @@
 <h2>Here ya go...</h2>
-<div id="map_canvas"></div>
+<div id="map_canvas" data-coordinates='{"latitude":40.018504, "longitude":-105.278092}'></div>
 <%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
 <% if user_signed_in? %>
   <p>
@@ -12,8 +12,10 @@
 <script>
   function initialize() {
     var mapCanvas = document.getElementById('map_canvas');
+    var lat = $(mapCanvas).data("coordinates").latitude;
+    var long = $(mapCanvas).data("coordinates").longitude;
     var mapOptions = {
-      center: new google.maps.LatLng(40.018504, -105.278092),
+      center: new google.maps.LatLng(lat, long),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
