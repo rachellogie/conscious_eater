@@ -1,5 +1,5 @@
 <h2>Here ya go...</h2>
-<div id="map_canvas" data-coordinates='{"latitude":40.018504, "longitude":-105.278092}'></div>
+<div id="map_canvas" data-coordinates='{"latitude":<%= @latitude %>, "longitude": <%= @longitude %>}'></div>
 <%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
 <% if user_signed_in? %>
   <p>
@@ -20,9 +20,44 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    var myRestaurants = <%= @restaurants.to_json.html_safe %>;
+    for (var i = 0; i < myRestaurants.length; i++) {
+      addMarker(myRestaurants[i]);
+    }
+
+
+    function addMarker(restaurant) {
+      var lat = restaurant.latitude;
+      var long = restaurant.longitude;
+      var myLatlng = new google.maps.LatLng(lat, long);
+
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+      });
+
+      var restaurant_page = "/restaurants/" + restaurant.id
+      console.log(restaurant_page)
+
+      var contentString = '<div id="content_string">' +
+        "<p>" + restaurant.name + "</p>" +
+        "<a href=" + restaurant_page + ">click me</a>" +
+        '</div>';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+      });
+    }
+
   }
 
-  $(document).ready(function(){
+
+  $(document).ready(function () {
     initialize();
   });
 </script>

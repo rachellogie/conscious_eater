@@ -27,6 +27,10 @@ class PlacesSearch
     end
   end
 
+  def get_restaurant_coordinates
+    get_json_restaurant_data["geometry"]["location"]
+  end
+
   def get_address
     get_json_restaurant_data["vicinity"]
   end

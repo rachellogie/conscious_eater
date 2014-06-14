@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 13 Jun 2014 22:50:26 GMT
+      - Sat, 14 Jun 2014 17:23:13 GMT
       Expires:
-      - Sat, 14 Jun 2014 22:50:26 GMT
+      - Sun, 15 Jun 2014 17:23:13 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -117,5 +117,80 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 13 Jun 2014 22:50:25 GMT
+  recorded_at: Sat, 14 Jun 2014 17:23:13 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=Centro&radius=1000&sensor=false&types=food
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 14 Jun 2014 17:23:13 GMT
+      Expires:
+      - Sat, 14 Jun 2014 17:28:13 GMT
+      Cache-Control:
+      - public, max-age=300
+      Vary:
+      - Accept-Language
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "html_attributions" : [],
+           "results" : [
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.017196,
+                       "lng" : -105.282545
+                    }
+                 },
+                 "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+                 "id" : "9bf72f40861b6ad7c8414e8ceb5cb827bfdabcf7",
+                 "name" : "Centro Latin Kitchen & Refreshment Palace",
+                 "opening_hours" : {
+                    "open_now" : true
+                 },
+                 "photos" : [
+                    {
+                       "height" : 1362,
+                       "html_attributions" : [],
+                       "photo_reference" : "CnRqAAAAuyY7INo5cr-WG138wIg8bQGmGYkYqVH5Wcu3qIZaawgnfVkgTiVVHhu0CCJe-F3gkMswK25lLILobnOJx3fj0Nt0SOu4BcGyAP3kYZ8OdtjXFekAv0KBqScQMH8pBtwquWLm9iQ0nhSBviZcP5z_QBIQ9OB0NS-hfmGVqiQ-KBg1eRoU0CS7reCmPqnhTBh_W0UGZ_a0Owk",
+                       "width" : 2048
+                    }
+                 ],
+                 "rating" : 3.8,
+                 "reference" : "CpQBiwAAAO_Ti0RKbUhtn0qNoCRoDpthCbliaMspY9Z68_4X9_o9dZnFw58YjBFCiC2ifUUXUu8pDidsyGdiFVoeNUAY4unWc8wWjUrccKs3L-7_uguWdCKi3NHvjqFYaUCCQ-Mr_pnLbo4VPt0xMKQSS5Fi4JlKF2UZil97k6Ft4Pu_BqrG2TYkOHVrQk_wHUDEGgeSYBIQeLQRt6xqwOozhDj3fkkvdxoUEzjAjApjbaGGN5sS_UUTPFwJ0HY",
+                 "types" : [ "restaurant", "food", "establishment" ],
+                 "vicinity" : "950 Pearl St, Boulder"
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Sat, 14 Jun 2014 17:23:13 GMT
 recorded_with: VCR 2.9.0

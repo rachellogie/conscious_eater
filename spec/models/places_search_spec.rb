@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'requests/rails_helper'
 require_relative '../../app/models/places_search'
 
 describe 'PlacesSearch' do
@@ -56,6 +57,14 @@ describe 'PlacesSearch' do
       search = PlacesSearch.new(@key, "bhew", "Pearl Street, Boulder")
       coordinates = search.get_json_restaurant_data(true)
       expect(coordinates).to eq ({ :latitude=>40.0179479, :longitude=>-105.2795348 })
+    end
+  end
+
+  it "returns latitude and longitude for a specific restaurant" do
+    VCR.use_cassette('places_search/coordinates') do
+      search = PlacesSearch.new(@key, "Centro", "Pearl Street, Boulder")
+      coordinates = search.get_restaurant_coordinates
+      expect(coordinates).to eq ({ "lat"=>40.017196, "lng"=>-105.282545 })
     end
   end
 

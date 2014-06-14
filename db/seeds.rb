@@ -5,6 +5,8 @@ def seed_each_restaurant(restaurant)
   restaurant.photo_uri = search.get_photo
   restaurant.website = search.get_website
   restaurant.name = search.get_name
+  restaurant.latitude = search.get_restaurant_coordinates["lat"]
+  restaurant.longitude = search.get_restaurant_coordinates["lng"]
   restaurant.save!
 end
 

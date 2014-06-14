@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'requests/rails_helper'
+
 
 describe 'welcome helper' do
 

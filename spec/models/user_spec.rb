@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'requests/rails_helper'
+
 
 describe User do
   it 'should respond to restaurants' do
