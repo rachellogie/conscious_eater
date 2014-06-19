@@ -13,6 +13,18 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -48,7 +60,9 @@ VCR.configure do |c|
 
   c.filter_sensitive_data('<GOOGLE_API_KEY>') { ENV['GOOGLE_API_KEY']}
 
-  c.ignore_request do |request|
-    URI(request.uri).host == '127.0.0.1'
-  end
+  c.ignore_hosts '127.0.0.1', 'maps.googleapis.com'
+
+  #c.ignore_request do |request|
+  #  URI(request.uri).host == '127.0.0.1'
+  #end
 end

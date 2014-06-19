@@ -7,6 +7,7 @@
   <div id="restaurant_info" class="one_half">
     <% if @restaurant.rating %>
       <p><%= @restaurant.rating %> out of 5 stars</p>
+      <div class="star"></div>
     <% end %>
 
     <p class="neighborhood">Neighborhood: <%= @restaurant.location %></p>
@@ -66,3 +67,16 @@
     <% end %>
   <% end %>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+
+    var restaurant = <%= @restaurant.to_json.html_safe %>
+    $('.star').raty({
+      readOnly: true,
+      score: restaurant.rating,
+      path: '/assets'
+    });
+
+  });
+</script>

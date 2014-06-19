@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 require_relative '../../app/models/places_search'
 
 describe 'PlacesSearch' do

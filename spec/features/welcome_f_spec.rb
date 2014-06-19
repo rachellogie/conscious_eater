@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 
 
 feature 'Homepage' do
@@ -10,16 +9,18 @@ feature 'Homepage' do
 
   scenario 'User can search by location' do
     VCR.use_cassette('welcome/search') do
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Shine"
-      fill_in "restaurant[website]", with: "http://lingerdenver.com/"
+      fill_in "restaurant[website]", with: "http://shine.com/"
       check("option[gluten free options]")
       select "Pearl Street, Boulder", :from => "restaurant[location]"
       click_on "Add this Restaurant"
 
-      visit restaurants_path
-      expect(page).to have_content "Shine"
+      visit root_path
+      click_on "Go"
+      expect(page).to_not have_content "Shine"
       expect(page).to have_content "Linger"
 
       visit root_path

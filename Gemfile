@@ -57,6 +57,9 @@ gem 'chosen-rails', '~> 1.1.0'
 
 gem 'acts_as_votable', '~> 0.9.0'
 
+gem 'ejs', '~> 1.1.1'
+
+gem 'jquery-ui-rails', '~> 4.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

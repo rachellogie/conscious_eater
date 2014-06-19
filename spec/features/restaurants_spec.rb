@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 
 
 feature 'Restaurants manager' do
@@ -10,7 +9,8 @@ feature 'Restaurants manager' do
 
   scenario 'User can add a restaurant' do
     VCR.use_cassette('restaurants/add') do
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "Linger"
       fill_in "restaurant[website]", with: "http://lingerdenver.com/"
@@ -19,7 +19,8 @@ feature 'Restaurants manager' do
       expect(page).to have_content "Linger"
       expect(page).to have_content "gluten free options"
 
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "shine"
       check("option[gluten free options]")
@@ -27,7 +28,8 @@ feature 'Restaurants manager' do
       click_on "Add this Restaurant"
       expect(page).to have_content "Shine Restaurant and Gathering Place"
 
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: ""
       check("option[gluten free options]")
@@ -64,7 +66,8 @@ feature 'Restaurants manager' do
 
   scenario 'User can add a restaurant that is not in google' do
     VCR.use_cassette('restaurants/addwithoutgoogle') do
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "bhsdg"
       fill_in "restaurant[website]", with: "http://bhsdg.com/"
@@ -77,7 +80,8 @@ feature 'Restaurants manager' do
 
   scenario 'User can add a restaurant that has no website from google api' do
     VCR.use_cassette('restaurants/addthekitchen') do
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "kitchen"
       fill_in "restaurant[website]", with: "http://bhsdg.com/"
@@ -91,7 +95,8 @@ feature 'Restaurants manager' do
 
   scenario 'User can add address manually if not in google' do
     VCR.use_cassette('restaurants/addthekitchen') do
-      visit restaurants_path
+      visit root_path
+      click_on "Go"
       click_on "Add a Restaurant"
       fill_in "restaurant[name]", with: "adfg"
       fill_in "restaurant[website]", with: "http://adfg.com/"

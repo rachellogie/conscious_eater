@@ -9,6 +9,7 @@
       <p class="smaller"><%= restaurant.location %></p>
 
       <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
+      <div class="star" data-rating="<%= restaurant.rating %>"></div>
     </div>
     <% restaurant.dietary_option_list.each do |option| %>
       <div class="option_tags"><%= option %></div>
@@ -19,3 +20,10 @@
   <% if counter.even? %>
   <hr>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    my_restaurant = <%= restaurant.to_json.html_safe %>;
+    StarRating.initialize(my_restaurant);
+  });
+</script>

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 
 
 feature 'happy path' do

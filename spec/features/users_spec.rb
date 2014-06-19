@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 
 
 feature 'User authentication' do
@@ -18,20 +17,23 @@ feature 'User authentication' do
   end
 
   scenario 'non signed in users cannot add a restaurant' do
-    visit '/restaurants'
+    visit root_path
+    click_on 'Go'
     click_on 'Linger'
     expect(page).to_not have_button 'delete'
   end
 
   scenario 'non signed in users cannot update a restaurant' do
-    visit '/restaurants'
+    visit root_path
+    click_on 'Go'
     click_on 'Linger'
     expect(page).to_not have_content 'Edit Restaurant Information'
   end
 
   scenario 'non admin cannot delete a restaurant' do
     sign_in_user
-    visit '/restaurants'
+    visit root_path
+    click_on 'Go'
     click_on 'Linger'
     expect(page).to_not have_button 'delete'
   end

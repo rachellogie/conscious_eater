@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/rails_helper'
 
 
 describe Restaurant do
