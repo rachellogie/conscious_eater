@@ -436,6 +436,8 @@ p.address {
   height: 300px;
   width: 500px;
   border: 1px solid black;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 #content_string {
@@ -446,12 +448,22 @@ p.address {
 //-----------------stars-------------------------
 
 .star {
+  display: inline;
+
   img {
     height: 20px;
     width: 20px;
   }
 
 }
+
+.star-rating-in-words {
+  display: inline;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+
 
 
 

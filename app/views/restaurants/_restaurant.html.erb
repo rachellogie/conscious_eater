@@ -8,8 +8,9 @@
 
       <p class="smaller"><%= restaurant.location %></p>
 
-      <p class="smaller"><%= restaurant.rating %> out of 5 stars</p>
+
       <div class="star" data-rating="<%= restaurant.rating %>"></div>
+      <div class="star-rating-in-words"><%= restaurant.rating %> stars</div>
     </div>
     <% restaurant.dietary_option_list.each do |option| %>
       <div class="option_tags"><%= option %></div>

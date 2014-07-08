@@ -1,6 +1,7 @@
 <h2>Here ya go...</h2>
 <div id="map_canvas" data-coordinates='{"latitude":<%= @latitude %>, "longitude": <%= @longitude %>}'></div>
-<%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
+
+  <%= render partial: "restaurants/restaurant", collection: @restaurants, locals: {counter: 0} %>
 <% if user_signed_in? %>
   <p>
     <%= link_to 'Add a Restaurant', new_restaurant_path %>

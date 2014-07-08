@@ -5,10 +5,7 @@
   </div>
 
   <div id="restaurant_info" class="one_half">
-    <% if @restaurant.rating %>
-      <p><%= @restaurant.rating %> out of 5 stars</p>
-      <div class="star"></div>
-    <% end %>
+
 
     <p class="neighborhood">Neighborhood: <%= @restaurant.location %></p>
 
@@ -20,6 +17,14 @@
     </p>
 
     <p class="smaller"><a href=<%= @restaurant.website %>>Restaurant Website »</a></p>
+    <% if @restaurant.rating %>
+
+      <div class="star"></div>
+      <div class="star-rating-in-words"><%= @restaurant.rating %> stars from Google Reviews</div>
+      <p></p>
+    <% end %>
+
+
 
     <div>
       <%= render 'restaurants/favorite_restaurant_button' if user_signed_in? %>
