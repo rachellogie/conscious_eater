@@ -10,42 +10,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <nav>
-    <div id="nav_container">
-      <ul>
+<div id="wrapper">
+  <header>
+    <nav>
+      <div id="nav_container">
+        <ul>
 
-        <%= render 'layouts/user_widget' %>
-        <li><%= link_to 'My Profile', profile_path if user_signed_in? %></li>
-        <li><a href="/">New Search</a></li>
-      </ul>
+          <%= render 'layouts/user_widget' %>
+          <li><%= link_to 'My Profile', profile_path if user_signed_in? %></li>
+          <li><a href="/">New Search</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="header_container">
+      <h1><span><%= link_to 'Picky Eater', root_path %></span></h1>
+
+      <h3><span>Find restaurants in the Denver/Boulder area <br>that suit your dietary preferences.</span>
+      </h3>
     </div>
-  </nav>
-  <div id="header_container">
-    <h1><span><%= link_to 'Picky Eater', root_path %></span></h1>
-    <h3><span>Find restaurants in the Denver/Boulder area <br>that suit your dietary preferences.</span>
-    </h3>
-  </div>
-</header>
+  </header>
 
-<div id="sign_in_flash">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div id="sign_in_flash">
+    <p class="notice"><%= notice %></p>
+
+    <p class="alert"><%= alert %></p>
+  </div>
+
+
+  <div id="main">
+    <div id="main_container">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer_container">
+      <%= link_to 'Rachel Logie 2014', about_me_path %>
+    </div>
+  </footer>
 </div>
-
-
-
-<div id="main">
-  <div id="main_container">
-    <%= yield %>
-  </div>
-</div>
-
-<footer>
-  <div id="footer_container">
-    <%= link_to 'Rachel Logie 2014', about_me_path %>
-  </div>
-</footer>
-
 </body>
 </html>
