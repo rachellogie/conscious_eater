@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 
-feature 'User authentication' do
+feature 'User authorizations' do
 
   before :each do
     VCR.use_cassette('users/before') do
@@ -39,7 +39,7 @@ feature 'User authentication' do
   end
 
   scenario 'non signed in users cant save dietary options' do
-    visit '/'
+    visit root_path
     expect(page).to_not have_content 'Save my dietary preferences'
   end
 

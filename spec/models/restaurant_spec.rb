@@ -19,6 +19,13 @@ describe Restaurant do
       expect(@restaurant).to_not be_valid
     end
 
+    it 'validates the uniqueness of the restaurant name' do
+      create_restaurant
+      duplicate_restaurant = Restaurant.new(name: "Linger", location: "Highlands, Denver", dietary_option_list: "gluten free options")
+      puts duplicate_restaurant.errors.full_messages
+      expect(duplicate_restaurant).to_not be_valid
+    end
+
   end
 end
 

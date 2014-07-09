@@ -1,10 +1,10 @@
-<% if @restaurant %>
-  <% if @restaurant.errors %>
+
+  <% if @restaurant && @restaurant.errors %>
     <% @restaurant.errors.full_messages.each do |message| %>
       <p class="error"><%= message %></p>
     <% end %>
   <% end %>
-<% end %>
+
 
 <%= form_for @restaurant, url: "/restaurants/#{@restaurant.id}" do |f| %>
 

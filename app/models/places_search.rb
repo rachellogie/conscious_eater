@@ -47,7 +47,8 @@ class PlacesSearch
       match = json_data.scan /<A\sHREF.+">/
       match.first[9..-3]
     else
-      "https://47006bd19c074195238a-b0b757299a8f3a7022a498c3b4069649.ssl.cf2.rackcdn.com/media/photos/3956/large-f3c5d0c3666eec8c.jpg?1369865351"    end
+      "https://47006bd19c074195238a-b0b757299a8f3a7022a498c3b4069649.ssl.cf2.rackcdn.com/media/photos/3956/large-f3c5d0c3666eec8c.jpg?1369865351"
+    end
   end
 
   def get_website

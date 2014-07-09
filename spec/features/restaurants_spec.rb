@@ -109,7 +109,7 @@ feature 'Restaurants manager' do
     end
   end
 
-  scenario 'User can add a restaurant to their restaurant pick and see it on their mypage' do
+  scenario 'User can add a restaurant to their restaurant pick and see it on their profile page' do
     restaurant = create_restaurant
     visit restaurant_path(restaurant)
     click_on "Favorite this restaurant"

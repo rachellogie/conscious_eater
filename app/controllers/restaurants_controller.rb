@@ -12,8 +12,8 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
 
-    #use params[:homepage_location] to get the lat and long of the map?
-    search = PlacesSearch.new(@key, "bhew", params[:homepage_location])
+    #use params[:homepage_location] to get the lat and long of the map
+    search = PlacesSearch.new(@key, "get coordinates", params[:homepage_location])
     coordinates = search.get_json_restaurant_data(true)
     @longitude = coordinates[:longitude]
     @latitude = coordinates[:latitude]

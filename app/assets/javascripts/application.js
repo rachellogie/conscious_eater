@@ -17,3 +17,4 @@
 //= require chosen-jquery
 //= require jquery.raty
 //= require_tree .
+
