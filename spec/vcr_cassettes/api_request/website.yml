@@ -2,119 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
-      Expires:
-      - Mon, 14 Jul 2014 19:24:05 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "2030",
-                       "short_name" : "2030",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "West 30th Avenue",
-                       "short_name" : "W 30th Ave",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Highland",
-                       "short_name" : "Highland",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver",
-                       "short_name" : "Denver",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver County",
-                       "short_name" : "Denver County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80211",
-                       "short_name" : "80211",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "2030 West 30th Avenue, Denver, CO 80211, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 39.7594564,
-                       "lng" : -105.0113582
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.76080538029149,
-                          "lng" : -105.0100092197085
-                       },
-                       "southwest" : {
-                          "lat" : 39.7581074197085,
-                          "lng" : -105.0127071802915
-                       }
-                    }
-                 },
-                 "types" : [ "street_address" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
-- request:
-    method: get
     uri: https://maps.googleapis.com/maps/api/geocode/json?address=1942%20Broadway%20St,%20Boulder,%20CO%2080302%7B&key=<GOOGLE_API_KEY>&sensor=false
     body:
       encoding: US-ASCII
@@ -134,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:21 GMT
       Expires:
-      - Mon, 14 Jul 2014 19:24:05 GMT
+      - Mon, 14 Jul 2014 19:24:21 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -230,10 +117,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:21 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=Shine&radius=1000&sensor=false&types=food
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=shine&radius=1000&sensor=false&types=food
     body:
       encoding: US-ASCII
       string: ''
@@ -252,9 +139,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:21 GMT
       Expires:
-      - Sun, 13 Jul 2014 19:29:05 GMT
+      - Sun, 13 Jul 2014 19:29:21 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -292,14 +179,14 @@ http_interactions:
                     {
                        "height" : 512,
                        "html_attributions" : [],
-                       "photo_reference" : "CnRnAAAAO1cKl_FLH8yM6xJ_lnF1c6Zxe7admMKYWiwbCTWIIJ0qvCW38GxEEfCrIN_Zu6LvV4lqsoYMphBARyZtOqe348IafOMXCZ6dmP-YWPYbQBWMvwtUu8le-dOjErNe9Wo0RyDMe2YBZG63qgvig5HL9RIQHw6pnrBqYYUbUl-RX_VigxoUPdtKxvBjTWN5Yt404_9Fad1mWJ4",
+                       "photo_reference" : "CnRnAAAAtsPyoQu8ckVpCDgykPMQLHyBrPiZ10BrUjcUh21sblr-LEK2w3naXDISw6_MP_hAMIi0nVV9SF2Pc5wQIsHa0qHP2epGz_e4de_Em8q2dvHX7EkzHYN4Lte4MbG8l9pIcTCB9AgFUzPhYe6IoqgmVRIQWOXPTyrspOpEEIC6zGLRrRoUdyMZak_9CJjTVmEOkmsqTwa7aMo",
                        "width" : 341
                     }
                  ],
                  "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
                  "price_level" : 2,
                  "rating" : 3.9,
-                 "reference" : "CpQBhgAAAFisJibynh3rsyeqUctGMB4veOEe7JU8YGQPlochgj8Fv7IBi0QkQvyXkRkZDHYkgy9NbpjSV7rBzj9FDys1gGCjw1mF5mvLKE6D3-hUXfZ-mdrvYt8RrRjb-M9-L1kBzgmQSbPku-PIEU7a8YqTC7BvwYRdcVUBJds8RlhZ6nEg9E3B_F_MLFDaFF5uD1M-HxIQUl5Gs2vooh2XxPPAkHNp-xoUBdCiVUVPRxBC0HQJvr-xkdcgvNU",
+                 "reference" : "CpQBhwAAAFRZJkLyJz-1SV021MzC9WC1z7on-Hfo_GGrWMDwV0kHr42Rrx-7i_u_ijy_miN7iZoD6Awa-CKy6qgkpUBG75vZQLCqzanK85Yg4z04X2d-W2bK7znTMvpnQ1ULXsmkKxuLYLW8JPhP49LOjgHTg5raBN-dsfA0-dqVRpwusr1MG-wbry9tXIbIoyV5ZhAH8xIQtB33gve4d-2dl85z1-QIABoUGRA96r4CQ39p5VcPGjzJ4kRuHyI",
                  "scope" : "GOOGLE",
                  "types" : [ "bar", "restaurant", "food", "establishment" ],
                  "vicinity" : "2027 13th St, Boulder"
@@ -308,10 +195,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:21 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAO1cKl_FLH8yM6xJ_lnF1c6Zxe7admMKYWiwbCTWIIJ0qvCW38GxEEfCrIN_Zu6LvV4lqsoYMphBARyZtOqe348IafOMXCZ6dmP-YWPYbQBWMvwtUu8le-dOjErNe9Wo0RyDMe2YBZG63qgvig5HL9RIQHw6pnrBqYYUbUl-RX_VigxoUPdtKxvBjTWN5Yt404_9Fad1mWJ4&sensor=false
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAtsPyoQu8ckVpCDgykPMQLHyBrPiZ10BrUjcUh21sblr-LEK2w3naXDISw6_MP_hAMIi0nVV9SF2Pc5wQIsHa0qHP2epGz_e4de_Em8q2dvHX7EkzHYN4Lte4MbG8l9pIcTCB9AgFUzPhYe6IoqgmVRIQWOXPTyrspOpEEIC6zGLRrRoUdyMZak_9CJjTVmEOkmsqTwa7aMo&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -328,7 +215,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:21 GMT
       Pragma:
       - no-cache
       Expires:
@@ -355,10 +242,10 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:21 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhgAAAFisJibynh3rsyeqUctGMB4veOEe7JU8YGQPlochgj8Fv7IBi0QkQvyXkRkZDHYkgy9NbpjSV7rBzj9FDys1gGCjw1mF5mvLKE6D3-hUXfZ-mdrvYt8RrRjb-M9-L1kBzgmQSbPku-PIEU7a8YqTC7BvwYRdcVUBJds8RlhZ6nEg9E3B_F_MLFDaFF5uD1M-HxIQUl5Gs2vooh2XxPPAkHNp-xoUBdCiVUVPRxBC0HQJvr-xkdcgvNU&sensor=true
+    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhwAAAFRZJkLyJz-1SV021MzC9WC1z7on-Hfo_GGrWMDwV0kHr42Rrx-7i_u_ijy_miN7iZoD6Awa-CKy6qgkpUBG75vZQLCqzanK85Yg4z04X2d-W2bK7znTMvpnQ1ULXsmkKxuLYLW8JPhP49LOjgHTg5raBN-dsfA0-dqVRpwusr1MG-wbry9tXIbIoyV5ZhAH8xIQtB33gve4d-2dl85z1-QIABoUGRA96r4CQ39p5VcPGjzJ4kRuHyI&sensor=true
     body:
       encoding: US-ASCII
       string: ''
@@ -377,9 +264,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:21 GMT
       Expires:
-      - Sun, 13 Jul 2014 19:29:05 GMT
+      - Sun, 13 Jul 2014 19:29:21 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -524,14 +411,14 @@ http_interactions:
                  {
                     "height" : 512,
                     "html_attributions" : [],
-                    "photo_reference" : "CnRnAAAAczptvt-8DoQu5cbJq-yt-XIALYFENW7goyMyJv3ozBmqIdKRptK772o4oeb8I1Opzlhu2UCXPbEzZ-iaJ_yMSgZuWJVfoiTi5iWZhtBlRrYQVbqrmpzavmBL2X9rGxkVcHaStES0BtbaW8dCwkH1ZhIQcjTQexjoOajAnyyKAGAa8xoUrrWsMmCSz5W-_LQyiX-UwOnyK6I",
+                    "photo_reference" : "CnRnAAAASDH4CwH9H8EhsZeiwbLUxByNEHcaAi0Sqzh9BUB0wwUYHaT1eXaIPPvOakp9HePRd8k_H3LSNiM37fghR22I4aEf7UNvkm0HukYRqagJkGulj39seio50crTwcr0hzMuyBZ8Bgqj0RSHH_pr4NvTJRIQIDJg3AaL-TMV1GTa4qoCZxoU8rACxIBHwI7B0jpaYkVRWof0mU4",
                     "width" : 341
                  }
               ],
               "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
               "price_level" : 2,
               "rating" : 3.9,
-              "reference" : "CpQBhgAAAHt51C3bAt46xugPBaN5kFUWr8JKwkXsvxoBGIe1hiMYpEF6KMazO4WEIB47gZwy_ejHsF-31aOhWywJs-qMEF9g33559YPLtLz2zj7hjZXm9DuhE666Yu9eJftA0nNletowHpcmdu-BI8kgYvLEgNhIT_agy7WfDYNpposwA6X-5LFeaf9shBLv2dQKVmxlqhIQUYVa0OPiCJ2nuW-mjYsfaRoUSwWl6cR8AwdvaP0XKC3zlq4iYlI",
+              "reference" : "CpQBhwAAAK0wpx0YAVX_WQQH2CBzqlaVKJapxlA0Y4SPQbdGCfxjLBw6o4XhMDXyBgMRGsTHStVi8ZpRNbqa14yL2tIETqbN6xge-goSM3iJe0slLz1U-w8qTpWi_dkLGZdEN5V6o2p6WM-UmIYNRJ_xd71oBlczo1h9RK3AGVq1jEMVKMsgsPdbDAo5GCFmnkiKZ4NP0BIQrEiEbWWSBuX96c5nK1QVqxoU3X_jWJLDV0YJ4gONAqLqOVpDMQE",
               "reviews" : [
                  {
                     "aspects" : [
@@ -647,10 +534,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:21 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
+    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhwAAAFRZJkLyJz-1SV021MzC9WC1z7on-Hfo_GGrWMDwV0kHr42Rrx-7i_u_ijy_miN7iZoD6Awa-CKy6qgkpUBG75vZQLCqzanK85Yg4z04X2d-W2bK7znTMvpnQ1ULXsmkKxuLYLW8JPhP49LOjgHTg5raBN-dsfA0-dqVRpwusr1MG-wbry9tXIbIoyV5ZhAH8xIQtB33gve4d-2dl85z1-QIABoUGRA96r4CQ39p5VcPGjzJ4kRuHyI&sensor=true
     body:
       encoding: US-ASCII
       string: ''
@@ -669,15 +556,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:06 GMT
+      - Sun, 13 Jul 2014 19:24:22 GMT
       Expires:
-      - Mon, 14 Jul 2014 19:24:06 GMT
+      - Sun, 13 Jul 2014 19:29:22 GMT
       Cache-Control:
-      - public, max-age=86400
+      - public, max-age=300
       Vary:
       - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
       Server:
       - mafe
       X-Xss-Protection:
@@ -692,191 +577,254 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-           "results" : [
-              {
-                 "address_components" : [
+           "html_attributions" : [],
+           "result" : {
+              "address_components" : [
+                 {
+                    "long_name" : "2027",
+                    "short_name" : "2027",
+                    "types" : [ "street_number" ]
+                 },
+                 {
+                    "long_name" : "13th St",
+                    "short_name" : "13th St",
+                    "types" : [ "route" ]
+                 },
+                 {
+                    "long_name" : "Boulder",
+                    "short_name" : "Boulder",
+                    "types" : [ "locality", "political" ]
+                 },
+                 {
+                    "long_name" : "CO",
+                    "short_name" : "CO",
+                    "types" : [ "administrative_area_level_1", "political" ]
+                 },
+                 {
+                    "long_name" : "United States",
+                    "short_name" : "US",
+                    "types" : [ "country", "political" ]
+                 },
+                 {
+                    "long_name" : "80302",
+                    "short_name" : "80302",
+                    "types" : [ "postal_code" ]
+                 }
+              ],
+              "adr_address" : "\u003cspan class=\"street-address\"\u003e2027 13th St\u003c/span\u003e, \u003cspan class=\"locality\"\u003eBoulder\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80302\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUnited States\u003c/span\u003e",
+              "formatted_address" : "2027 13th St, Boulder, CO, United States",
+              "formatted_phone_number" : "(303) 449-0120",
+              "geometry" : {
+                 "location" : {
+                    "lat" : 40.018807,
+                    "lng" : -105.279253
+                 }
+              },
+              "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+              "id" : "d2883f3f956ae221b0d144040088188c49cdc5e8",
+              "international_phone_number" : "+1 303-449-0120",
+              "name" : "Shine Restaurant and Gathering Place",
+              "opening_hours" : {
+                 "open_now" : true,
+                 "periods" : [
                     {
-                       "long_name" : "2030",
-                       "short_name" : "2030",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "West 30th Avenue",
-                       "short_name" : "W 30th Ave",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Highland",
-                       "short_name" : "Highland",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver",
-                       "short_name" : "Denver",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver County",
-                       "short_name" : "Denver County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80211",
-                       "short_name" : "80211",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "2030 West 30th Avenue, Denver, CO 80211, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 39.7594564,
-                       "lng" : -105.0113582
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.76080538029149,
-                          "lng" : -105.0100092197085
+                       "close" : {
+                          "day" : 0,
+                          "time" : "2200"
                        },
-                       "southwest" : {
-                          "lat" : 39.7581074197085,
-                          "lng" : -105.0127071802915
+                       "open" : {
+                          "day" : 0,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 1,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 1,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 2,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 2,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 3,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 3,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 4,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 4,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 5,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 5,
+                          "time" : "1100"
+                       }
+                    },
+                    {
+                       "close" : {
+                          "day" : 6,
+                          "time" : "2200"
+                       },
+                       "open" : {
+                          "day" : 6,
+                          "time" : "1100"
                        }
                     }
+                 ]
+              },
+              "photos" : [
+                 {
+                    "height" : 512,
+                    "html_attributions" : [],
+                    "photo_reference" : "CnRnAAAAm-bdzQjRBeqHGI0jT-IGa4WEetDRjKVFiNRXeSjJN6BeOOBJrylOBtv5pm_3vBnYursOe4H2OIoiXgmgy925dIgNCDIaiY80xUVKKxhiGyBnl89aKo7iBNrnJg778fq2Wnxo2SMEUD9hpxk5VpLmwxIQgIQ6l-ut7DgmUdsyeZ8e-xoUdxGWxWFU6GycQtVoxc51DIxAOc4",
+                    "width" : 341
+                 }
+              ],
+              "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
+              "price_level" : 2,
+              "rating" : 3.9,
+              "reference" : "CpQBhwAAABVDMpoeGqTQT3RbaNKeeK9X6fgPeguYTMkidq4iwbZQ6bLWFCdzS0nN3J6X6EALe0jJ3TQPKioe0RarlZ7_g18jC7mj36OHGzY8GVNwRai2wE7ub9Q6UpHp3lXW6QrMV7N-rVwDNyLnxGCcgh3F-Ywws8yIRNM2JPZ-keHgcJtZGDvWhQ_iVuHg040-eGupvBIQvYeLbqCSRHV1lSSUMu3aihoUY8yE43G9R8Rn8WDAalX7fiRrxEY",
+              "reviews" : [
+                 {
+                    "aspects" : [
+                       {
+                          "rating" : 3,
+                          "type" : "overall"
+                       }
+                    ],
+                    "author_name" : "Cobun Keegan",
+                    "author_url" : "https://plus.google.com/115863699937873756994",
+                    "language" : "en",
+                    "rating" : 5,
+                    "text" : "I go here every chance I get. They have creative and delicious local gluten-free food (beet hummus!) . . . but the highlight of a visit to Shine are the \"potions,\" both alcoholic and non-alcoholic. They may sound like something from Alice and Wonderland, but they are all delicious!",
+                    "time" : 1394032856
                  },
-                 "types" : [ "street_address" ]
-              }
-           ],
+                 {
+                    "aspects" : [
+                       {
+                          "rating" : 2,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 2,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 3,
+                          "type" : "service"
+                       }
+                    ],
+                    "author_name" : "Christian Lewis",
+                    "author_url" : "https://plus.google.com/108932930156606795444",
+                    "language" : "en",
+                    "rating" : 4,
+                    "text" : "Shine offers a new twist to normal cocktails and micro brews. Good food and atmosphere as well. Try all the extracts, infusions and elixers - this place is cool and has a great gluten free selection! Perfect restaurant to try something new in Boulder.",
+                    "time" : 1368506116
+                 },
+                 {
+                    "aspects" : [
+                       {
+                          "rating" : 0,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 1,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 0,
+                          "type" : "service"
+                       }
+                    ],
+                    "author_name" : "David Oettinger",
+                    "author_url" : "https://plus.google.com/113889400853795698344",
+                    "language" : "en",
+                    "rating" : 2,
+                    "text" : "Nice bar with very good mixologist. However, the experience went downhill from there after we sat down to eat. We began with a pork rib and chicken skewer starters. The pork ribs were brought to the table first only they weren't pork. They were lamb. We asked the server about it and she said \"oh yeah...it's not pork, it's lamb.\" Though she did comp us that dish, her attitude stunk and she was not exactly apologetic. The ribs themselves were tasty but were overpowered by a garlic. Next, out came the chicken skewers which were undercooked and contained a very tasteless coconut milk dipping sauce and side of \"slaw\" that was bland. Our main courses were served - and in fairness were better than the starters - however, one of our party ordered a salad, which arrived a good 10 minutes after all the other plates had been served. Again, the waitress seemed unconcerned; never offered a real apology. For all these reasons, we won't be going back again. ",
+                    "time" : 1351550585
+                 },
+                 {
+                    "aspects" : [
+                       {
+                          "rating" : 1,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 1,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 0,
+                          "type" : "service"
+                       }
+                    ],
+                    "author_name" : "Ashlee Wagoner",
+                    "author_url" : "https://plus.google.com/114151421075635558616",
+                    "language" : "en",
+                    "rating" : 3,
+                    "text" : "WILL NEVER GO BACK - I am extremely disappointed in this place. I just had my 2nd experience at Shine the other day (giving them another chance) and was, to say the least, one of the worst restaurant experiences I have ever had. Coming from a service industry background and having worked in many different types of restaurants I would NEVER treat my customers the way the ENTIRE staff treated me on this occasion. \n\nI went in to enjoy their Saturday special of \"bottomless mimosas\" that went until 3pm. I called to ask more about their specials and I was instructed to \"check their menus on the internet\". The hostess didn't even have the decency or time to tell me what their menu/prices/happy hour was. When I came in I only had a short amount of time to enjoy the bottomless mimosas and I wanted to take advantage of what I was going to pay for. I asked if I could just get my drinks from the bar (because the server was taking forever to bring me my drinks) and I was told, \"that's tacky, we can bring it to your table one and time, we aren't just going to let you open your mouth for us to pour champagne down your throat and then for you to throw up everywhere\". What an assumption!!! First of all, it was a tiny little mimosa, half OJ, half champagne. No one is going to be throwing up anywhere. Second, why would that be your choice of words when speaking to a paying customer? I wasn't going out to get belligerent in the middle of the day, I just wanted to enjoy a little more than just one tiny glass of mimosa.\n\nAfter all that BS and our check arrived, my friend and I split our payment with a card and some cash. The server decided to keep my friend's change of more than $6, as if she decided this was suppose to be her tip... My friend had to approach her to ask for her change. I have NEVER been in a situation like this. How rude to just decide what to keep instead of letting the customer calculate what you might have deserved as a server. \n\nI will never spend money at this place again and I would advise you not to as well. The people that work here are rude, disrespectful, and do not deserve your business.",
+                    "time" : 1351463633
+                 },
+                 {
+                    "aspects" : [
+                       {
+                          "rating" : 3,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 3,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 3,
+                          "type" : "service"
+                       }
+                    ],
+                    "author_name" : "Ryan Morgan",
+                    "author_url" : "https://plus.google.com/113897653859540537334",
+                    "language" : "en",
+                    "rating" : 5,
+                    "text" : "NEEDS MORE RECOGNITION. this place is great. food is wonderful. own beer, own liquor. cauliflower mashed potatoes. mmmmm YEAH!",
+                    "time" : 1350005951
+                 }
+              ],
+              "scope" : "GOOGLE",
+              "types" : [ "bar", "restaurant", "food", "establishment" ],
+              "url" : "https://plus.google.com/107509113374620490168/about?hl=en-US",
+              "user_ratings_total" : 11,
+              "utc_offset" : -360,
+              "vicinity" : "2027 13th St, Boulder",
+              "website" : "http://www.shineboulder.com/"
+           },
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:06 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1942%20Broadway%20St,%20Boulder,%20CO%2080302%7B&key=<GOOGLE_API_KEY>&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 13 Jul 2014 19:24:06 GMT
-      Expires:
-      - Mon, 14 Jul 2014 19:24:06 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "1942",
-                       "short_name" : "1942",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "Pearl Street Mall",
-                       "short_name" : "Pearl Street Mall",
-                       "types" : [ "establishment" ]
-                    },
-                    {
-                       "long_name" : "Broadway Street",
-                       "short_name" : "Broadway St",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Downtown",
-                       "short_name" : "Downtown",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Boulder",
-                       "short_name" : "Boulder",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Boulder County",
-                       "short_name" : "Boulder County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80302",
-                       "short_name" : "80302",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "1942 Broadway Street, Pearl Street Mall, Boulder, CO 80302, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 40.0179479,
-                       "lng" : -105.2795348
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 40.0192968802915,
-                          "lng" : -105.2781858197085
-                       },
-                       "southwest" : {
-                          "lat" : 40.0165989197085,
-                          "lng" : -105.2808837802915
-                       }
-                    }
-                 },
-                 "types" : [ "street_address" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:06 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:22 GMT
 recorded_with: VCR 2.9.0

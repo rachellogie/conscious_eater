@@ -1,6 +1,6 @@
 class Restaurant < ActiveRecord::Base
 
-  DIETARY_OPTIONS = [ "gluten free options", "dairy free options", "vegan options", "vegetarian options",
+  DIETARY_OPTIONS = ["gluten free options", "dairy free options", "vegan options", "vegetarian options",
                      "organic ingredients", "grass fed beef", "100% gluten free",
                      "100% vegetarian", "100% vegan",]
 
@@ -14,9 +14,15 @@ class Restaurant < ActiveRecord::Base
 
   has_many :facts
 
+  def self.search(location, tags)
+    scope = where(location: location)
+    scope = scope.tagged_with(tags) if tags.present?
+    scope
+  end
+
   def facts
     facts = super
-    facts.sort { |a,b| b.get_likes.size <=> a.get_likes.size }
+    facts.sort { |a, b| b.get_likes.size <=> a.get_likes.size }
   end
 
   def num_favorites

@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 16 May 2014 22:08:34 GMT
+      - Sun, 13 Jul 2014 19:24:22 GMT
       Expires:
-      - Sat, 17 May 2014 22:08:34 GMT
+      - Mon, 14 Jul 2014 19:24:22 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -117,53 +117,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 16 May 2014 22:08:34 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=Linger&radius=1000&sensor=false&types=food
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 16 May 2014 22:08:34 GMT
-      Expires:
-      - Fri, 16 May 2014 22:13:34 GMT
-      Cache-Control:
-      - public, max-age=300
-      Vary:
-      - Accept-Language
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "html_attributions" : [],
-           "results" : [],
-           "status" : "ZERO_RESULTS"
-        }
-    http_version: 
-  recorded_at: Fri, 16 May 2014 22:08:34 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:22 GMT
 recorded_with: VCR 2.9.0

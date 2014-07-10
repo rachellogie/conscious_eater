@@ -4,11 +4,9 @@ require 'spec_helper'
 feature 'User authorizations' do
 
   before :each do
-    VCR.use_cassette('users/before') do
-      sign_up_user
-      create_restaurant
-      click_on 'Sign out'
-    end
+    sign_up_user
+    @restaurant = create_restaurant
+    click_on 'Sign out'
   end
 
   scenario 'User can sign in' do
@@ -17,24 +15,17 @@ feature 'User authorizations' do
   end
 
   scenario 'non signed in users cannot add a restaurant' do
-    visit root_path
-    click_on 'Go'
-    click_on 'Linger'
+    visit restaurant_path(@restaurant)
     expect(page).to_not have_button 'delete'
   end
 
   scenario 'non signed in users cannot update a restaurant' do
-    visit root_path
-    click_on 'Go'
-    click_on 'Linger'
+    visit restaurant_path(@restaurant)
     expect(page).to_not have_content 'Edit Restaurant Information'
   end
 
   scenario 'non admin cannot delete a restaurant' do
-    sign_in_user
-    visit root_path
-    click_on 'Go'
-    click_on 'Linger'
+    visit restaurant_path(@restaurant)
     expect(page).to_not have_button 'delete'
   end
 

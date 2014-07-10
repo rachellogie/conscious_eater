@@ -1,7 +1,6 @@
 <div id="main">
   <div id="main_container">
-    <form action="/restaurants" method="get">
-      <input type="hidden" name="search" value="true"/>
+    <form action="/search" method="get">
 
       <div id="search_location">
         <p class="dropbox">Find restaurants in: </p>
@@ -44,22 +43,22 @@
     </form>
 
     <a id="surprise_section"></a>
-    <% if @surprise %>
+    <% if @restaurant %>
       <p>Here's what we picked for you:</p>
       <hr>
       <div class="display_restaurant" id="surprise">
         <div class="one_fourth">
-          <img src="<%= @surprise.photo_uri %>"/>
+          <img src="<%= @restaurant.photo_uri %>"/>
         </div>
         <div class="one_third">
           <div class="restaurant_info">
-            <p><%= link_to @surprise.name, @surprise %></a></p>
+            <p><%= link_to @restaurant.name, @restaurant %></a></p>
 
-            <p class="smaller"><%= @surprise.location %></p>
+            <p class="smaller"><%= @restaurant.location %></p>
 
-            <p class="smaller"><%= @surprise.rating %> out of 5 stars</p>
+            <p class="smaller"><%= @restaurant.rating %> out of 5 stars</p>
           </div>
-          <% @surprise.dietary_option_list.each do |option| %>
+          <% @restaurant.dietary_option_list.each do |option| %>
             <div class="option_tags"><%= option %></div>
           <% end %>
         </div>

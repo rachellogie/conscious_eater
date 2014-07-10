@@ -11,12 +11,12 @@
 
     <p class="smaller address">
       <span><%= @restaurant.address %></span>
-      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>">
+      <a href="http://maps.google.com/maps?q=<%= @restaurant.address %>" target="_blank">
         Show me on the map »
       </a>
     </p>
 
-    <p class="smaller"><a href=<%= @restaurant.website %>>Restaurant Website »</a></p>
+    <p class="smaller"><a href="<%= @restaurant.website %>" target="_blank">Restaurant Website »</a></p>
     <% if @restaurant.rating %>
 
       <div class="star"></div>

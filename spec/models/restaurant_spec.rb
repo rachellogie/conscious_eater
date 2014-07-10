@@ -22,10 +22,26 @@ describe Restaurant do
     it 'validates the uniqueness of the restaurant name' do
       create_restaurant
       duplicate_restaurant = Restaurant.new(name: "Linger", location: "Highlands, Denver", dietary_option_list: "gluten free options")
-      puts duplicate_restaurant.errors.full_messages
       expect(duplicate_restaurant).to_not be_valid
     end
+  end
 
+  describe 'search method' do
+    it 'searching without dietary options returns restaurants for that location' do
+      create_restaurant
+      Restaurant.create!(name: 'Japango', location: 'Pearl Street, Boulder', dietary_option_list: "organic ingredients")
+      results = Restaurant.search('Highlands, Denver', {})
+      expect(results.first.name).to eq 'Linger'
+      expect(results.length).to eq 1
+    end
+
+    it 'searching with dietary options returns matching restaurants' do
+      create_restaurant
+      Restaurant.create!(name: 'Root Down', location: 'Highlands, Denver', dietary_option_list: "organic ingredients")
+      results = Restaurant.search('Highlands, Denver', 'organic ingredients')
+      expect(results.first.name).to eq 'Root Down'
+      expect(results.length).to eq 1
+    end
   end
 end
 

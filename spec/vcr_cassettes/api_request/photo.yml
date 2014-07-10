@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 09 May 2014 16:15:46 GMT
+      - Sun, 13 Jul 2014 19:24:20 GMT
       Expires:
-      - Sat, 10 May 2014 16:15:46 GMT
+      - Mon, 14 Jul 2014 19:24:20 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -96,18 +96,18 @@ http_interactions:
                  "formatted_address" : "1942 Broadway Street, Pearl Street Mall, Boulder, CO 80302, USA",
                  "geometry" : {
                     "location" : {
-                       "lat" : 40.0178149,
-                       "lng" : -105.2795947
+                       "lat" : 40.0179479,
+                       "lng" : -105.2795348
                     },
                     "location_type" : "ROOFTOP",
                     "viewport" : {
                        "northeast" : {
-                          "lat" : 40.0191638802915,
-                          "lng" : -105.2782457197085
+                          "lat" : 40.0192968802915,
+                          "lng" : -105.2781858197085
                        },
                        "southwest" : {
-                          "lat" : 40.0164659197085,
-                          "lng" : -105.2809436802915
+                          "lat" : 40.0165989197085,
+                          "lng" : -105.2808837802915
                        }
                     }
                  },
@@ -117,10 +117,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 09 May 2014 16:15:46 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:20 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0178149,-105.2795947&name=Shine&radius=1000&sensor=false&types=food
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=shine&radius=1000&sensor=false&types=food
     body:
       encoding: US-ASCII
       string: ''
@@ -139,9 +139,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 09 May 2014 16:15:46 GMT
+      - Sun, 13 Jul 2014 19:24:20 GMT
       Expires:
-      - Fri, 09 May 2014 16:20:46 GMT
+      - Sun, 13 Jul 2014 19:29:20 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -165,27 +165,29 @@ http_interactions:
               {
                  "geometry" : {
                     "location" : {
-                       "lat" : 40.018867,
-                       "lng" : -105.279056
+                       "lat" : 40.018807,
+                       "lng" : -105.279253
                     }
                  },
                  "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
                  "id" : "d2883f3f956ae221b0d144040088188c49cdc5e8",
                  "name" : "Shine Restaurant and Gathering Place",
                  "opening_hours" : {
-                    "open_now" : false
+                    "open_now" : true
                  },
                  "photos" : [
                     {
                        "height" : 512,
                        "html_attributions" : [],
-                       "photo_reference" : "CnRnAAAAP9vTdSr6OOls3aX6xZbddcwiG7-U0y1HpFul22DDBkp9uWVnpOs2fKAd9amZS2MJp-1T3V6UQ_bld6i7yF7veiH4DWLJExQD-23StTGOJYYBlkw-D6viNU2pN82rQx4sJPIYWX8XybW_gCTb109PnhIQvJeLS-joZPVrW0Xjl-QmrxoUWPXgBXBMs4OckMbqNNatyiG-nVc",
+                       "photo_reference" : "CnRnAAAAiecTiugfrMnZVSzeAgyoH_LkD5S_Po9H2KUFJLLXbLQpMutiytR5crjJYCduGKDTDjOosq8FiyIgbNU_dr-54GN5mKRtrFE3beXLikzsef__veA56AsJ6cWbEJiH2M4a1YNaOJaIip6Lt2sfyk74chIQxnxm8sdw3ZzeooFUCn4yVBoUiiAK0xOyyz-IsQkOMw3mDgnqbi8",
                        "width" : 341
                     }
                  ],
+                 "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
                  "price_level" : 2,
                  "rating" : 3.9,
-                 "reference" : "CpQBhwAAALRANhRbQwbVHzDt1x0okuqIuKrwDMHrntpDbXPM5oykyiaMD3V3Zr8ocil4LbV4pWqh0Jjb-CdBDR-5b0kd9rgvxMiv1C-kIakwI9MO4lAGhYrPZsE1w9j-9Brf8KuqUeYt4ig5wQczMLNLajIHnJXmw5To0F9SXlYECPxbfI8IKELRhSUt2spgGAedBNIqJRIQljsYIHhbHjXQx4vHTH4LghoUFOXGnTaBz4rJKsFidEGqkDl8Ouc",
+                 "reference" : "CpQBhwAAAM_U0jaA16khPVXC5r-zn3Vxjz_0xkY1EvpgyJKSBNsP293WKg3buSjn2BU_k20JW3qJRfzdVJj4Zthm-HTXDt00QlY4h2cC2gWaPX04MSSQ5Hb2Dzd5Ea6hg0oJI73qPSfwPI5vs3fwjWM_dj0xS6vgtq-aRvfR8j2l6PuX17aj_gMHY0676uj9b2LrgvgmoBIQjq5ISMrF7S4XUxaQEcEzYhoUaTR9RG-vY9aAKM6FpZ2mXajK_jI",
+                 "scope" : "GOOGLE",
                  "types" : [ "bar", "restaurant", "food", "establishment" ],
                  "vicinity" : "2027 13th St, Boulder"
               }
@@ -193,10 +195,57 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 09 May 2014 16:15:46 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:20 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhwAAALRANhRbQwbVHzDt1x0okuqIuKrwDMHrntpDbXPM5oykyiaMD3V3Zr8ocil4LbV4pWqh0Jjb-CdBDR-5b0kd9rgvxMiv1C-kIakwI9MO4lAGhYrPZsE1w9j-9Brf8KuqUeYt4ig5wQczMLNLajIHnJXmw5To0F9SXlYECPxbfI8IKELRhSUt2spgGAedBNIqJRIQljsYIHhbHjXQx4vHTH4LghoUFOXGnTaBz4rJKsFidEGqkDl8Ouc&sensor=true
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAiecTiugfrMnZVSzeAgyoH_LkD5S_Po9H2KUFJLLXbLQpMutiytR5crjJYCduGKDTDjOosq8FiyIgbNU_dr-54GN5mKRtrFE3beXLikzsef__veA56AsJ6cWbEJiH2M4a1YNaOJaIip6Lt2sfyk74chIQxnxm8sdw3ZzeooFUCn4yVBoUiiAK0xOyyz-IsQkOMw3mDgnqbi8&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Sun, 13 Jul 2014 19:24:20 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - mafe
+      Content-Length:
+      - '300'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: 
+  recorded_at: Sun, 13 Jul 2014 19:24:20 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhwAAAM_U0jaA16khPVXC5r-zn3Vxjz_0xkY1EvpgyJKSBNsP293WKg3buSjn2BU_k20JW3qJRfzdVJj4Zthm-HTXDt00QlY4h2cC2gWaPX04MSSQ5Hb2Dzd5Ea6hg0oJI73qPSfwPI5vs3fwjWM_dj0xS6vgtq-aRvfR8j2l6PuX17aj_gMHY0676uj9b2LrgvgmoBIQjq5ISMrF7S4XUxaQEcEzYhoUaTR9RG-vY9aAKM6FpZ2mXajK_jI&sensor=true
     body:
       encoding: US-ASCII
       string: ''
@@ -215,9 +264,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 09 May 2014 16:15:46 GMT
+      - Sun, 13 Jul 2014 19:24:20 GMT
       Expires:
-      - Fri, 09 May 2014 16:20:46 GMT
+      - Sun, 13 Jul 2014 19:29:20 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -275,8 +324,8 @@ http_interactions:
               "formatted_phone_number" : "(303) 449-0120",
               "geometry" : {
                  "location" : {
-                    "lat" : 40.018867,
-                    "lng" : -105.279056
+                    "lat" : 40.018807,
+                    "lng" : -105.279253
                  }
               },
               "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
@@ -284,76 +333,76 @@ http_interactions:
               "international_phone_number" : "+1 303-449-0120",
               "name" : "Shine Restaurant and Gathering Place",
               "opening_hours" : {
-                 "open_now" : false,
+                 "open_now" : true,
                  "periods" : [
                     {
                        "close" : {
                           "day" : 0,
-                          "time" : "2300"
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 0,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
                           "day" : 1,
-                          "time" : "2300"
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 1,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
                           "day" : 2,
-                          "time" : "2300"
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 2,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
                           "day" : 3,
-                          "time" : "2300"
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 3,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
                           "day" : 4,
-                          "time" : "2300"
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 4,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
-                          "day" : 6,
-                          "time" : "0100"
+                          "day" : 5,
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 5,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     },
                     {
                        "close" : {
-                          "day" : 0,
-                          "time" : "0100"
+                          "day" : 6,
+                          "time" : "2200"
                        },
                        "open" : {
                           "day" : 6,
-                          "time" : "1130"
+                          "time" : "1100"
                        }
                     }
                  ]
@@ -362,13 +411,14 @@ http_interactions:
                  {
                     "height" : 512,
                     "html_attributions" : [],
-                    "photo_reference" : "CnRnAAAAyYtSwc9Cat08_WmCzpeq5Ysp733WSgaLlB0iDkXt0gLvxI0VBVjXDP8VdFhyROLwAN75dd2SKHaGMP6bo3T_mWTsZcQkT9O9u8OiTT9lwScSaYokjmzfmD_Om7mCCFwq11KejKXbipmYhMHHZINtSRIQrAHACHcjuEhqTMk-H2hudRoU9rLi1IdP0N1HA05BfIcjwvr-KAo",
+                    "photo_reference" : "CnRnAAAA1lwzvqNntdTd5bfhg2Z6Aq7nGA31isTft6u5Bwm-GOew1TQdEWe3n814Nh8xc6H0-1iWz787WD_ReaBMGPgZOMVTTnpgTX_QpN9bqyoum62bES_qnrDmdPB6E60S3zyxnachc28WV1vA_NTCJjeE6BIQxzVU9I5Bf9zOKrCBj-HS0RoUFzd9TwJK9Htt9ajbtfFTmXBUHlg",
                     "width" : 341
                  }
               ],
+              "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
               "price_level" : 2,
               "rating" : 3.9,
-              "reference" : "CpQBhwAAAH2kBjnyvbKuA3Zykwaa7SK1PXRPrGviDKFH4-6cpCFAf7r39wpSsV5aPf9Up-5VoUgUOxOqClbHmiaI2T_qK-94g4s1HhQWLGLpzQ3O-DAzlBjTztj16SZEsaayrkbL6U7dHcWwF1HyVrrFeB87OfLfcLF7XUggi36RgzMLMvxjx_WR_9yyD-ax9b8kWP8mqhIQq3z1T0jCKQG_FROZctRb3xoUGN4dsgcnCC86oEbjmtOMIyY7z84",
+              "reference" : "CpQBhwAAAEMMkX8GxySwVk3n5CdvO_87qM3rQI9sP8e1WgzVL2a_nZkLKCzbjy_RHSgFTlu0u9ytnJGEmFX7OW6_rwa2LmuzJe1lJ42nSv0Lwqn_HV5kF4dQhO3cr2qJe_Jx2nmvINSN-Grr-VzedgYHJ00Z1yieVCO0TD2I34Poz2hkgmPv_0pTbm2tzTstToiexkIbNBIQmUUDvzENz0IwtlDrTmZPUhoURsKD61157IxyDofBIYbeAY68CXw",
               "reviews" : [
                  {
                     "aspects" : [
@@ -381,7 +431,7 @@ http_interactions:
                     "author_url" : "https://plus.google.com/115863699937873756994",
                     "language" : "en",
                     "rating" : 5,
-                    "text" : "I go here every chance I get. They have creative and delicious local gluten-free food (beet hummus!) . . . but the highlight of a visit to Shine are the &quot;potions,&quot; both alcoholic and non-alcoholic. They may sound like something from Alice and Wonderland, but they are all delicious!",
+                    "text" : "I go here every chance I get. They have creative and delicious local gluten-free food (beet hummus!) . . . but the highlight of a visit to Shine are the \"potions,\" both alcoholic and non-alcoholic. They may sound like something from Alice and Wonderland, but they are all delicious!",
                     "time" : 1394032856
                  },
                  {
@@ -425,38 +475,55 @@ http_interactions:
                     "author_url" : "https://plus.google.com/113889400853795698344",
                     "language" : "en",
                     "rating" : 2,
-                    "text" : "Nice bar with very good mixologist. However, the experience went downhill from there after we sat down to eat. We began with a pork rib and chicken skewer starters. The pork ribs were brought to the table first only they weren&#39;t pork. They were lamb. We asked the server about it and she said &quot;oh yeah...it&#39;s not pork, it&#39;s lamb.&quot; Though she did comp us that dish, her attitude stunk and she was not exactly apologetic. The ribs themselves were tasty but were overpowered by a garlic. Next, out came the chicken skewers which were undercooked and contained a very tasteless coconut milk dipping sauce and side of &quot;slaw&quot; that was bland. Our main courses were served - and in fairness were better than the starters - however, one of our party ordered a salad, which arrived a good 10 minutes after all the other plates had been served. Again, the waitress seemed unconcerned; never offered a real apology. For all these reasons, we won&#39;t be going back again.",
+                    "text" : "Nice bar with very good mixologist. However, the experience went downhill from there after we sat down to eat. We began with a pork rib and chicken skewer starters. The pork ribs were brought to the table first only they weren't pork. They were lamb. We asked the server about it and she said \"oh yeah...it's not pork, it's lamb.\" Though she did comp us that dish, her attitude stunk and she was not exactly apologetic. The ribs themselves were tasty but were overpowered by a garlic. Next, out came the chicken skewers which were undercooked and contained a very tasteless coconut milk dipping sauce and side of \"slaw\" that was bland. Our main courses were served - and in fairness were better than the starters - however, one of our party ordered a salad, which arrived a good 10 minutes after all the other plates had been served. Again, the waitress seemed unconcerned; never offered a real apology. For all these reasons, we won't be going back again. ",
                     "time" : 1351550585
                  },
                  {
                     "aspects" : [
                        {
-                          "rating" : 2,
-                          "type" : "overall"
+                          "rating" : 1,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 1,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 0,
+                          "type" : "service"
                        }
                     ],
-                    "author_name" : "Paul Harbin",
-                    "author_url" : "https://plus.google.com/115532491993962283252",
+                    "author_name" : "Ashlee Wagoner",
+                    "author_url" : "https://plus.google.com/114151421075635558616",
                     "language" : "en",
-                    "rating" : 4,
-                    "text" : "Well, the first time ... had a good beer with coconut shrimp &lt;3 and lamb fettuccine alfredo. Went back again got 2 orders of the shrimp. Will go back again.",
-                    "time" : 1378154771
+                    "rating" : 3,
+                    "text" : "WILL NEVER GO BACK - I am extremely disappointed in this place. I just had my 2nd experience at Shine the other day (giving them another chance) and was, to say the least, one of the worst restaurant experiences I have ever had. Coming from a service industry background and having worked in many different types of restaurants I would NEVER treat my customers the way the ENTIRE staff treated me on this occasion. \n\nI went in to enjoy their Saturday special of \"bottomless mimosas\" that went until 3pm. I called to ask more about their specials and I was instructed to \"check their menus on the internet\". The hostess didn't even have the decency or time to tell me what their menu/prices/happy hour was. When I came in I only had a short amount of time to enjoy the bottomless mimosas and I wanted to take advantage of what I was going to pay for. I asked if I could just get my drinks from the bar (because the server was taking forever to bring me my drinks) and I was told, \"that's tacky, we can bring it to your table one and time, we aren't just going to let you open your mouth for us to pour champagne down your throat and then for you to throw up everywhere\". What an assumption!!! First of all, it was a tiny little mimosa, half OJ, half champagne. No one is going to be throwing up anywhere. Second, why would that be your choice of words when speaking to a paying customer? I wasn't going out to get belligerent in the middle of the day, I just wanted to enjoy a little more than just one tiny glass of mimosa.\n\nAfter all that BS and our check arrived, my friend and I split our payment with a card and some cash. The server decided to keep my friend's change of more than $6, as if she decided this was suppose to be her tip... My friend had to approach her to ask for her change. I have NEVER been in a situation like this. How rude to just decide what to keep instead of letting the customer calculate what you might have deserved as a server. \n\nI will never spend money at this place again and I would advise you not to as well. The people that work here are rude, disrespectful, and do not deserve your business.",
+                    "time" : 1351463633
                  },
                  {
                     "aspects" : [
                        {
-                          "rating" : 0,
-                          "type" : "overall"
+                          "rating" : 3,
+                          "type" : "food"
+                       },
+                       {
+                          "rating" : 3,
+                          "type" : "decor"
+                       },
+                       {
+                          "rating" : 3,
+                          "type" : "service"
                        }
                     ],
-                    "author_name" : "Kevin Garry",
-                    "author_url" : "https://plus.google.com/105193140120288249669",
+                    "author_name" : "Ryan Morgan",
+                    "author_url" : "https://plus.google.com/113897653859540537334",
                     "language" : "en",
-                    "rating" : 2,
-                    "text" : "Great concept and the food can be quite good. The first time the owner attended to us and it was lovely but the next two times we were subjected to the snippy, bitchy and incompetent wait staff who ruined the experience.",
-                    "time" : 1375775278
+                    "rating" : 5,
+                    "text" : "NEEDS MORE RECOGNITION. this place is great. food is wonderful. own beer, own liquor. cauliflower mashed potatoes. mmmmm YEAH!",
+                    "time" : 1350005951
                  }
               ],
+              "scope" : "GOOGLE",
               "types" : [ "bar", "restaurant", "food", "establishment" ],
               "url" : "https://plus.google.com/107509113374620490168/about?hl=en-US",
               "user_ratings_total" : 11,
@@ -467,5 +534,52 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 09 May 2014 16:15:47 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:20 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAiecTiugfrMnZVSzeAgyoH_LkD5S_Po9H2KUFJLLXbLQpMutiytR5crjJYCduGKDTDjOosq8FiyIgbNU_dr-54GN5mKRtrFE3beXLikzsef__veA56AsJ6cWbEJiH2M4a1YNaOJaIip6Lt2sfyk74chIQxnxm8sdw3ZzeooFUCn4yVBoUiiAK0xOyyz-IsQkOMw3mDgnqbi8&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Sun, 13 Jul 2014 19:24:21 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - mafe
+      Content-Length:
+      - '300'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: 
+  recorded_at: Sun, 13 Jul 2014 19:24:21 GMT
 recorded_with: VCR 2.9.0

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profiles#show', as: :profile
 
+  get '/search', to: 'restaurants#search', as: :search
+
   resources :restaurants do
     resources :favorite_restaurants, only: [:create, :destroy]
     resources :facts do

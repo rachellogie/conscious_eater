@@ -2,119 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
-      Expires:
-      - Mon, 14 Jul 2014 19:24:05 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "2030",
-                       "short_name" : "2030",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "West 30th Avenue",
-                       "short_name" : "W 30th Ave",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Highland",
-                       "short_name" : "Highland",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver",
-                       "short_name" : "Denver",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver County",
-                       "short_name" : "Denver County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80211",
-                       "short_name" : "80211",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "2030 West 30th Avenue, Denver, CO 80211, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 39.7594564,
-                       "lng" : -105.0113582
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.76080538029149,
-                          "lng" : -105.0100092197085
-                       },
-                       "southwest" : {
-                          "lat" : 39.7581074197085,
-                          "lng" : -105.0127071802915
-                       }
-                    }
-                 },
-                 "types" : [ "street_address" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
-- request:
-    method: get
     uri: https://maps.googleapis.com/maps/api/geocode/json?address=1942%20Broadway%20St,%20Boulder,%20CO%2080302%7B&key=<GOOGLE_API_KEY>&sensor=false
     body:
       encoding: US-ASCII
@@ -134,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:07 GMT
       Expires:
-      - Mon, 14 Jul 2014 19:24:05 GMT
+      - Mon, 14 Jul 2014 19:24:07 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -230,10 +117,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:07 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=Shine&radius=1000&sensor=false&types=food
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<GOOGLE_API_KEY>&location=40.0179479,-105.2795348&name=shine&radius=1000&sensor=false&types=food
     body:
       encoding: US-ASCII
       string: ''
@@ -252,9 +139,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:08 GMT
       Expires:
-      - Sun, 13 Jul 2014 19:29:05 GMT
+      - Sun, 13 Jul 2014 19:29:08 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -292,14 +179,14 @@ http_interactions:
                     {
                        "height" : 512,
                        "html_attributions" : [],
-                       "photo_reference" : "CnRnAAAAO1cKl_FLH8yM6xJ_lnF1c6Zxe7admMKYWiwbCTWIIJ0qvCW38GxEEfCrIN_Zu6LvV4lqsoYMphBARyZtOqe348IafOMXCZ6dmP-YWPYbQBWMvwtUu8le-dOjErNe9Wo0RyDMe2YBZG63qgvig5HL9RIQHw6pnrBqYYUbUl-RX_VigxoUPdtKxvBjTWN5Yt404_9Fad1mWJ4",
+                       "photo_reference" : "CnRnAAAAY3ZbmKB3lRbEDHdGb-D2OlyHoTpHpBZGta7H5MtIrbqw9tsOjc9YLKLTHByUxeL_Zwsb-Fu7t_yOSm12FjrxZVGFrBf9sJWPDPKUSWr6m4vTymH89wlqSDvzURksW9dr4MR2ul6MKXO2weOcDLBUxhIQY_BQrKbrAgfakxVtLTWtxRoU3URttHJA-BAVK7szK8coFjimmsE",
                        "width" : 341
                     }
                  ],
                  "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
                  "price_level" : 2,
                  "rating" : 3.9,
-                 "reference" : "CpQBhgAAAFisJibynh3rsyeqUctGMB4veOEe7JU8YGQPlochgj8Fv7IBi0QkQvyXkRkZDHYkgy9NbpjSV7rBzj9FDys1gGCjw1mF5mvLKE6D3-hUXfZ-mdrvYt8RrRjb-M9-L1kBzgmQSbPku-PIEU7a8YqTC7BvwYRdcVUBJds8RlhZ6nEg9E3B_F_MLFDaFF5uD1M-HxIQUl5Gs2vooh2XxPPAkHNp-xoUBdCiVUVPRxBC0HQJvr-xkdcgvNU",
+                 "reference" : "CpQBhgAAAIYE8oRhABxWNR4HRTFa0WOC3jb3m8Ygv6rBhZNnn41RxBGL746c-9xBOYWggfXy8RuSkpOUXjeBY9OV__RZjCsDm63MoQQcMbblViWYXMCPNrYy-X96zEfWlij9-D6OTXYHgR7ULGQA8dLmcsh4Fx-X1FNODxBWpn4BbWoJLb4-_jt4Oz0QTRHQCwcaX4iCdxIQVRg-jx6H7wTGM40U9KGUjhoUHfAr4h9LL00BJNd-_MrqVIsUycE",
                  "scope" : "GOOGLE",
                  "types" : [ "bar", "restaurant", "food", "establishment" ],
                  "vicinity" : "2027 13th St, Boulder"
@@ -308,10 +195,10 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:08 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAO1cKl_FLH8yM6xJ_lnF1c6Zxe7admMKYWiwbCTWIIJ0qvCW38GxEEfCrIN_Zu6LvV4lqsoYMphBARyZtOqe348IafOMXCZ6dmP-YWPYbQBWMvwtUu8le-dOjErNe9Wo0RyDMe2YBZG63qgvig5HL9RIQHw6pnrBqYYUbUl-RX_VigxoUPdtKxvBjTWN5Yt404_9Fad1mWJ4&sensor=false
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_API_KEY>&maxwidth=400&photoreference=CnRnAAAAY3ZbmKB3lRbEDHdGb-D2OlyHoTpHpBZGta7H5MtIrbqw9tsOjc9YLKLTHByUxeL_Zwsb-Fu7t_yOSm12FjrxZVGFrBf9sJWPDPKUSWr6m4vTymH89wlqSDvzURksW9dr4MR2ul6MKXO2weOcDLBUxhIQY_BQrKbrAgfakxVtLTWtxRoU3URttHJA-BAVK7szK8coFjimmsE&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -328,7 +215,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:08 GMT
       Pragma:
       - no-cache
       Expires:
@@ -355,10 +242,10 @@ http_interactions:
         Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
         HREF=\"https://lh5.googleusercontent.com/-bPP-ol8Sb-o/UjEkAUKaoLI/AAAAAAAAD4Y/AqRIATez_v8/s1600-w341/photo.jpg\">here</A>.\r\n</BODY></HTML>\r\n"
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:08 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhgAAAFisJibynh3rsyeqUctGMB4veOEe7JU8YGQPlochgj8Fv7IBi0QkQvyXkRkZDHYkgy9NbpjSV7rBzj9FDys1gGCjw1mF5mvLKE6D3-hUXfZ-mdrvYt8RrRjb-M9-L1kBzgmQSbPku-PIEU7a8YqTC7BvwYRdcVUBJds8RlhZ6nEg9E3B_F_MLFDaFF5uD1M-HxIQUl5Gs2vooh2XxPPAkHNp-xoUBdCiVUVPRxBC0HQJvr-xkdcgvNU&sensor=true
+    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_API_KEY>&reference=CpQBhgAAAIYE8oRhABxWNR4HRTFa0WOC3jb3m8Ygv6rBhZNnn41RxBGL746c-9xBOYWggfXy8RuSkpOUXjeBY9OV__RZjCsDm63MoQQcMbblViWYXMCPNrYy-X96zEfWlij9-D6OTXYHgR7ULGQA8dLmcsh4Fx-X1FNODxBWpn4BbWoJLb4-_jt4Oz0QTRHQCwcaX4iCdxIQVRg-jx6H7wTGM40U9KGUjhoUHfAr4h9LL00BJNd-_MrqVIsUycE&sensor=true
     body:
       encoding: US-ASCII
       string: ''
@@ -377,9 +264,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 13 Jul 2014 19:24:05 GMT
+      - Sun, 13 Jul 2014 19:24:08 GMT
       Expires:
-      - Sun, 13 Jul 2014 19:29:05 GMT
+      - Sun, 13 Jul 2014 19:29:08 GMT
       Cache-Control:
       - public, max-age=300
       Vary:
@@ -524,14 +411,14 @@ http_interactions:
                  {
                     "height" : 512,
                     "html_attributions" : [],
-                    "photo_reference" : "CnRnAAAAczptvt-8DoQu5cbJq-yt-XIALYFENW7goyMyJv3ozBmqIdKRptK772o4oeb8I1Opzlhu2UCXPbEzZ-iaJ_yMSgZuWJVfoiTi5iWZhtBlRrYQVbqrmpzavmBL2X9rGxkVcHaStES0BtbaW8dCwkH1ZhIQcjTQexjoOajAnyyKAGAa8xoUrrWsMmCSz5W-_LQyiX-UwOnyK6I",
+                    "photo_reference" : "CnRnAAAAZCHMnhPiLzx7d7eWih8qfexDOJ70A8IiX9tLmiQPss6QTo6u5AmQbOBa1sgi4YJcFCDmFEe7oJH_Sc9eT94SFoqEufU_dCPPV9Qm9a1zl4pbvwtMWrj_725egQ4cB_5y3btZYTwjvqi0ehQOBVXvGRIQhvxrmff6emRHIn6ByTq-WhoUYDBhuiP_hcZ8ZtfXqY2a92dF4ns",
                     "width" : 341
                  }
               ],
               "place_id" : "ChIJve0ZzCfsa4cRYKABDAHdY_c",
               "price_level" : 2,
               "rating" : 3.9,
-              "reference" : "CpQBhgAAAHt51C3bAt46xugPBaN5kFUWr8JKwkXsvxoBGIe1hiMYpEF6KMazO4WEIB47gZwy_ejHsF-31aOhWywJs-qMEF9g33559YPLtLz2zj7hjZXm9DuhE666Yu9eJftA0nNletowHpcmdu-BI8kgYvLEgNhIT_agy7WfDYNpposwA6X-5LFeaf9shBLv2dQKVmxlqhIQUYVa0OPiCJ2nuW-mjYsfaRoUSwWl6cR8AwdvaP0XKC3zlq4iYlI",
+              "reference" : "CpQBhgAAAGXHs-I_jMH92Z4kiGKJ04QEZzK92V-iQqyHdaqTPAU15Dmb-8MO_Nw4NhT_5_4OjA7H0pxzhiTc2x9g8Bc9ikdifYmOcvBR5lIG8r-8nffXvk_xfL2XeHtMJTEKjIPNQJLRegUiDn7SLFSZR_IIJFcVOeC-1t2oTDpNXc-iRCKAvfWzuc7_tEEAdJjqR0Gb3hIQt0Jf5ls-Yfo-9iOV_xuTrhoUSixUDbfv1EczpVZ1UwlvjrjkmD8",
               "reviews" : [
                  {
                     "aspects" : [
@@ -647,236 +534,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:05 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2030%20W.%2030th%20Ave.,%20Denver,%20CO%2080211%7B&key=<GOOGLE_API_KEY>&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 13 Jul 2014 19:24:06 GMT
-      Expires:
-      - Mon, 14 Jul 2014 19:24:06 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "2030",
-                       "short_name" : "2030",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "West 30th Avenue",
-                       "short_name" : "W 30th Ave",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Highland",
-                       "short_name" : "Highland",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver",
-                       "short_name" : "Denver",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Denver County",
-                       "short_name" : "Denver County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80211",
-                       "short_name" : "80211",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "2030 West 30th Avenue, Denver, CO 80211, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 39.7594564,
-                       "lng" : -105.0113582
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.76080538029149,
-                          "lng" : -105.0100092197085
-                       },
-                       "southwest" : {
-                          "lat" : 39.7581074197085,
-                          "lng" : -105.0127071802915
-                       }
-                    }
-                 },
-                 "types" : [ "street_address" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:06 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1942%20Broadway%20St,%20Boulder,%20CO%2080302%7B&key=<GOOGLE_API_KEY>&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 13 Jul 2014 19:24:06 GMT
-      Expires:
-      - Mon, 14 Jul 2014 19:24:06 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alternate-Protocol:
-      - 443:quic
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "1942",
-                       "short_name" : "1942",
-                       "types" : [ "street_number" ]
-                    },
-                    {
-                       "long_name" : "Pearl Street Mall",
-                       "short_name" : "Pearl Street Mall",
-                       "types" : [ "establishment" ]
-                    },
-                    {
-                       "long_name" : "Broadway Street",
-                       "short_name" : "Broadway St",
-                       "types" : [ "route" ]
-                    },
-                    {
-                       "long_name" : "Downtown",
-                       "short_name" : "Downtown",
-                       "types" : [ "neighborhood", "political" ]
-                    },
-                    {
-                       "long_name" : "Boulder",
-                       "short_name" : "Boulder",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Boulder County",
-                       "short_name" : "Boulder County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "Colorado",
-                       "short_name" : "CO",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    },
-                    {
-                       "long_name" : "80302",
-                       "short_name" : "80302",
-                       "types" : [ "postal_code" ]
-                    }
-                 ],
-                 "formatted_address" : "1942 Broadway Street, Pearl Street Mall, Boulder, CO 80302, USA",
-                 "geometry" : {
-                    "location" : {
-                       "lat" : 40.0179479,
-                       "lng" : -105.2795348
-                    },
-                    "location_type" : "ROOFTOP",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 40.0192968802915,
-                          "lng" : -105.2781858197085
-                       },
-                       "southwest" : {
-                          "lat" : 40.0165989197085,
-                          "lng" : -105.2808837802915
-                       }
-                    }
-                 },
-                 "types" : [ "street_address" ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Sun, 13 Jul 2014 19:24:06 GMT
+  recorded_at: Sun, 13 Jul 2014 19:24:08 GMT
 recorded_with: VCR 2.9.0

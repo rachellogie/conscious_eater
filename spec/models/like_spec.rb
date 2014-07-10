@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-
-#do I even need this test at all??
-
-
 describe 'Likes' do
 
   it 'can upvote and downvote a fact through likes' do

@@ -1,26 +1,14 @@
 class RestaurantsController < ApplicationController
 
-  def index
-    if params[:search] && params[:option]
-      if params[:save]
-        populate_preferences(params[:option])
-      end
-      @restaurants = Restaurant.tagged_with(params[:option].keys).where(location: params[:homepage_location])
-    elsif params[:search]
-      @restaurants = Restaurant.where(location: params[:homepage_location])
-    else
-      @restaurants = Restaurant.all
-    end
-
-    #use params[:homepage_location] to get the lat and long of the map
-    search = PlacesSearch.new(@key, "get coordinates", params[:homepage_location])
-    coordinates = search.get_json_restaurant_data(true)
-    @longitude = coordinates[:longitude]
-    @latitude = coordinates[:latitude]
-
+  def search
+    @restaurants = Restaurant.search(params[:homepage_location], params.fetch(:option, {}).keys)
+    Preference.save_preferences_for(current_user, params[:option]) if params[:save]
     if params[:surprise]
-      @surprise = @restaurants.sample
-      render 'welcome/index'
+      @restaurant = @restaurants.sample
+      redirect_to restaurant_path(@restaurant)
+    else
+      @latitude, @longitude = APIRequest.new.get_lat_lng(params[:homepage_location])
+      render :search_results
     end
   end
 
@@ -51,12 +39,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new
-    populate_restaurant_from_params(@restaurant, allowed_parameters)
-
+    @restaurant = Restaurant.new(restaurant_attributes)
     if @restaurant.name?
-      search = PlacesSearch.new(ENV["GOOGLE_API_KEY"], @restaurant.name, @restaurant.location)
-      populate_restaurant(search, @restaurant)
+      api_response = APIRequest.new.get_first_result(@restaurant.name, @restaurant.location)
+      search_attributes = api_response.to_h
+      @restaurant.attributes = search_attributes
     end
 
     if @restaurant.save
@@ -68,9 +55,7 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    populate_restaurant_from_params(@restaurant, allowed_parameters)
-
-    if @restaurant.save
+    if @restaurant.update_attributes(restaurant_attributes)
       redirect_to restaurant_path(@restaurant)
     else
       render :edit
@@ -79,42 +64,16 @@ class RestaurantsController < ApplicationController
 
   def destroy
     Restaurant.find(params[:id]).destroy
-    redirect_to restaurants_path
+    redirect_to root_path
   end
 
   private
 
-  def populate_preferences(options)
-    Preference.where(user_id: current_user.id).destroy_all if !Preference.find_by(user_id: current_user.id).nil?
-    options.each do |preference|
-      Preference.create(preference_name: preference.first, user_id: current_user.id)
-    end
-  end
-
-  def populate_restaurant_from_params(restaurant, attributes)
-    restaurant.attributes = attributes
-    restaurant.name = restaurant.name.titleize
-    if params[:option]
-      restaurant.dietary_option_list = params[:option].keys.join(", ")
-    else
-      restaurant.dietary_option_list = ''
-    end
-  end
-
-  def populate_restaurant(search, restaurant)
-    if search.matches?
-      restaurant.rating = search.get_rating
-      restaurant.address = search.get_address
-      restaurant.photo_uri = search.get_photo
-      restaurant.website = search.get_website
-      restaurant.name = search.get_name
-      restaurant.latitude = search.get_restaurant_coordinates["lat"]
-      restaurant.longitude = search.get_restaurant_coordinates["lng"]
-    end
-  end
-
-  def allowed_parameters
-    params.require(:restaurant).permit(:address, :location, :website, :name)
+  def restaurant_attributes
+    attributes = params.require(:restaurant).permit(:address, :location, :website, :name)
+    attributes[:name] = attributes[:name].titleize
+    attributes[:dietary_option_list] = params.fetch(:option, {}).keys.join(", ")
+    attributes
   end
 
 end

@@ -1,12 +1,7 @@
 def seed_each_restaurant(restaurant)
-  search = PlacesSearch.new(ENV["GOOGLE_API_KEY"], restaurant.name, restaurant.location)
-  restaurant.rating = search.get_rating
-  restaurant.address = search.get_address
-  restaurant.photo_uri = search.get_photo
-  restaurant.website = search.get_website
-  restaurant.name = search.get_name
-  restaurant.latitude = search.get_restaurant_coordinates["lat"]
-  restaurant.longitude = search.get_restaurant_coordinates["lng"]
+  api_hash = APIRequest.new.get_first_result(restaurant.name, restaurant.location)
+  search = ApiResponse.new(api_hash)
+  restaurant.attributes = search.to_h
   restaurant.save!
 end
 
@@ -16,31 +11,31 @@ restaurant = Restaurant.new(name: "Salt", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Shine", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "Shine", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, 100% gluten free, vegan options, grass fed beef, organic ingredients" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "The Kitchen", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "The Kitchen", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, organic ingredients, vegan options" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Leaf", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "Leaf", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, 100% vegetarian, organic ingredients" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Linger", location: "Highlands, Denver",
+restaurant = Restaurant.new(name: "Linger", location: "Highlands, Denver",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Root Down", location: "Highlands, Denver",
+restaurant = Restaurant.new(name: "Root Down", location: "Highlands, Denver",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Black Cat", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "Black Cat", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 seed_each_restaurant(restaurant)
 
-restaurant = Restaurant.create(name: "Mountain Sun", location: "Pearl Street, Boulder",
+restaurant = Restaurant.new(name: "Mountain Sun", location: "Pearl Street, Boulder",
                   dietary_option_list: "gluten free options, dairy free options, vegetarian options, vegan options, organic ingredients" )
 seed_each_restaurant(restaurant)
 

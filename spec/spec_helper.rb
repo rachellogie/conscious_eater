@@ -14,16 +14,21 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+  config.use_transactional_fixtures = false
+
+  config.before :each do
+    if Capybara.current_driver == :rack_test
+      DatabaseCleaner.strategy = :transaction
+    else
+      DatabaseCleaner.strategy = :truncation
+    end
+    DatabaseCleaner.start
   end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  config.after do
+    DatabaseCleaner.clean
   end
+
 
   # ## Mock Framework
   #
@@ -60,7 +65,7 @@ VCR.configure do |c|
 
   c.filter_sensitive_data('<GOOGLE_API_KEY>') { ENV['GOOGLE_API_KEY']}
 
-  c.ignore_hosts '127.0.0.1', 'maps.googleapis.com'
+  c.ignore_localhost = true
 
   #c.ignore_request do |request|
   #  URI(request.uri).host == '127.0.0.1'
