@@ -1,7 +1,6 @@
 def seed_each_restaurant(restaurant)
-  api_hash = APIRequest.new.get_first_result(restaurant.name, restaurant.location)
-  search = ApiResponse.new(api_hash)
-  restaurant.attributes = search.to_h
+  response = APIRequest.new.get_first_result(restaurant.name, restaurant.location)
+  restaurant.attributes = response.to_h
   restaurant.save!
 end
 
