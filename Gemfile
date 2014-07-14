@@ -61,6 +61,8 @@ gem 'ejs', '~> 1.1.1'
 
 gem 'jquery-ui-rails', '~> 4.2.1'
 
+gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
